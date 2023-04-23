@@ -6,7 +6,7 @@ Social Post Maker is a simple and intuitive social media post builder built with
 
 To get started with Social Post Maker, simply clone this repository and run `npm install` to install the required dependencies. Then run `npm start` to start the development server.
 
-git clone https://github.com/Shuaa-Technology/SocialPostMaker.git
+git clone https://github.com/Shuaa-Technology/social-post-maker.git
 cd SocialPostMaker
 npm install
 npm start
