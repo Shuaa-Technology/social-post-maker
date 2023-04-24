@@ -1,0 +1,15 @@
+.editorPage {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.postSettingsWrapper {
+  width: 30%;
+  background-color: #323232;
+}
+
+.workspaceWrapper {
+  width: 70%;
+  background-color: #1c1c1c;
+}
