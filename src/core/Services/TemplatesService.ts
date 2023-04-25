@@ -8,7 +8,7 @@ export class TemplatesService {
     this.templates = [];
   }
 
-  getEmployees(): Promise<TemplateInterface[]> {
+  getTemplates(): Promise<TemplateInterface[]> {
     this.templates = [];
     return new Promise<TemplateInterface[]>((resolve, reject) =>
       API.get(`templates`)
@@ -21,5 +21,17 @@ export class TemplatesService {
           reject(new Error(error));
         })
     );
+  }
+
+  getDefaultTemplate(): TemplateInterface {
+    return {
+      id: "1",
+      version: "1.0.0",
+      name: "Default template",
+      description: "This is a default template.",
+      height: 600,
+      width: 600,
+      render: "<span>Default Template HTML <span>" /* BETTER WAY? */,
+    };
   }
 }

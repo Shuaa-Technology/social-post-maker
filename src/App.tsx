@@ -1,9 +1,9 @@
-import style from "./App.module.css";
-import EditorPage from "./Pages/Editor/EditorPage";
+import style from "./App.module.scss";
+import EditorPage from "./pages/Editor/EditorPage";
 
 function App() {
   return (
-      <div className="app">
+      <div className={style.app}>
         <EditorPage />
       </div>
   );

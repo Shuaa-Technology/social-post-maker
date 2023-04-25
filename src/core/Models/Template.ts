@@ -3,5 +3,7 @@ export interface TemplateInterface {
   version: string;
   name: string;
   description: string;
-  html: string;
+  height: number;
+  width: number;
+  render: string;
 }
