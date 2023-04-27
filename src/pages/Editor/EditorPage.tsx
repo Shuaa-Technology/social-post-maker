@@ -3,7 +3,7 @@ import { TemplateInterface } from "../../core/Models/Template";
 import { TemplatesService } from "../../core/Services/TemplatesService";
 import styles from "./EditorPage.module.scss";
 import Artboard from "./Layouts/Artboard/Artboard";
-import PostSettings from "./Layouts/PostSettings/PostSettings";
+import LeftSidebar from "./Layouts/LeftSidebar/LeftSidebar";
 
 function EditorPage() {
   const [templates, setTemplates] = useState<TemplateInterface[]>([]);
@@ -16,8 +16,8 @@ function EditorPage() {
   }, []);
   return (
     <div className={styles.editorPage}>
-      <div className={styles.postSettingsWrapper}>
-        <PostSettings templates={templates} />
+      <div className={styles.leftSidebarWrapper}>
+        <LeftSidebar templates={templates} />
       </div>
       <div className={styles.workspaceWrapper}>
         <Artboard template={templateService.getDefaultTemplate()} />

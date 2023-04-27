@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { FiSettings, FiList, FiCalendar, FiUsers } from 'react-icons/fi';
 
-import styles from './PostSettings.module.scss';
+import styles from './LeftSidebar.module.scss';
 import Settings from './Settings/Settings';
 import TemplateList from './TemplateList/TemplateList';
 import { TemplateInterface } from '../../../../core/Models/Template';
@@ -11,7 +11,7 @@ import { TemplateInterface } from '../../../../core/Models/Template';
   
  
 /* @note:need to change to another name, as it contain settings and templates list now... */
-function PostSettings({
+function LeftSidebar({
     templates = [],
   }: {
     templates: TemplateInterface[];
@@ -25,7 +25,7 @@ function PostSettings({
     const isTabActive = (index: number): boolean => tabIndex === index;
 
     return (
-        <div className={styles.postSettings}>
+        <div className={styles.leftSidebar}>
             <Tabs
                 selectedIndex={tabIndex}
                 onSelect={handleTabSelect}
@@ -64,4 +64,4 @@ function PostSettings({
     );
 };
 
-export default PostSettings;
+export default LeftSidebar;
