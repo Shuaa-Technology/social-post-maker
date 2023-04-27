@@ -9,7 +9,8 @@ To get started with Social Post Maker, simply clone this repository and run `npm
 git clone https://github.com/Shuaa-Technology/social-post-maker.git <br/>
 cd social-post-maker <br/>
 npm install <br/>
-npm start <br/>
+to run the app: npm start <br/> 
+to run the dev server(in another terminal): json-server --watch api.json <br/>
 
 
 Once the development server is running, you can access Social Post Maker at `http://localhost:3000`.

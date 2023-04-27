@@ -3,8 +3,19 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { FiSettings, FiList, FiCalendar, FiUsers } from 'react-icons/fi';
 
 import styles from './PostSettings.module.scss';
+import Settings from './Settings/Settings';
+import TemplateList from './TemplateList/TemplateList';
+import { TemplateInterface } from '../../../../core/Models/Template';
 
-const PostSettings: React.FC = () => {
+
+  
+ 
+/* @note:need to change to another name, as it contain settings and templates list now... */
+function PostSettings({
+    templates = [],
+  }: {
+    templates: TemplateInterface[];
+  }) {
     const [tabIndex, setTabIndex] = useState(0);
 
     const handleTabSelect = (index: number) => {
@@ -23,7 +34,7 @@ const PostSettings: React.FC = () => {
                 <TabList className={styles.tabList}>
                     <Tab className={`${styles.tab} ${isTabActive(0) ? styles.active : ''}`}>
                         <FiSettings className={styles.tabIcon} />
-                        <span>Settings</span>
+                     
                     </Tab>
                     <Tab className={`${styles.tab} ${isTabActive(1) ? styles.active : ''}`}>
                         <FiList className={styles.tabIcon} />
@@ -33,17 +44,14 @@ const PostSettings: React.FC = () => {
                         <FiCalendar className={styles.tabIcon} />
                         <span>TBD</span>
                     </Tab>
-                    <Tab className={`${styles.tab} ${isTabActive(3) ? styles.active : ''}`}>
-                        <FiUsers className={styles.tabIcon} />
-                        <span>TBD</span>
-                    </Tab>
+                   
                 </TabList>
 
                 <TabPanel>
-                    <h2>Settings Panel</h2>
+                     <Settings/>
                 </TabPanel>
                 <TabPanel>
-                    <h2>Template List Panel</h2>
+                   <TemplateList templates={templates}/>
                 </TabPanel>
                 <TabPanel>
                     <h2>TBD Panel</h2>

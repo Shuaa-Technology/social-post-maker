@@ -4,8 +4,73 @@
          "id": 1,
          "name": "Start template",
          "version": "1.0.0",
-         "description": "",
-         "html": ""
+         "description": "This is a Start template.",
+         "height": 600,
+         "width": 600,
+         "render": "<span style='color:black;' >Start Template HTML <span>"
+      },
+      {
+         "id": 2,
+         "name": "Fancy template",
+         "version": "1.0.0",
+         "description": "This is a Fancy template.",
+         "height": 600,
+         "width": 600,
+         "render": "<span style='color:black;' >Fancy Template HTML <span>"
+      },
+      {
+         "id": 3,
+         "name": "Elegant template",
+         "version": "1.0.0",
+         "description": "This is a Elegant template.",
+         "height": 600,
+         "width": 600,
+         "render": "<span style='color:black;' >Elegant Template HTML <span>"
+      },
+      {
+         "id": 4,
+         "name": "Dreamer template",
+         "version": "1.0.0",
+         "description": "This is a Dreamer template.",
+         "height": 600,
+         "width": 600,
+         "render": "<span style='color:black;' >Dreamer Template HTML <span>"
+      },
+      {
+         "id": 5,
+         "name": "Start template",
+         "version": "1.0.0",
+         "description": "This is a Start template.",
+         "height": 600,
+         "width": 600,
+         "render": "<span style='color:black;' >Start Template HTML <span>"
+      },
+      {
+         "id": 6,
+         "name": "Fancy template",
+         "version": "1.0.0",
+         "description": "This is a Fancy template.",
+         "height": 600,
+         "width": 600,
+         "render": "<span style='color:black;' >Fancy Template HTML <span>"
+      },
+      {
+         "id": 7,
+         "name": "Elegant template",
+         "version": "1.0.0",
+         "description": "This is a Elegant template.",
+         "height": 600,
+         "width": 600,
+         "render": "<span style='color:black;' >Elegant Template HTML <span>"
+      },
+      {
+         "id": 8,
+         "name": "Dreamer template",
+         "version": "1.0.0",
+         "description": "This is a Dreamer template.",
+         "height": 600,
+         "width": 600,
+         "render": "<span style='color:black;' >Dreamer Template HTML <span>"
       }
    ]
 }
