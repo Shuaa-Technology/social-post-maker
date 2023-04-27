@@ -1,5 +1,3 @@
-
-
 ## In Work <br/>
 
 \*\*\* Intiate post settings form.
