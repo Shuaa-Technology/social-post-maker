@@ -1,3 +1,5 @@
-## Urgent <br/>
+## In Work
 
-\*\*\* change "PostSettings" need to change to another name, as it contain settings and templates list now... 
+- Intiate post settings form.
+- Define strict SCSS variables to make UI consistent.
+- Improve Tabs.
