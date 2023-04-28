@@ -38,39 +38,39 @@
       },
       {
          "id": 5,
-         "name": "Start template",
+         "name": "Amazing template",
          "version": "1.0.0",
-         "description": "This is a Start template.",
+         "description": "This is a Amazing template.",
          "height": 600,
          "width": 600,
-         "render": "<span style='color:black;' >Start Template HTML <span>"
+         "render": "<span style='color:black;' >Amazing Template HTML <span>"
       },
       {
          "id": 6,
-         "name": "Fancy template",
+         "name": "Black&White template",
          "version": "1.0.0",
-         "description": "This is a Fancy template.",
+         "description": "This is a Black&White template.",
          "height": 600,
          "width": 600,
-         "render": "<span style='color:black;' >Fancy Template HTML <span>"
+         "render": "<span style='color:black;' >Black&White Template HTML <span>"
       },
       {
          "id": 7,
-         "name": "Elegant template",
+         "name": "Nerdy template",
          "version": "1.0.0",
-         "description": "This is a Elegant template.",
+         "description": "This is a Nerdy template.",
          "height": 600,
          "width": 600,
-         "render": "<span style='color:black;' >Elegant Template HTML <span>"
+         "render": "<span style='color:black;' >Nerdy Template HTML <span>"
       },
       {
          "id": 8,
-         "name": "Dreamer template",
+         "name": "Sunny template",
          "version": "1.0.0",
-         "description": "This is a Dreamer template.",
+         "description": "This is a Sunny template.",
          "height": 600,
          "width": 600,
-         "render": "<span style='color:black;' >Dreamer Template HTML <span>"
+         "render": "<span style='color:black;' >Sunny Template HTML <span>"
       }
    ]
 }
