@@ -1,6 +1,7 @@
 .templateList {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  overflow: scroll;
 }
 .templatesContainer {
   padding: 5px;
@@ -8,11 +9,4 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-}
-.templatePreview {
-  width: 150px;
-  height: 150px;
-  padding: 1em;
-  background-color: #1c1c1c;
-  margin: 8px;
 }

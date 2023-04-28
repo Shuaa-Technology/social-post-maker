@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
 import styles from "./TemplateList.module.scss";
-import { TemplateInterface } from "../../../../../core/Models/Template";
+import { TemplateInterface } from "../../core/Models/Template";
+import TemplateThumbnail from "./TemplateThumbnail/TemplateThumbnail";
 
 function TemplateList({ templates = [] }: { templates: TemplateInterface[] }) {
   return (
@@ -10,13 +11,11 @@ function TemplateList({ templates = [] }: { templates: TemplateInterface[] }) {
       <div className={styles.templatesContainer}>
         {(() => {
           let stack = [];
-          for (let i = 0; i < templates.length; i++) {    /* @todo: to foreach please. */
-         /* @todo: in another Comp. */
-           stack.push(
-              <div key={i} className={styles.templatePreview}>
-                {templates[i].name}
-              </div>
-            ); 
+          for (let i = 0; i < templates.length; i++) {
+            /* @todo: to foreach please. {*/
+            /* @todo: in another Comp. */
+            stack.push(<TemplateThumbnail template={templates[i]} />
+            );
           }
           return stack;
         })()}

@@ -3,9 +3,9 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { FiSettings, FiList, FiCalendar, FiUsers } from "react-icons/fi";
 
 import styles from "./LeftSidebar.module.scss";
-import Settings from "./Settings/Settings";
-import TemplateList from "./TemplateList/TemplateList";
+import Settings from "../../../../components/Settings/Settings";
 import { TemplateInterface } from "../../../../core/Models/Template";
+import TemplateList from "../../../../components/TemplateList/TemplateList";
 
 function LeftSidebar({ templates = [] }: { templates: TemplateInterface[] }) {
   const [tabIndex, setTabIndex] = useState(0);

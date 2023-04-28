@@ -1,0 +1,12 @@
+.templateThumbnail {
+  width: 150px;
+  height: 150px;
+  padding: 1em;
+  background-color: #1c1c1c;
+  margin: 5px;
+  border-radius: 8px;
+  &:hover {
+    background-color: #292929;
+    transition: 0.3s;
+  }
+}
