@@ -12,7 +12,7 @@ function EditorPage() {
   useEffect(() => {
     templateService
       .getTemplates()
-      .then((data) => setTemplates(data.slice(0, 12))); /* For pagination later */
+      .then((data) => setTemplates(data)); /* For pagination later */
   }, []);
   return (
     <div className={styles.editorPage}>

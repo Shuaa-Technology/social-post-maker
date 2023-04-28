@@ -3,15 +3,16 @@
   height: 100%;
 }
 .templatesContainer {
-  padding: 1em;
+  padding: 5px;
   display: flex;
   flex-wrap: wrap;
-
+  align-items: center;
+  justify-content: center;
 }
 .templatePreview {
-  width: 50px;
-  height: 50px;
+  width: 150px;
+  height: 150px;
   padding: 1em;
   background-color: #1c1c1c;
-  margin: 5px;
+  margin: 8px;
 }

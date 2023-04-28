@@ -1,3 +1,4 @@
+import { PAGINATION_SIZE } from "../../config/templates";
 import API from "../API";
 
 import { TemplateInterface } from "../Models/Template";
@@ -8,10 +9,10 @@ export class TemplatesService {
     this.templates = [];
   }
 
-  getTemplates(): Promise<TemplateInterface[]> {
+  getTemplates(limit:number = PAGINATION_SIZE): Promise<TemplateInterface[]> {
     this.templates = [];
     return new Promise<TemplateInterface[]>((resolve, reject) =>
-      API.get(`templates`)
+      API.get(`templates`+ ( limit > 0 ?`?_limit=${limit}` : ''))
         .then((res) => {
           this.templates = res.data;
           resolve(this.templates);
