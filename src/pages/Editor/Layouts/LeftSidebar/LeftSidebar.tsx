@@ -3,7 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { FiSettings, FiList, FiCalendar, FiUsers } from "react-icons/fi";
 
 import styles from "./LeftSidebar.module.scss";
-import Settings from "../../../../components/Settings/Settings";
+import Settings , { SettingsData }  from "../../../../components/Settings/Settings";
 import { TemplateInterface } from "../../../../core/Models/Template";
 import TemplateList from "../../../../components/TemplateList/TemplateList";
 
@@ -12,6 +12,10 @@ function LeftSidebar({ templates = [] }: { templates: TemplateInterface[] }) {
 
   const handleTabSelect = (index: number) => {
     setTabIndex(index);
+  };
+
+  const handleSave = (data: SettingsData) => {
+    //TODO after setting up redux stuff
   };
 
   const isTabActive = (index: number): boolean => tabIndex === index;
@@ -24,10 +28,10 @@ function LeftSidebar({ templates = [] }: { templates: TemplateInterface[] }) {
         className={styles.tabContainer}
       >
         <TabList className={styles.tabList}>
-          <Tab
-            className={`${styles.tab} ${isTabActive(0) ? styles.active : ""}`}
-          >
+          <Tab className={`${styles.tab} ${isTabActive(0) ? styles.active : ""}`}>
             <FiSettings className={styles.tabIcon} />
+            <span>TBD</span>
+
           </Tab>
           <Tab
             className={`${styles.tab} ${isTabActive(1) ? styles.active : ""}`}
@@ -44,7 +48,7 @@ function LeftSidebar({ templates = [] }: { templates: TemplateInterface[] }) {
         </TabList>
 
         <TabPanel>
-          <Settings />
+          <Settings  />
         </TabPanel>
         <TabPanel>
           <TemplateList templates={templates} />
