@@ -3,10 +3,22 @@ import { TemplateInterface } from "../../../core/Models/Template";
 
 interface Props {
   template: TemplateInterface;
+  onSelectTemplate: any;
 }
 function TemplateThumbnail(props: Props) {
+
+  const onClick = () => {
+   props.onSelectTemplate(props.template.id);
+  };
+
   return (
-    <div key={props.template.id} className={styles.templateThumbnail}>
+    <div
+      key={props.template.id}
+      className={styles.templateThumbnail}
+      onClick={() => {
+        onClick();
+      }}
+    >
       {props.template.name}
     </div>
   );

@@ -9,10 +9,11 @@ function EditorPage() {
   const [templates, setTemplates] = useState<TemplateInterface[]>([]);
   const templateService = new TemplatesService();
 
+  
   useEffect(() => {
     templateService
       .getTemplates()
-      .then((data) => setTemplates(data)); /* For pagination later */
+      .then((data) => setTemplates(data));
   }, []);
   return (
     <div className={styles.editorPage}>
