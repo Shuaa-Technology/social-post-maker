@@ -1,15 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import styles from "./TemplateList.module.scss";
 import { TemplateInterface } from "../../core/Models/Template";
 import TemplateThumbnail from "./TemplateThumbnail/TemplateThumbnail";
+import { useAppSelector, useAppDispatch } from "../../../src/app/hooks";
+import { getTemplates, loadTemplates } from "../../app/store/Templatestore";
 
-function TemplateList({ templates = [] }: { templates: TemplateInterface[] }) {
+function TemplateList() {
+  const templatesLoader = useAppSelector(getTemplates);
+  /*   const [templates, setTemplates] = useState<TemplateInterface[]>([]); */
+  const dispatch = useAppDispatch();
 
-  const handleSelectTemplate = (id:string) => {
+  const handleSelectTemplate = (id: string) => {
     //dipatch redux select action
-     console.log(id)
-   };
+    console.log(id);
+  };
+
+  useEffect(() => {
+    dispatch(loadTemplates());
+  }, []);
 
   return (
     <div className={styles.templateList}>
@@ -17,9 +26,14 @@ function TemplateList({ templates = [] }: { templates: TemplateInterface[] }) {
       <div className={styles.templatesContainer}>
         {(() => {
           let stack = [];
-          for (let i = 0; i < templates.length; i++) {
-            /* @todo: to foreach please. {*/
-            stack.push(<TemplateThumbnail template={templates[i]} onSelectTemplate={handleSelectTemplate} />);
+          for (let i = 0; i < templatesLoader.templates.length; i++) {
+            /* @todo: to foreach please. */
+            stack.push(
+              <TemplateThumbnail
+                template={templatesLoader.templates[i]}
+                onSelectTemplate={handleSelectTemplate}
+              />
+            );
           }
           return stack;
         })()}

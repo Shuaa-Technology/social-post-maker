@@ -6,19 +6,12 @@ import Artboard from "./Layouts/Artboard/Artboard";
 import LeftSidebar from "./Layouts/LeftSidebar/LeftSidebar";
 
 function EditorPage() {
-  const [templates, setTemplates] = useState<TemplateInterface[]>([]);
   const templateService = new TemplatesService();
 
-  
-  useEffect(() => {
-    templateService
-      .getTemplates()
-      .then((data) => setTemplates(data));
-  }, []);
   return (
     <div className={styles.editorPage}>
       <div className={styles.leftSidebarWrapper}>
-        <LeftSidebar templates={templates} />
+        <LeftSidebar  />
       </div>
       <div className={styles.workspaceWrapper}>
         <Artboard template={templateService.getDefaultTemplate()} />
