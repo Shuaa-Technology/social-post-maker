@@ -14,7 +14,7 @@ function EditorPage() {
         <LeftSidebar  />
       </div>
       <div className={styles.workspaceWrapper}>
-        <Artboard template={templateService.getDefaultTemplate()} />
+        <Artboard  />
       </div>
     </div>
   );

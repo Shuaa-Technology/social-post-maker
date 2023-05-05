@@ -4,24 +4,50 @@ import { TemplateInterface } from "../../core/Models/Template";
 import { TemplatesService } from "../../core/Services/TemplatesService";
 
 export interface TemplateLoadingState {
+  template: TemplateInterface;
   templates: TemplateInterface[];
   status: "idle" | "loading" | "failed";
   status_message: string | null;
 }
 
+const templatesService = new TemplatesService();
+
 const initialState: TemplateLoadingState = {
+  template: templatesService.getDefaultTemplate(),
   templates: [],
   status: "idle",
   status_message: null,
 };
 
-const templatesService = new TemplatesService();
-
 export const loadTemplates = createAsyncThunk(
-  "template/loading",
+  "templates/load/all",
   async (data, { rejectWithValue }) => {
     try {
       const response = await templatesService.getTemplates();
+      return response;
+    } catch (err) {
+      return rejectWithValue(err);
+    }
+  }
+);
+
+export const loadTemplate = createAsyncThunk(
+  "templates/load/selected",
+  async (data, { rejectWithValue }) => {
+    try {
+      const response = await initialState.template;
+      return response;
+    } catch (err) {
+      return rejectWithValue(err);
+    }
+  }
+);
+
+export const selectTemplate = createAsyncThunk(
+  "templates/select",
+  async (id: string, { rejectWithValue }) => {
+    try {
+      const response = await templatesService.getTemplateById(id);
       return response;
     } catch (err) {
       return rejectWithValue(err);
@@ -50,9 +76,23 @@ export const TemplatesStore = createSlice({
         state.status = "failed";
         state.status_message = "Fetching templates  error, try again...";
       });
+    builder
+      .addCase(selectTemplate.pending, (state) => {
+        state.status = "loading";
+        state.status_message = "loading data...";
+      })
+      .addCase(selectTemplate.fulfilled, (state, action) => {
+        state.status = "idle";
+        state.template =
+          action.payload ?? templatesService.getDefaultTemplate();
+      })
+      .addCase(selectTemplate.rejected, (state) => {
+        state.status = "failed";
+        state.status_message = "Fetching Template Data error, try again...";
+      });
   },
 });
 
-export const getTemplates = (state: RootState) => state.templates;
+export const getTemplatesStore = (state: RootState) => state.templatesStore;
 
 export default TemplatesStore.reducer;

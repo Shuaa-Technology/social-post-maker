@@ -1,16 +1,17 @@
 import Preview from "../../../../components/Preview/Preview";
-import { TemplateInterface } from "../../../../core/Models/Template";
+
 import styles from "./Artboard.module.scss";
 
-type ArtboardProps = {
-  template: TemplateInterface;
-};
+import {  useAppSelector } from "../../../../app/hooks";
+import { getTemplatesStore } from "../../../../app/store/TemplatesStore";
 
-function Artboard(props: ArtboardProps) {
+function Artboard() {
+  const templateLoader = useAppSelector(getTemplatesStore);
+
   return (
     <div className={styles.artBoard}>
-      <h2>{props.template.name}</h2>
-      <Preview template={props.template} />
+      <h2>{templateLoader.template.name ?? "undefined"}</h2>
+      <Preview template={templateLoader.template} />
     </div>
   );
 }

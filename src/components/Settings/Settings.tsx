@@ -6,7 +6,7 @@ export interface SettingsData {
     onSave?: (data: { title: string; content: string }) => void;
 }
 
-const Settings: React.FC<SettingsData> = ({ onSave }) => {
+const Settings: React.FC<SettingsData> = ({ onSave }) => { /* @note: use simple TS function  */
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
 

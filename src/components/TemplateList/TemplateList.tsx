@@ -4,16 +4,20 @@ import styles from "./TemplateList.module.scss";
 import { TemplateInterface } from "../../core/Models/Template";
 import TemplateThumbnail from "./TemplateThumbnail/TemplateThumbnail";
 import { useAppSelector, useAppDispatch } from "../../../src/app/hooks";
-import { getTemplates, loadTemplates } from "../../app/store/Templatestore";
+import {
+
+  getTemplatesStore,
+  loadTemplates,
+  selectTemplate,
+} from "../../app/store/TemplatesStore";
 
 function TemplateList() {
-  const templatesLoader = useAppSelector(getTemplates);
+  const templatesLoader = useAppSelector(getTemplatesStore);
   /*   const [templates, setTemplates] = useState<TemplateInterface[]>([]); */
   const dispatch = useAppDispatch();
 
   const handleSelectTemplate = (id: string) => {
-    //dipatch redux select action
-    console.log(id);
+    dispatch(selectTemplate(id));
   };
 
   useEffect(() => {
