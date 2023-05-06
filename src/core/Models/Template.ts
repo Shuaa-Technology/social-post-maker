@@ -1,3 +1,5 @@
+import { TemplateSettings } from "./TemplateSettings";
+
 export interface TemplateInterface {
   id: string;
   version: string;
@@ -6,4 +8,5 @@ export interface TemplateInterface {
   height: number;
   width: number;
   render: string;
+  settings: TemplateSettings[] ;
 }

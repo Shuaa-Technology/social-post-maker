@@ -40,6 +40,7 @@ export class TemplatesService {
       width: 600,
       render:
         "<span style='color:black;' >Default Template HTML <span>" /* BETTER WAY? */,
+      settings: [],
     };
   }
 }
