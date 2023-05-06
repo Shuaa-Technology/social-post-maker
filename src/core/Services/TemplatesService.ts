@@ -38,8 +38,7 @@ export class TemplatesService {
       description: "This is a default template.",
       height: 600,
       width: 600,
-      render:
-        "<span style='color:black;' >Default Template HTML <span>" /* BETTER WAY? */,
+      render: "<span style='color:black;' >Default Template HTML <span>" /* BETTER WAY? */,
       settings: [],
     };
   }

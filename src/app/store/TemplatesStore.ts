@@ -4,7 +4,7 @@ import { TemplateInterface } from "../../core/Models/Template";
 import { TemplatesService } from "../../core/Services/TemplatesService";
 
 export interface TemplateLoadingState {
-  template: TemplateInterface;
+  currentTemplate: TemplateInterface;
   templates: TemplateInterface[];
   status: "idle" | "loading" | "failed";
   status_message: string | null;
@@ -13,7 +13,7 @@ export interface TemplateLoadingState {
 const templatesService = new TemplatesService();
 
 const initialState: TemplateLoadingState = {
-  template: templatesService.getDefaultTemplate(),
+  currentTemplate: templatesService.getDefaultTemplate(),
   templates: [],
   status: "idle",
   status_message: null,
@@ -35,7 +35,7 @@ export const loadTemplate = createAsyncThunk(
   "templates/load/selected",
   async (data, { rejectWithValue }) => {
     try {
-      const response = await initialState.template;
+      const response = await initialState.currentTemplate;
       return response;
     } catch (err) {
       return rejectWithValue(err);
@@ -83,7 +83,7 @@ export const TemplatesStore = createSlice({
       })
       .addCase(selectTemplate.fulfilled, (state, action) => {
         state.status = "idle";
-        state.template =
+        state.currentTemplate =
           action.payload ?? templatesService.getDefaultTemplate();
       })
       .addCase(selectTemplate.rejected, (state) => {

@@ -1,6 +1,6 @@
 export interface TemplateSettings {
   id: string;
-  key: number;
+  key: string;
   type: string;
   version: string;
   name: string;

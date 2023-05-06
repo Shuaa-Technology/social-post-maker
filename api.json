@@ -7,8 +7,18 @@
          "description": "This is a Start template.",
          "height": 600,
          "width": 600,
-         "render": "<span style='color:black;' >Start Template HTML <span>",
-         "settings": []
+         "render": "<span style='color:%color%;' >Start Template HTML <span>",
+         "settings": [
+            {
+               "id": 1,
+               "key": "color",
+               "type": "COLOR_TYPE",
+               "version": "1",
+               "name": "Main text color",
+               "description": "What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+               "value": "red"
+            }
+         ]
       },
       {
          "id": 2,
