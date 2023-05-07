@@ -3,11 +3,9 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { FiSettings, FiList, FiCalendar, FiUsers } from "react-icons/fi";
 
 import styles from "./LeftSidebar.module.scss";
-import Settings, {
-  SettingsData,
-} from "../../../../components/Settings/Settings";
-import { TemplateInterface } from "../../../../core/Models/Template";
+
 import TemplateList from "../../../../components/TemplateList/TemplateList";
+import Settings from "../../../../components/Settings/Settings";
 
 function LeftSidebar() {
   const [tabIndex, setTabIndex] = useState(0);
@@ -16,9 +14,6 @@ function LeftSidebar() {
     setTabIndex(index);
   };
 
-  const handleSave = (data: SettingsData) => {
-    //TODO after setting up redux stuff
-  };
 
   const isTabActive = (index: number): boolean => tabIndex === index;
 

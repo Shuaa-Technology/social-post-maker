@@ -10,13 +10,59 @@
          "render": "<span style='color:%color%;' >Start Template HTML <span>",
          "settings": [
             {
-               "id": 1,
-               "key": "color",
-               "type": "COLOR_TYPE",
-               "version": "1",
-               "name": "Main text color",
-               "description": "What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-               "value": "red"
+               "id": "thumbnail",
+               "key": "thumbnail",
+               "type": {
+                  "handle": "IMAGE"
+               },
+               "version": "1.0.0",
+               "name": "Thumbnail",
+               "description": "Upload a thumbnail image",
+               "value": "https://example.com/thumbnail.png"
+            },
+            {
+               "id": "header-color",
+               "key": "headerColor",
+               "type": {
+                  "handle": "COLOR"
+               },
+               "version": "1.0.0",
+               "name": "Header Color",
+               "description": "Select a color for the header",
+               "value": "#ffffff"
+            },
+            {
+               "id": "body-text-color",
+               "key": "bodyTextColor",
+               "type": {
+                  "handle": "COLOR"
+               },
+               "version": "1.0.0",
+               "name": "Body Text Color",
+               "description": "Select a color for the body text",
+               "value": "#000000"
+            },
+            {
+               "id": "heading",
+               "key": "heading",
+               "type": {
+                  "handle": "TEXT"
+               },
+               "version": "1.0.0",
+               "name": "Heading",
+               "description": "Enter a heading for the template",
+               "value": "Example Heading"
+            },
+            {
+               "id": "body",
+               "key": "body",
+               "type": {
+                  "handle": "TEXT"
+               },
+               "version": "1.0.0",
+               "name": "Body",
+               "description": "Enter the body content for the template",
+               "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu felis quis mi dignissim laoreet."
             }
          ]
       },

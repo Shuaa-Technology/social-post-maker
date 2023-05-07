@@ -1,41 +1,34 @@
 import React, { useState } from "react";
 import styles from "./Settings.module.scss";
+import {useSelector} from "react-redux";
+import {getTemplatesStore} from "../../app/store/TemplatesStore";
 
-//todo: to be move to one place maybe?
-export interface SettingsData {
-    onSave?: (data: { title: string; content: string }) => void;
+
+function FormField({ setting }: any) {
+    const formField = setting.type.getFormField(setting.value);
+
+    return (
+        <div className={styles.field} key={setting.id}>
+            <label htmlFor={setting.id}>{setting.name}:</label>
+            <div>{formField}</div>
+        </div>
+    );
 }
 
-const Settings: React.FC<SettingsData> = ({ onSave }) => { /* @note: use simple TS function  */
-    const [title, setTitle] = useState("");
-    const [content, setContent] = useState("");
+function Settings() {
 
-    const handleSave = () => {
-
-    };
+    const { currentTemplate } = useSelector(getTemplatesStore);
 
     return (
         <div className={styles.container}>
-            <div className={styles.field}>
-                <label htmlFor="title">Title:</label>
-                <input
-                    type="text"
-                    id="title"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                />
-            </div>
-            <div className={styles.field}>
-                <label htmlFor="content">Content:</label>
-                <textarea
-                    id="content"
-                    value={content}
-                    onChange={(e) => setContent(e.target.value)}
-                />
-            </div>
-            <button className={styles.button} onClick={handleSave}>
-                Save
-            </button>
+            <form>
+                {currentTemplate.settings.map((setting) => (
+                    <FormField key={setting.id} setting={setting} />
+                ))}
+                <button className={styles.button} type="submit">
+                    Save
+                </button>
+            </form>
         </div>
     );
 };
