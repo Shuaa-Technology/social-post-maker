@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Settings.module.scss";
 import {useSelector} from "react-redux";
 import {getTemplatesStore} from "../../app/store/TemplatesStore";
-import { SettingsType } from "../../core/Models/SettingsTypes/Type";
+import {SettingsType} from "../../core/Models/Template/Settings/Types/SettingsType";
 
 
 function FormField({ setting }: any) {
@@ -19,7 +19,7 @@ function FormField({ setting }: any) {
 function Settings() {
 
     const { currentTemplate } = useSelector(getTemplatesStore);
-
+    
     return (
         <div className={styles.container}>
             <form>

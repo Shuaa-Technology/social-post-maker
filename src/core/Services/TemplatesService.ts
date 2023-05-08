@@ -1,10 +1,13 @@
-import { PAGINATION_SIZE } from "../../config/templates";
+import {PAGINATION_SIZE} from "../../config/templates";
 import API from "../API";
 
-import { TemplateInterface } from "../Models/Template";
-import {ImageType} from "../Models/SettingsTypes/Image";
-import {ColorType} from "../Models/SettingsTypes/Color";
-import {TextType} from "../Models/SettingsTypes/Text";
+import {TemplateInterface} from "../Models/Template/Template";
+import {SettingsType} from "../Models/Template/Settings/Types/SettingsType";
+import {ImageType} from "../Models/Template/Settings/Types/ImageType";
+import {ColorType} from "../Models/Template/Settings/Types/ColorType";
+import {TextType} from "../Models/Template/Settings/Types/TextType";
+import {TemplateSettings} from "../Models/Template/Settings/TemplateSettings";
+
 
 export class TemplatesService {
   templates: TemplateInterface[];
@@ -17,7 +20,22 @@ export class TemplatesService {
     return new Promise<TemplateInterface[]>((resolve, reject) =>
       API.get(`templates` + (limit > 0 ? `?_limit=${limit}` : ""))
         .then((res) => {
-          this.templates = res.data;
+
+          this.templates = res.data.map((template: TemplateInterface) => {
+            const settings = template.settings.map((setting: TemplateSettings) => {
+
+              const type = SettingsType.createType(setting.type.handle)
+
+              return {
+                ...setting,
+                type,
+              };
+            })
+            return {
+              ...template,
+              settings,
+            };
+          });
           resolve(this.templates);
         })
         .catch((error) => {
@@ -44,7 +62,7 @@ export class TemplatesService {
       render: "<span style='color:black;' >Default Template HTML <span>" /* BETTER WAY? */,
       settings: [
         {
-          "id": "thumbnail",
+          "id": "1",
           "key": "thumbnail",
           "type": new ImageType(),
           "version": "1.0.0",
@@ -53,7 +71,7 @@ export class TemplatesService {
           "value": "https://images.unsplash.com/photo-1682687220063-4742bd7fd538?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=775&q=80"
         },
         {
-          "id": "header-color",
+          "id": "2",
           "key": "headerColor",
           "type": new ColorType(),
           "version": "1.0.0",
@@ -62,7 +80,7 @@ export class TemplatesService {
           "value": "#ffffff"
         },
         {
-          "id": "body-text-color",
+          "id": "3",
           "key": "bodyTextColor",
           "type": new ColorType(),
           "version": "1.0.0",
@@ -71,7 +89,7 @@ export class TemplatesService {
           "value": "#000000"
         },
         {
-          "id": "heading",
+          "id": "4",
           "key": "heading",
           "type": new TextType(),
           "version": "1.0.0",
@@ -80,7 +98,7 @@ export class TemplatesService {
           "value": "Example Heading"
         },
         {
-          "id": "body",
+          "id": "5",
           "key": "body",
           "type": new TextType(),
           "version": "1.0.0",

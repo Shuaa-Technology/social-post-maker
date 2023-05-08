@@ -1,4 +1,4 @@
-import {SettingsType} from "./SettingsTypes/Type";
+import {SettingsType} from "./Types/SettingsType";
 
 export interface TemplateSettings {
   id: string;

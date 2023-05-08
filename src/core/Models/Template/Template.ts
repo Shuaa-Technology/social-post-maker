@@ -1,4 +1,4 @@
-import { TemplateSettings } from "./TemplateSettings";
+import {TemplateSettings} from "./Settings/TemplateSettings";
 
 export interface TemplateInterface {
   id: string;

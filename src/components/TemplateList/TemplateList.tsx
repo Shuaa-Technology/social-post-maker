@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import styles from "./TemplateList.module.scss";
-import { TemplateInterface } from "../../core/Models/Template";
+import { TemplateInterface } from "../../core/Models/Template/Template";
 import TemplateThumbnail from "./TemplateThumbnail/TemplateThumbnail";
 import { useAppSelector, useAppDispatch } from "../../../src/app/hooks";
 import {

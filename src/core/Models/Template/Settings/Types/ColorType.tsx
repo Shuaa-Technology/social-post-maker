@@ -1,4 +1,4 @@
-import { SettingsType } from "./Type";
+import { SettingsType } from "./SettingsType";
 
 
 export class ColorType extends SettingsType {

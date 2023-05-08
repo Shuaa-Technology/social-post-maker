@@ -52,17 +52,6 @@
                "name": "Heading",
                "description": "Enter a heading for the template",
                "value": "Example Heading"
-            },
-            {
-               "id": "5",
-               "key": "body",
-               "type": {
-                  "handle": "TEXT"
-               },
-               "version": "1.0.0",
-               "name": "Body",
-               "description": "Enter the body content for the template",
-               "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu felis quis mi dignissim laoreet."
             }
          ]
       },

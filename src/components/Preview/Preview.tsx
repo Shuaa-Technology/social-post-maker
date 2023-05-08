@@ -1,5 +1,5 @@
 import styles from "./Preview.module.scss";
-import { Template, TemplateInterface } from "../../core/Models/Template";
+import { Template, TemplateInterface } from "../../core/Models/Template/Template";
 
 function Preview(props: { template: TemplateInterface }) {
   return (
@@ -9,7 +9,7 @@ function Preview(props: { template: TemplateInterface }) {
         width: props.template.width,
         height: props.template.height,
       }}
-      dangerouslySetInnerHTML={{ __html: Template.parseTemplate(props.template) }}
+      dangerouslySetInnerHTML={{ __html: Template.parse(props.template) }}
     ></div>
   );
 }

@@ -1,4 +1,4 @@
-import { SettingsType } from "./Type";
+import { SettingsType } from "./SettingsType";
 import React from "react";
 
 
@@ -13,6 +13,7 @@ export class ImageType extends SettingsType {
 
 
     getFormField() {
+        // todo change this to external component
         return (
             <input type="file" accept="image/*" id={this.id} data-handle={ImageType.getHandle()}  />
         );
