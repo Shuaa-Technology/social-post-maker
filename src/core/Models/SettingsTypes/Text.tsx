@@ -2,17 +2,20 @@ import { SettingsType } from "./Type";
 
 export class TextType extends SettingsType {
 
-  get handle(): string {
-    return 'TEXT';
-  }
 
+  constructor() {
+   super()
+}
+  static getHandle(): string {
+    return 'TEXT';
+}
   getFormField(value: string) {
     return (
         <input
             type="text"
             defaultValue={value ?? ''}
             id={this.id}
-            data-handle={this.handle}
+            data-handle={TextType.getHandle()}
         />
     );
   }

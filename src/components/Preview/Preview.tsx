@@ -9,7 +9,7 @@ function Preview(props: { template: TemplateInterface }) {
         width: props.template.width,
         height: props.template.height,
       }}
-      dangerouslySetInnerHTML={{ __html: Template.parse(props.template) }}
+      dangerouslySetInnerHTML={{ __html: Template.parseTemplate(props.template) }}
     ></div>
   );
 }

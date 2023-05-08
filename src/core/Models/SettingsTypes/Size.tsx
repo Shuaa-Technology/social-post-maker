@@ -3,7 +3,10 @@ import { SettingsType } from "./Type";
 
 export class SizeType extends SettingsType {
 
-    get handle(): string {
+    constructor() {
+        super()
+     }
+    static getHandle(): string {
         return 'SIZE';
     }
 
@@ -13,7 +16,7 @@ export class SizeType extends SettingsType {
                 type="number"
                 value={value ?? 0}
                 id={this.id}
-                data-handle={this.handle}
+                data-handle={SizeType.getHandle()}
             />
         );
     }

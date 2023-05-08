@@ -4,13 +4,17 @@ import React from "react";
 
 export class ImageType extends SettingsType {
 
-    get handle(): string {
+    constructor() {
+        super()
+     }
+    static getHandle(): string {
         return 'IMAGE';
     }
 
+
     getFormField() {
         return (
-            <input type="file" accept="image/*" id={this.id} data-handle={this.handle}  />
+            <input type="file" accept="image/*" id={this.id} data-handle={ImageType.getHandle()}  />
         );
     }
     displayValue(value: string) {

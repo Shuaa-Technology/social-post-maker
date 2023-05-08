@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import styles from "./Settings.module.scss";
 import {useSelector} from "react-redux";
 import {getTemplatesStore} from "../../app/store/TemplatesStore";
+import { SettingsType } from "../../core/Models/SettingsTypes/Type";
 
 
 function FormField({ setting }: any) {
-    const formField = setting.type.getFormField(setting.value);
+    const formField = setting.type && setting.type  instanceof SettingsType  ? setting.type.getFormField(setting.value) : <></>;
 
     return (
         <div className={styles.field} key={setting.id}>

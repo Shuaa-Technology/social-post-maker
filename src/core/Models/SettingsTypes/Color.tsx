@@ -2,8 +2,10 @@ import { SettingsType } from "./Type";
 
 
 export class ColorType extends SettingsType {
-
-    get handle(): string {
+    constructor() {
+        super()
+     }
+    static getHandle(): string {
         return 'COLOR';
     }
 
@@ -13,7 +15,7 @@ export class ColorType extends SettingsType {
                 type="color"
                 value={value ?? "#000000"}
                 id={this.id}
-                data-handle={this.handle}
+                data-handle={ColorType.getHandle()}
             />
         );
     }

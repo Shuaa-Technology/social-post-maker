@@ -1,31 +1,41 @@
 
 
 import { v4 as uuidv4 } from "uuid";
+import { ImageType } from "./Image";
+import { TextType } from "./Text";
+import { ColorType } from "./Color";
 
 export interface SettingsTypeInterface {
     readonly id: string;
-    handle?: string;
+    readonly handle: string;
 }
 
 export abstract class SettingsType implements SettingsTypeInterface {
+
+    id: string;
+    handle: string = "";
+
     constructor() {
         this.id = uuidv4();
     }
 
-    id: string;
 
-    private _handle: string;
-
-    get handle(): string {
-        return this._handle;
+     /* Type Factory */ /* Fix */
+/*  static createType(handle: string) {
+    if (handle == ImageType.getHandle()) {
+      return new ImageType();
+    } else if (handle == TextType.getHandle()) {
+      return new TextType();
+    } else if (handle == ColorType.getHandle()) {
+      return new ColorType();
+    } else {
+        return new TextType();
     }
-
-    set handle(value: string) {
-        this._handle = value;
-    }
-
+  }
+ */
     abstract getFormField(value: string): React.ReactNode;
 
     abstract displayValue(value: string): string;
+
 
 }

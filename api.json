@@ -10,7 +10,7 @@
          "render": "<span style='color:%color%;' >Start Template HTML <span>",
          "settings": [
             {
-               "id": "thumbnail",
+               "id": "1",
                "key": "thumbnail",
                "type": {
                   "handle": "IMAGE"
@@ -21,7 +21,7 @@
                "value": "https://example.com/thumbnail.png"
             },
             {
-               "id": "header-color",
+               "id": "2",
                "key": "headerColor",
                "type": {
                   "handle": "COLOR"
@@ -32,7 +32,7 @@
                "value": "#ffffff"
             },
             {
-               "id": "body-text-color",
+               "id": "3",
                "key": "bodyTextColor",
                "type": {
                   "handle": "COLOR"
@@ -43,7 +43,7 @@
                "value": "#000000"
             },
             {
-               "id": "heading",
+               "id": "4",
                "key": "heading",
                "type": {
                   "handle": "TEXT"
@@ -54,7 +54,7 @@
                "value": "Example Heading"
             },
             {
-               "id": "body",
+               "id": "5",
                "key": "body",
                "type": {
                   "handle": "TEXT"
