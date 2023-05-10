@@ -38,9 +38,8 @@ export abstract class SettingsType implements SettingsTypeInterface {
         }
     }
 
-    abstract getFormField(value: string): React.ReactNode;
+    // Currently it will return only the value named 'render' to keep the possiblity that the display of the value could be customized
+    abstract renderValue(value: string): string;
 
-    abstract displayValue(value: string): string;
-
-
+    abstract getFormFieldHandle(): string;
 }

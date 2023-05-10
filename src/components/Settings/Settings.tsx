@@ -1,37 +1,37 @@
-import React, { useState } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
+import { getTemplatesStore } from "../../app/store/TemplatesStore";
+import { SettingsType } from "../../core/Models/Template/Settings/Types/SettingsType";
+import { TypeFormField } from "./TypesFormFields/TypeFormField";
 import styles from "./Settings.module.scss";
-import {useSelector} from "react-redux";
-import {getTemplatesStore} from "../../app/store/TemplatesStore";
-import {SettingsType} from "../../core/Models/Template/Settings/Types/SettingsType";
 
-
-function FormField({ setting }: any) {
-    const formField = setting.type && setting.type  instanceof SettingsType  ? setting.type.getFormField(setting.value) : <></>;
-
-    return (
-        <div className={styles.field} key={setting.id}>
-            <label htmlFor={setting.id}>{setting.name}:</label>
-            <div>{formField}</div>
-        </div>
-    );
-}
 
 function Settings() {
+  const { currentTemplate } = useSelector(getTemplatesStore);
 
-    const { currentTemplate } = useSelector(getTemplatesStore);
-    
-    return (
-        <div className={styles.container}>
-            <form>
-                {currentTemplate.settings.map((setting) => (
-                    <FormField key={setting.id} setting={setting} />
-                ))}
-                <button className={styles.button} type="submit">
-                    Save
-                </button>
-            </form>
-        </div>
-    );
-};
+  return (
+    <div className={styles.container}>
+      <form>
+        {currentTemplate.settings.map((setting) => {
+          if (!setting.type || !(setting.type instanceof SettingsType)) {
+            return null;
+          }
+
+          return (
+            <TypeFormField
+              id={setting.id}
+              name={setting.name}
+              fieldHandle={setting.type.getFormFieldHandle()}
+              value={setting.value}
+            />
+          );
+        })}
+        <button className={styles.button} type="submit">
+          Save
+        </button>
+      </form>
+    </div>
+  );
+}
 
 export default Settings;
