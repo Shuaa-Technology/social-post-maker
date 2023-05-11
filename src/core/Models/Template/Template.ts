@@ -1,18 +1,6 @@
-import {TemplateSettings} from "./Settings/TemplateSettings";
+import {TemplateSettingsInterface} from "./Settings/TemplateSettingsInterface";
+import { TemplateInterface } from "./TemplateInterface";
 
-export interface TemplateInterface {
-  id: string;
-  version: string;
-  name: string;
-  description: string;
-  height: number;
-  width: number;
-  render: string;
-  settings: TemplateSettings[];
-
-  /*   getRender(): string;
-  parse(): TemplateInterface; */
-}
 
 export class Template implements TemplateInterface {
   id: string;
@@ -22,17 +10,17 @@ export class Template implements TemplateInterface {
   height: number;
   width: number;
   render: string;
-  settings: TemplateSettings[] = [];
+  settings: TemplateSettingsInterface[] = [];
 
   public getRender(): string {
     return this.render;
   }
 
-  public getSettings(): TemplateSettings[] {
+  public getSettings(): TemplateSettingsInterface[] {
     return this.settings;
   }
 
-  public setSettings(settings: TemplateSettings[]): TemplateInterface {
+  public setSettings(settings: TemplateSettingsInterface[]): TemplateInterface {
     this.settings = settings;
     return this;
   }
@@ -54,8 +42,8 @@ export class Template implements TemplateInterface {
   public static getSettingsByKey(
     template: TemplateInterface,
     key: string
-  ): TemplateSettings | null {
-    return template.settings.filter(function (el: TemplateSettings) {
+  ): TemplateSettingsInterface | null {
+    return template.settings.filter(function (el: TemplateSettingsInterface) {
       return el.key === key;
     })[0];
   }

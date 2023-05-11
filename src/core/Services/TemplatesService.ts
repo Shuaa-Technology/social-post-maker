@@ -1,12 +1,12 @@
 import {PAGINATION_SIZE} from "../../config/templates";
 import API from "../API";
 
-import {TemplateInterface} from "../Models/Template/Template";
+import {TemplateInterface} from "../Models/Template/TemplateInterface";
 import {SettingsType} from "../Models/Template/Settings/Types/SettingsType";
 import {ImageType} from "../Models/Template/Settings/Types/ImageType";
 import {ColorType} from "../Models/Template/Settings/Types/ColorType";
 import {TextType} from "../Models/Template/Settings/Types/TextType";
-import {TemplateSettings} from "../Models/Template/Settings/TemplateSettings";
+import {TemplateSettingsInterface} from "../Models/Template/Settings/TemplateSettingsInterface";
 
 
 export class TemplatesService {
@@ -22,7 +22,7 @@ export class TemplatesService {
         .then((res) => {
 
           this.templates = res.data.map((template: TemplateInterface) => {
-            const settings = template.settings.map((setting: TemplateSettings) => {
+            const settings = template.settings.map((setting: TemplateSettingsInterface) => {
 
               const type = SettingsType.createType(setting.type.handle)
 

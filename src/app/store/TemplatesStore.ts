@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
-import { TemplateInterface } from "../../core/Models/Template/Template";
+import { TemplateInterface } from "../../core/Models/Template/TemplateInterface";
 import { TemplatesService } from "../../core/Services/TemplatesService";
 
 export interface TemplateLoadingState {

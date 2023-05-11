@@ -1,5 +1,5 @@
 import styles from "./TemplateThumbnail.module.scss";
-import { TemplateInterface } from "../../../core/Models/Template/Template";
+import { TemplateInterface } from "../../../core/Models/Template/TemplateInterface";
 
 interface Props {
   template: TemplateInterface;

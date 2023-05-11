@@ -1,14 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
-import { ImageType } from "./ImageType";
-import { TextType } from "./TextType";
-import { ColorType } from "./ColorType";
-import {SizeType} from "./SizeType";
 
-export interface SettingsTypeInterface {
- 
-    readonly id: string;
-    readonly handle: string;
-}
+import { SettingsTypeInterface } from "./SettingsTypeInterface";
+
 
 export abstract class SettingsType implements SettingsTypeInterface {
 
@@ -20,7 +13,7 @@ export abstract class SettingsType implements SettingsTypeInterface {
     }
 
     protected getFormFieldsDirectory() {
-         return 'src\components\Settings\TypesFormFields'
+         return 'src\components\Default\Settings\TypesFormFields'
     }
 
     //@todo: proper way?
