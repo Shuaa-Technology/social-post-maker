@@ -7,7 +7,7 @@
          "description": "This is a Start template.",
          "height": 600,
          "width": 600,
-         "render": "<span style='color:%color%;' >Start Template HTML <span>",
+         "render": "<span style='color:%headerColor%;' >Start Template HTML <span>",
          "settings": [
             {
                "id": "1",
@@ -29,7 +29,7 @@
                "version": "1.0.0",
                "name": "Header Color",
                "description": "Select a color for the header",
-               "value": "#ffffff"
+               "value": "#db0000"
             },
             {
                "id": "3",

@@ -1,5 +1,5 @@
 import styles from "./Preview.module.scss";
-import { Template, TemplateInterface } from "../../core/Models/Template/Template";
+import { Template, TemplateInterface } from "../../../../core/Models/Template/Template";
 
 function Preview(props: { template: TemplateInterface }) {
   return (

@@ -5,6 +5,7 @@ import { ColorType } from "./ColorType";
 import {SizeType} from "./SizeType";
 
 export interface SettingsTypeInterface {
+ 
     readonly id: string;
     readonly handle: string;
 }
@@ -18,6 +19,11 @@ export abstract class SettingsType implements SettingsTypeInterface {
         this.id = uuidv4();
     }
 
+    protected getFormFieldsDirectory() {
+         return 'src\components\Settings\TypesFormFields'
+    }
+
+    //@todo: proper way?
     // const { ImageType } = require('./ImageType'); not sure about it but worked this way
     static createType(handle: string) {
         switch (handle) {
@@ -38,8 +44,12 @@ export abstract class SettingsType implements SettingsTypeInterface {
         }
     }
 
+
+
     // Currently it will return only the value named 'render' to keep the possiblity that the display of the value could be customized
     abstract renderValue(value: string): string;
 
+
+    // TSX/JSX component handle (src\components\Settings\TypesFormFields\...)
     abstract getFormFieldHandle(): string;
 }
