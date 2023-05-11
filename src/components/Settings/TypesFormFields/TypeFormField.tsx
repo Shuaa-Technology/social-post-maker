@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { TEMPLATE_EDITOR } from "../../../config/templates";
+import { TEMPLATE_EDITOR } from "../../../config/templates"; /* @todo: get this as props */
 
 export interface FieldProps {
   id?: string;

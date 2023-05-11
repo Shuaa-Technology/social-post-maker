@@ -1,6 +1,5 @@
-import {TemplateSettingsInterface} from "./Settings/TemplateSettingsInterface";
+import { TemplateSettingsInterface } from "./Settings/TemplateSettingsInterface";
 import { TemplateInterface } from "./TemplateInterface";
-
 
 export class Template implements TemplateInterface {
   id: string;
@@ -46,13 +45,5 @@ export class Template implements TemplateInterface {
     return template.settings.filter(function (el: TemplateSettingsInterface) {
       return el.key === key;
     })[0];
-  }
-
-  public static parse(template: TemplateInterface): string {
-    return template.render.replace(/%\w+%/g, (placeholder: string) => {
-      return (
-        Template.getSettingsByKey(template, placeholder.slice(1, -1))?.value || placeholder
-      );
-    });
   }
 }

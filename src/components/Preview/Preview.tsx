@@ -1,6 +1,7 @@
 import styles from "./Preview.module.scss";
-import { Template } from "../../core/Models/Template/Template";
-import {  TemplateInterface } from "../../core/Models/Template/TemplateInterface";
+import { TemplateInterface } from "../../core/Models/Template/TemplateInterface";
+
+import Rendrer from "../Template/Default/Preview/Rendrer";
 
 function Preview(props: { template: TemplateInterface }) {
   return (
@@ -10,8 +11,9 @@ function Preview(props: { template: TemplateInterface }) {
         width: props.template.width,
         height: props.template.height,
       }}
-      dangerouslySetInnerHTML={{ __html: Template.parse(props.template) }}
-    ></div>
+    >
+      <Rendrer template={props.template} />
+    </div>
   );
 }
 
