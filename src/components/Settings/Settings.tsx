@@ -1,7 +1,6 @@
-import React from "react";
 import { useSelector } from "react-redux";
-import { getTemplatesStore } from "../../../../app/store/TemplatesStore";
-import { SettingsType } from "../../../../core/Models/Template/Settings/Types/SettingsType";
+import { getTemplatesStore } from "../../app/store/TemplatesStore";
+import { SettingsType } from "../../core/Models/Template/Settings/Types/SettingsType";
 import { TypeFormField } from "./TypesFormFields/TypeFormField";
 import styles from "./Settings.module.scss";
 

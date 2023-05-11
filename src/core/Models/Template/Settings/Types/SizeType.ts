@@ -11,7 +11,7 @@ export class SizeType extends SettingsType {
     }
 
     getFormFieldHandle(): string {
-        return 'size_field';
+        return 'SizeFormField';
     }
 
     renderValue(value: string) {

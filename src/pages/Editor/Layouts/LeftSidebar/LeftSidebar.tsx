@@ -5,7 +5,7 @@ import { FiSettings, FiList, FiCalendar, FiUsers } from "react-icons/fi";
 import styles from "./LeftSidebar.module.scss";
 
 import TemplateList from "../../../../components/TemplateList/TemplateList";
-import Settings from "../../../../components/Template/Default/Settings/Settings";
+import Settings from "../../../../components/Settings/Settings";
 
 function LeftSidebar() {
   const [tabIndex, setTabIndex] = useState(0);
@@ -46,7 +46,7 @@ function LeftSidebar() {
         </TabList>
 
         <TabPanel>
-          <Settings />
+        <Settings/>
         </TabPanel>
         <TabPanel>
           <TemplateList />

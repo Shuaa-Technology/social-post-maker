@@ -1,6 +1,7 @@
-import { FieldProps } from "./TypeFormField";
+import { FieldProps } from "../../../../Settings/TypesFormFields/TypeFormField";
 
-export function SizeFormField(props: FieldProps) {
+
+export default function SizeFormField(props: FieldProps) {
     const { id, name, value = '' } = props;
   
     return (

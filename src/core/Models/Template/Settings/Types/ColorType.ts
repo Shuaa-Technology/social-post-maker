@@ -11,7 +11,7 @@ export class ColorType extends SettingsType {
     }
 
     getFormFieldHandle(): string {
-        return 'color_field';
+        return 'ColorFormField';
     }
 
     renderValue(value: string): string {

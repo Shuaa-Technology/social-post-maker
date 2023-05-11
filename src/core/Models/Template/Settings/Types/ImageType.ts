@@ -11,7 +11,7 @@ export class ImageType extends SettingsType {
 
 
     getFormFieldHandle(): string {
-        return 'image_field';
+        return 'ImageFormField';
     }
 
     renderValue(value: string) {

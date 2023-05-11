@@ -10,7 +10,7 @@ export class TextType extends SettingsType {
     return 'TEXT';
 }
   getFormFieldHandle(): string {
-    return 'text_field';
+    return 'TextFormField';
   }
 
   renderValue(value: string) {

@@ -1,6 +1,7 @@
-import { FieldProps } from "./TypeFormField";
+import { FieldProps } from "../../../../Settings/TypesFormFields/TypeFormField";
 
-export function TextFormField(props: FieldProps) {
+
+export default function TextFormField(props: FieldProps) {
     const { id, name, value = '' } = props;
   
     return (
