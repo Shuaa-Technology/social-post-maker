@@ -7,7 +7,7 @@ function Preview(props: {editor:string,  template: TemplateInterface }) {
   const { editor, template} = props;
   
   const Rendrer = lazy(
-    () => import(`../Template/${editor}/Preview/Rendrer`)
+    () => import(`../Editor/${editor}/Preview/Rendrer`)
   );
 
   return (

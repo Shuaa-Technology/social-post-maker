@@ -17,7 +17,7 @@ export function TypeFormField(props: TypeFormFieldProps) {
 
   const Field = lazy(
     () => 
-      import(`../../Template/${editor}/Settings/TypesFormFields/${fieldHandle}`) 
+      import(`../../Editor/${editor}/Settings/TypesFormFields/${fieldHandle}`) 
   );
 
   return (
