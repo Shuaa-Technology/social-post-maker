@@ -5,9 +5,10 @@
          "name": "Start template",
          "version": "1.0.0",
          "description": "This is a Start template.",
-         "height": 600,
-         "width": 600,
-         "render": "<span style='color:%headerColor%;' >Start Template HTML <span>",
+         "height": 500,
+         "width": 500,
+         "style": ".start_template__bg_image { height:100%; background-image: linear-gradient( rgba(70, 130, 180, 0.8), rgba(178, 34, 34, 0.8) ), url(https://source.unsplash.com/VWcPlbHglYc); background-size: cover; background-position: center; color: #fff; } .content { display: grid; place-content: center; text-align: center; min-height: 500px; } .content h2 { font-size: 3.5rem; } .content p { font-size: 20px; } ",
+         "render": "<section class='start_template__bg_image'><div class='content'><h2>%hero_title%</h2><p>Hero description here</p></div></section>",
          "settings": [
             {
                "id": "1",
@@ -44,14 +45,14 @@
             },
             {
                "id": "4",
-               "key": "heading",
+               "key": "hero_title",
                "type": {
                   "handle": "TEXT"
                },
                "version": "1.0.0",
                "name": "Heading",
                "description": "Enter a heading for the template",
-               "value": "Example Heading"
+               "value": "Example Heading after parsing"
             }
          ]
       },

@@ -7,6 +7,7 @@ export interface TemplateInterface {
   description: string;
   height: number;
   width: number;
+  style?: string;
   render: string;
   settings: TemplateSettingsInterface[];
 
