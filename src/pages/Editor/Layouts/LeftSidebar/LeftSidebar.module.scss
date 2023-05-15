@@ -12,41 +12,40 @@
 
   .tabList {
     display: flex;
-    background-color: #25282d;
-    padding: 0.5rem;
+    background-color: var(--dark-color-3);
     margin-top: 0;
     gap: 5px;
+    justify-content: center;
+    padding: 0;
   }
 
   .tab {
-    border-radius: 0.5rem;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #fff;
+    color: var(--dark-text-color-1);
     font-size: 12px;
     justify-content: center;
     outline: none;
     flex: auto;
     flex-basis: 33.33%;
 
-    padding: 0.5rem;
+    padding: 2rem 0.5rem;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-
-    &:hover {
-      background-color: #1a1c20;
-    }
-
+    transition: all 0.2s ease-in-out;
     &.active {
-      background-color: #3525df;
+      color: var(--dark-text-color-2);
+      border-bottom: 4px solid var(--primary);
+    }
+    &:hover {
+      color: var(--dark-text-color-2);
     }
   }
 
   .tabIcon {
     font-size: 1.3rem;
     margin-bottom: 0.4rem;
+    outline: none;
   }
 
   .tabPanel {

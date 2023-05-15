@@ -10,26 +10,29 @@ function Settings(props: { editor: string }) {
 
   return (
     <div className={styles.container}>
-      <form>
-        {currentTemplate.settings.map((setting) => {
-          if (!setting.type || !(setting.type instanceof SettingsType)) {
-            return null;
-          }
+        <div className={styles.formTitle}>
+            { currentTemplate.name } settings
+        </div>
+        <form>
+            {currentTemplate.settings.map((setting) => {
+                if (!setting.type || !(setting.type instanceof SettingsType)) {
+                    return null;
+                }
 
-          return (
-            <TypeFormField
-              editor={props.editor} 
-              id={setting.id}
-              name={setting.name}
-              fieldHandle={setting.type.getFormFieldHandle()}
-              value={setting.value} 
-            />
-          );
-        })}
-        <button className={styles.button} type="submit">
-          Save
-        </button>
-      </form>
+                return (
+                    <TypeFormField
+                        editor={props.editor}
+                        id={setting.id}
+                        name={setting.name}
+                        fieldHandle={setting.type.getFormFieldHandle()}
+                        value={setting.value}
+                    />
+                );
+            })}
+            <button className={styles.button} type="submit">
+                Save
+            </button>
+        </form>
     </div>
   );
 }

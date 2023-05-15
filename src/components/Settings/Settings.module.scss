@@ -1,55 +1,26 @@
-// todo: find a way to import variables from one place
-@import "../../variables.scss";
 
 .container {
   display: flex;
   flex-direction: column;
-  background-color: #1d1f21;
   padding: 25px;
   border-radius: 4px;
 }
 
-.field {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 16px;
+.formTitle {
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
 }
-
-label {
-  font-size: 14px;
-  font-weight: bold;
-  color: #c5c8c6;
-  margin-bottom: 8px;
-}
-
-input,
-textarea {
-  height: 30px;
-  background-color: #282a2e;
-  border: none;
-  border-radius: 4px;
-  padding: 8px;
-  color: #c5c8c6;
-  font-size: 14px;
-  margin-top: 4px;
-}
-
-input:focus,
-textarea:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px $primary;
-}
-
 .button {
-  background-color: $primary;
+  background-color: var(--primary);
   color: #fff;
   border: none;
   border-radius: 4px;
   padding: 8px 16px;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: normal;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
+  width: 100%;
 }
 
 .button:hover {

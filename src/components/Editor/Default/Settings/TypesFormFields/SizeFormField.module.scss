@@ -1,0 +1,26 @@
+// todo: find a better way for common styles
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  label {
+    font-weight: normal;
+    font-size: .8rem;
+    color: var(--dark-text-color-2);
+    margin-bottom: 10px;
+  }
+  input,
+  textarea {
+    height: 30px;
+    background-color: var(--dark-color-2);
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    color: #c5c8c6;
+    font-size: 14px;
+    margin-top: 4px;
+    outline: none;
+  }
+}
+
+

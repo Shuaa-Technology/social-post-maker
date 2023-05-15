@@ -1,3 +1,4 @@
+@import "styles/variables";
 
 body {
   margin: 0;
@@ -7,7 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* for now */
-  color: white;
+  color: $body-color;
 }
 
 code {

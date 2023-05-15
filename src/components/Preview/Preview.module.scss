@@ -1,6 +1,12 @@
 .postPreview {
-  background-color: #ffffff;
+  background-color: var(--dark-color-1);
   width: 600px;
   height: 600px;
   margin: 0 auto;
+  padding: 3rem;
+  border-radius: 1rem;
+}
+.postPreviewInner {
+  background-color: #ffffff;
+  height: 100%;
 }

@@ -1,4 +1,5 @@
 import { FieldProps } from "../../../../Settings/TypesFormFields/TypeFormField";
+import styles from "./ImageFormField.module.scss";
 
 
 export default function ImageFormField(props: FieldProps) {
@@ -6,7 +7,7 @@ export default function ImageFormField(props: FieldProps) {
   
     return (
         /*todo: fix image value*/
-      <div>
+      <div className={styles.field}>
         <label htmlFor={id}>{name}</label>
         <input type="file" accept="image/*" id={id} name={name} value='' />
       </div>

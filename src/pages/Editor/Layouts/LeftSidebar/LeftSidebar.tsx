@@ -1,11 +1,23 @@
 import React, { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import { FiSettings, FiList, FiCalendar, FiUsers } from "react-icons/fi";
+import {
+  FiSettings,
+  FiList,
+  FiCalendar,
+  FiUsers,
+  FiLayout,
+  FiEdit2,
+  FiFileText,
+  FiGrid,
+  FiCamera,
+  FiEdit
+} from "react-icons/fi";
 
 import styles from "./LeftSidebar.module.scss";
 
 import TemplateList from "../../../../components/TemplateList/TemplateList";
 import Settings from "../../../../components/Settings/Settings";
+import {Tooltip} from "react-tooltip";
 
 function LeftSidebar(props: { editor: string }) {
   const [tabIndex, setTabIndex] = useState(0);
@@ -27,21 +39,30 @@ function LeftSidebar(props: { editor: string }) {
           <Tab
             className={`${styles.tab} ${isTabActive(0) ? styles.active : ""}`}
           >
-            <FiSettings className={styles.tabIcon} />
-            <span>TBD</span>
+            <FiEdit  className={`${styles.tabIcon} post-builder-icon`} />
+
           </Tab>
-          <Tab
-            className={`${styles.tab} ${isTabActive(1) ? styles.active : ""}`}
-          >
-            <FiList className={styles.tabIcon} />
-            <span>Templates</span>
-          </Tab>
+          <Tooltip anchorSelect=".post-builder-icon" place="top">
+            Builder
+          </Tooltip>
+            <Tab
+              data-tooltip-content="Templates"
+              data-tooltip-place="top"
+              className={`${styles.tab} ${isTabActive(1) ? styles.active : ""} templates-tab`}
+            >
+              <FiList className={`${styles.tabIcon} templates-icon`} />
+            </Tab>
+            <Tooltip anchorSelect=".templates-icon" place="top">
+              Templates
+            </Tooltip>
           <Tab
             className={`${styles.tab} ${isTabActive(2) ? styles.active : ""}`}
           >
-            <FiCalendar className={styles.tabIcon} />
-            <span>TBD</span>
+            <FiCalendar className={`${styles.tabIcon} tbd-icon`} />
           </Tab>
+          <Tooltip anchorSelect=".tbd-icon" place="top">
+            TBD
+          </Tooltip>
         </TabList>
 
         <TabPanel>

@@ -18,9 +18,12 @@ function Preview(props: {editor:string,  template: TemplateInterface }) {
         height: template.height,
       }}
     >
-      <Suspense fallback={<div>Loading...</div>}>
-        <Rendrer  template={template} />
-      </Suspense>
+        <div className={styles.postPreviewInner}>
+            <Suspense fallback={<div>Loading...</div>}>
+                <Rendrer  template={template} />
+            </Suspense>
+        </div>
+
     </div>
   );
 }

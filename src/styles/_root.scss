@@ -1,0 +1,16 @@
+@import "variables";
+
+body {
+  --primary: #{$primary};
+  --dark-color-1: #{$dark-color-1};
+  --dark-color-2: #{$dark-color-2};
+  --dark-color-3: #{$dark-color-3};
+  --dark-text-color-1: #{$dark-text-color-1};
+  --dark-text-color-2: #{$dark-text-color-2};
+  --dark-text-color-3: #{$dark-color-3};
+  --dark-text-color-4: #{lighten($dark-color-3, 40%)};
+
+  //tooltip
+  --rt-color-white: #fff;
+  --rt-color-dark: #{$dark-color-2};
+}

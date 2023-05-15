@@ -2,11 +2,11 @@
   width: 150px;
   height: 150px;
   padding: 1em;
-  background-color: #1c1c1c;
+  background-color: var(--dark-color-2);
   margin: 5px;
   border-radius: 8px;
   &:hover {
-    background-color: #292929;
+    background-color: var(--dark-color-3);
     transition: 0.3s;
   }
 }
