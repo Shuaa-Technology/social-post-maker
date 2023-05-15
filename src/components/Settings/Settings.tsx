@@ -5,7 +5,7 @@ import { TypeFormField } from "./TypesFormFields/TypeFormField";
 import styles from "./Settings.module.scss";
 
 
-function Settings() {
+function Settings(props: { editor: string }) {
   const { currentTemplate } = useSelector(getTemplatesStore);
 
   return (
@@ -18,10 +18,11 @@ function Settings() {
 
           return (
             <TypeFormField
+              editor={props.editor} 
               id={setting.id}
               name={setting.name}
               fieldHandle={setting.type.getFormFieldHandle()}
-              value={setting.value}
+              value={setting.value} 
             />
           );
         })}

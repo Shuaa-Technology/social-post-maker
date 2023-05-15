@@ -1,3 +1,4 @@
+import { EDITOR_SYSTEM } from "../../config/templates";
 import styles from "./EditorPage.module.scss";
 import Artboard from "./Layouts/Artboard/Artboard";
 import LeftSidebar from "./Layouts/LeftSidebar/LeftSidebar";
@@ -7,10 +8,10 @@ function EditorPage() {
   return (
     <div className={styles.editorPage}>
       <div className={styles.leftSidebarWrapper}>
-        <LeftSidebar  />
+        <LeftSidebar editor={EDITOR_SYSTEM} />
       </div>
       <div className={styles.workspaceWrapper}>
-        <Artboard  />
+        <Artboard  editor={EDITOR_SYSTEM}  />
       </div>
     </div>
   );

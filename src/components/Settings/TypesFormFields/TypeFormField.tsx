@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { TEMPLATE_EDITOR } from "../../../config/templates"; /* @todo: get this as props */
+
 
 export interface FieldProps {
   id?: string;
@@ -8,15 +8,16 @@ export interface FieldProps {
 }
 
 export interface TypeFormFieldProps extends FieldProps {
+  editor: string;
   fieldHandle: string;
 }
 
 export function TypeFormField(props: TypeFormFieldProps) {
-  const { fieldHandle, id, name, value = "" } = props;
+  const { editor, fieldHandle, id, name, value = "" } = props;
 
   const Field = lazy(
     () => 
-      import(`../../Template/${TEMPLATE_EDITOR}/Settings/TypesFormFields/${fieldHandle}`) 
+      import(`../../Template/${editor}/Settings/TypesFormFields/${fieldHandle}`) 
   );
 
   return (

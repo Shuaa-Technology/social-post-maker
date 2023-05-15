@@ -1,18 +1,26 @@
 import styles from "./Preview.module.scss";
 import { TemplateInterface } from "../../core/Models/Template/TemplateInterface";
 
-import Rendrer from "../Template/Default/Preview/Rendrer";
+import { lazy, Suspense } from "react";
 
-function Preview(props: { template: TemplateInterface }) {
+function Preview(props: {editor:string,  template: TemplateInterface }) {
+  const { editor, template} = props;
+  
+  const Rendrer = lazy(
+    () => import(`../Template/${editor}/Preview/Rendrer`)
+  );
+
   return (
     <div
       className={styles.postPreview}
       style={{
-        width: props.template.width,
-        height: props.template.height,
+        width: template.width,
+        height: template.height,
       }}
     >
-      <Rendrer template={props.template} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Rendrer  template={template} />
+      </Suspense>
     </div>
   );
 }

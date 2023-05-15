@@ -7,13 +7,12 @@ import styles from "./LeftSidebar.module.scss";
 import TemplateList from "../../../../components/TemplateList/TemplateList";
 import Settings from "../../../../components/Settings/Settings";
 
-function LeftSidebar() {
+function LeftSidebar(props: { editor: string }) {
   const [tabIndex, setTabIndex] = useState(0);
 
   const handleTabSelect = (index: number) => {
     setTabIndex(index);
   };
-
 
   const isTabActive = (index: number): boolean => tabIndex === index;
 
@@ -46,7 +45,7 @@ function LeftSidebar() {
         </TabList>
 
         <TabPanel>
-        <Settings/>
+          <Settings editor={props.editor}  />
         </TabPanel>
         <TabPanel>
           <TemplateList />
