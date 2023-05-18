@@ -12,18 +12,19 @@
 
   .tabList {
     display: flex;
-    background-color: var(--dark-color-3);
+    background-color: var(--tabs-bg);
     margin-top: 0;
     gap: 5px;
     justify-content: center;
     padding: 0;
+    border-bottom: 1px solid var(--layout-border-color);
   }
 
   .tab {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--dark-text-color-1);
+    color: var(--tabs-icons-color);
     font-size: 12px;
     justify-content: center;
     outline: none;
@@ -33,12 +34,13 @@
     padding: 2rem 0.5rem;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    border-bottom: 4px solid transparent;
     &.active {
-      color: var(--dark-text-color-2);
+      color: var(--tabs-icons-active-color);
       border-bottom: 4px solid var(--primary);
     }
     &:hover {
-      color: var(--dark-text-color-2);
+      color: var(--tabs-icons-active-color);
     }
   }
 

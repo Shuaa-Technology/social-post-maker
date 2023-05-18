@@ -6,10 +6,11 @@
 
 .leftSidebarWrapper {
   width: 30%;
-  background-color: #1B1F3C;
+  background-color: var(--left-sidebar-bg);
+  border-right: 1px solid var(--layout-border-color);
 }
 
 .workspaceWrapper {
   width: 75%;
-  background-color: #14152E;
+  background-color: var(--workspace-bg);
 }

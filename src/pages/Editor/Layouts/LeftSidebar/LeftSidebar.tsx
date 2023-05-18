@@ -3,13 +3,6 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import {
   FiSettings,
   FiList,
-  FiCalendar,
-  FiUsers,
-  FiLayout,
-  FiEdit2,
-  FiFileText,
-  FiGrid,
-  FiCamera,
   FiEdit
 } from "react-icons/fi";
 
@@ -18,6 +11,7 @@ import styles from "./LeftSidebar.module.scss";
 import TemplateList from "../../../../components/TemplateList/TemplateList";
 import Settings from "../../../../components/Settings/Settings";
 import {Tooltip} from "react-tooltip";
+import Configuration from "../../../../components/Configuration/Configuration";
 
 function LeftSidebar(props: { editor: string }) {
   const [tabIndex, setTabIndex] = useState(0);
@@ -58,13 +52,12 @@ function LeftSidebar(props: { editor: string }) {
           <Tab
             className={`${styles.tab} ${isTabActive(2) ? styles.active : ""}`}
           >
-            <FiCalendar className={`${styles.tabIcon} tbd-icon`} />
+            <FiSettings className={`${styles.tabIcon} config-icon`} />
           </Tab>
-          <Tooltip anchorSelect=".tbd-icon" place="top">
-            TBD
+          <Tooltip anchorSelect=".config-icon" place="top">
+            Configuration
           </Tooltip>
         </TabList>
-
         <TabPanel>
           <Settings editor={props.editor}  />
         </TabPanel>
@@ -72,10 +65,7 @@ function LeftSidebar(props: { editor: string }) {
           <TemplateList />
         </TabPanel>
         <TabPanel>
-          <h2>TBD Panel</h2>
-        </TabPanel>
-        <TabPanel>
-          <h2>TBD Panel</h2>
+          <Configuration />
         </TabPanel>
       </Tabs>
     </div>

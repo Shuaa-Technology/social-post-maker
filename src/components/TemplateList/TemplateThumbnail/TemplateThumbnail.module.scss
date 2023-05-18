@@ -1,12 +1,12 @@
 .templateThumbnail {
-  width: 150px;
   height: 150px;
-  padding: 1em;
-  background-color: var(--dark-color-2);
-  margin: 5px;
+  background-color: var(--template-thumb-bg);
   border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &:hover {
-    background-color: var(--dark-color-3);
+    background-color: var(--template-thumb-hover-bg);
     transition: 0.3s;
   }
 }

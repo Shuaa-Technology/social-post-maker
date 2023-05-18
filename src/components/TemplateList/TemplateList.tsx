@@ -24,7 +24,7 @@ function TemplateList() {
 
   return (
     <div className={styles.templateList}>
-      <h2>Template List Panel</h2>
+      <h2 className={styles.sectionTitle}>Template List Panel</h2>
       <div className={styles.templatesContainer}>
         {(() => {
           let stack = [];

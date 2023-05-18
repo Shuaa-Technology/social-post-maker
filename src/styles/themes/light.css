@@ -1,0 +1,24 @@
+.light-theme {
+  --primary: #3525df;
+  --dark-color-1: white;
+  --dark-color-2: white;
+  --dark-color-3: white;
+  --tabs-bg: white;
+  --tabs-icons-color: #87879f;
+  --tabs-icons-active-color: #D7D7E7;
+  --template-thumb-hover-bg: white;
+  --template-thumb-bg: white;
+  --dark-text-color-1: #87879f;
+  --dark-text-color-2: #D7D7E7;
+  --dark-text-color-3: white;
+  --dark-text-color-4: #ffffff17;
+  --workspace-bg: #010409;
+  --post-review-bg: white;
+  --left-sidebar-bg: white;
+  --layout-border-color: #21262d;
+  --input-border-color: #30363d;
+  --input-bg: #010409;
+  --input-color: #c9d1d9;
+  --rt-color-white: #fff;
+  --rt-color-dark: white;
+}

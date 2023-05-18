@@ -1,28 +1,2 @@
-// todo: find a better way for common styles
-.field {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1.5rem;
-
-  label {
-    font-weight: normal;
-    font-size: .8rem;
-    color: var(--dark-text-color-2);
-    margin-bottom: 10px;
-  }
-  input,
-  textarea {
-    height: 30px;
-    background-color: var(--dark-color-2);
-    border-radius: 4px;
-    font-size: 14px;
-    margin-top: 4px;
-    outline: none;
-    padding: .5rem 1rem;
-    border-radius: 4px;
-    border: 1px solid var(--dark-text-color-3);
-    color: var(--dark-text-color-4);
-  }
-}
-
+@import "CommonStyles.module";
 

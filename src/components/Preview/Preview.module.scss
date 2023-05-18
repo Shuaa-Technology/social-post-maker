@@ -1,10 +1,11 @@
 .postPreview {
-  background-color: var(--dark-color-1);
+  background-color: var(--post-review-bg);
   width: 600px;
   height: 600px;
   margin: 0 auto;
   padding: 3rem;
   border-radius: 1rem;
+  border: 1px solid var(--layout-border-color);
 }
 .postPreviewInner {
   background-color: #ffffff;

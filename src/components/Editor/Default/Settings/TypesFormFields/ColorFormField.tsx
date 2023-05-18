@@ -7,7 +7,7 @@ export default function ColorFormField(props: FieldProps) {
     return (
       <div className={styles.field}>
         <label htmlFor={id}>{name}</label>
-        <input type="color" id={id} name={name} value={value} />
+        <input className={styles.colorInput} type="color" id={id} name={name} value={value} />
       </div>
     );
   }
