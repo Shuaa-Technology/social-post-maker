@@ -2,6 +2,8 @@ import React from 'react';
 import {setThemeMode} from "../../../app/store/AppearanceStore";
 import {RootState} from "../../../app/store";
 import {useAppDispatch, useAppSelector} from "../../../app/hooks";
+import styles from './Appearance.module.scss';
+
 
 const AppearanceSettings = () => {
     const dispatch = useAppDispatch();
@@ -16,7 +18,7 @@ const AppearanceSettings = () => {
     return (
         /*todo: improve ui*/
         <div>
-            <h2>Appearance</h2>
+            <div className={styles.sectionTitle}>Appearance</div>
             <div>
                 <label>
                     <input

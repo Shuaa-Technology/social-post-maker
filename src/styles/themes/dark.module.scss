@@ -1,0 +1,31 @@
+
+.dark {
+  --primary: #{$primary};
+  --dark-color-1: #{$dark-color-1};
+  --dark-color-2: #{$dark-color-2};
+  --dark-color-3: #{$dark-color-3};
+  --tabs-bg: #{$dark-color-3};
+  --tabs-icons-color: #8b949e;
+  --tabs-icons-active-color: #{$dark-text-color-2};
+  --template-thumb-hover-bg: #{$dark-color-2};
+  --template-thumb-bg: #{$dark-color-3};
+  --dark-text-color-1: #{$dark-text-color-1};
+  --dark-text-color-2: #{$dark-text-color-2};
+  --dark-text-color-3: #{$dark-color-3};
+  --dark-text-color-4: #{lighten($dark-color-3, 40%)};
+  --settings-label-color: #{$dark-text-color-2};
+  --workspace-bg: #010409;
+  --post-review-bg: #{$dark-color-1};
+  --left-sidebar-bg: #0d1117;
+  --layout-border-color: #21262d;
+  --input-border-color: #30363d;
+  --input-bg: #010409;
+  --input-color: #c9d1d9;
+  --tabs-section-title-color: #{$dark-text-color-2};
+  --thumbnail-text-color:  #{$dark-text-color-2};
+
+
+  //tooltip
+  --rt-color-white: #fff;
+  --rt-color-dark: #{$dark-color-2};
+}

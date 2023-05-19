@@ -1,0 +1,29 @@
+.light {
+  --primary: #{$primary-color};
+  --light-color-1: #{$light-color-1};
+  --light-color-2: #{$light-color-2};
+  --light-color-3: #{$light-color-3};
+  --tabs-bg: #{$tabs-bg};
+  --tabs-icons-color: #{$tabs-icons-color};
+  --tabs-icons-active-color: #{$tabs-icons-active-color};
+  --template-thumb-hover-bg: #{$template-thumb-hover-bg};
+  --template-thumb-bg: #{$template-thumb-bg};
+  --light-text-color-1: #{$light-text-color-1};
+  --light-text-color-2: #{$light-text-color-2};
+  --light-text-color-3: #{$light-text-color-3};
+  --light-text-color-4: #{$light-text-color-4};
+  --workspace-bg: #{$workspace-bg};
+  --post-review-bg: #{$post-review-bg};
+  --left-sidebar-bg: #{$left-sidebar-bg};
+  --layout-border-color: #{$layout-border-color};
+  --input-border-color: #{$input-border-color};
+  --input-bg: #{$input-bg};
+  --input-color: #{$input-color};
+  --settings-label-color: #{$light-text-color-2};
+  --tabs-section-title-color: #{$light-text-color-2};
+  --thumbnail-text-color:  #{$light-text-color-2};
+
+  //tooltip
+  --rt-color-white: #{$rt-color-white};
+  --rt-color-light: #{$rt-color-light};
+}
