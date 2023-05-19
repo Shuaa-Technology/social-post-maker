@@ -20,7 +20,7 @@ export class TemplatesService {
     return new Promise<TemplateInterface[]>((resolve, reject) =>
       API.get(`templates` + (limit > 0 ? `?_limit=${limit}` : ""))
         .then((res) => {
-          this.templates = res.data.map((template: TemplateInterface) => {
+          this.templates = res.data.map((template: TemplateInterface) => {  /* @todo Use recursive */ 
             const settings = template.settings.map(
               (setting: TemplateSettingsInterface) => {
                 let childSettings = undefined;

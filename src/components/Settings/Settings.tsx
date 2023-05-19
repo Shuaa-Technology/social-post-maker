@@ -14,7 +14,10 @@ function Settings(props: { editor: string }) {
   return (
     <div className={styles.container}>
       <div className={styles.formTitle}>{currentTemplate.name} settings</div>
-      <form>
+      <form>  {/* 
+           @todo: Use recursive laoding 
+           @todo: Use Accordion?
+        */}
         {currentTemplate.settings.map((setting) => {
           if (!setting.type || !(setting.type instanceof SettingsType)) {
             return null;
