@@ -11,7 +11,6 @@ import {
 
 function TemplateList() {
   const templatesLoader = useAppSelector(getTemplatesStore);
-  /*   const [templates, setTemplates] = useState<TemplateInterface[]>([]); */
   const dispatch = useAppDispatch();
 
   const handleSelectTemplate = (id: string) => {
@@ -20,16 +19,18 @@ function TemplateList() {
 
   useEffect(() => {
     dispatch(loadTemplates());
+    console.log(templatesLoader.templates)
   }, []);
 
+
+  
   return (
     <div className={styles.templateList}>
-      <h2 className={styles.sectionTitle}>Template List Panel</h2>
+      <h2 className={styles.sectionTitle}>Templates List Panel</h2>
       <div className={styles.templatesContainer}>
         {(() => {
           let stack = [];
           for (let i = 0; i < templatesLoader.templates.length; i++) {
-            /* @todo: to foreach please. */
             stack.push(
               <TemplateThumbnail
                 template={templatesLoader.templates[i]}

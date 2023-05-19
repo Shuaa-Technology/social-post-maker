@@ -9,4 +9,5 @@ export interface TemplateSettingsInterface {
   name: string;
   description: string;
   value: string;
+  childSettings?: TemplateSettingsInterface[];
 }

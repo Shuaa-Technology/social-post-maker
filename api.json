@@ -12,36 +12,49 @@
          "settings": [
             {
                "id": "1",
-               "key": "bg-image",
+               "key": "bg-image-settings",
                "type": {
-                  "handle": "IMAGE"
+                  "handle": "GROUP"
                },
                "version": "1.0.0",
-               "name": "Background image",
-               "description": "Upload a thumbnail image",
-               "value": "https://example.com/thumbnail.png"
-            },
-            {
-               "id": "2",
-               "key": "gradient_top_color",
-               "type": {
-                  "handle": "COLOR"
-               },
-               "version": "1.0.0",
-               "name": "Gradient top color",
-               "description": "Select a color for the header",
-               "value": "#db0000"
-            },
-            {
-               "id": "3",
-               "key": "gradient_bottom_color",
-               "type": {
-                  "handle": "COLOR"
-               },
-               "version": "1.0.0",
-               "name": "Gradient bottom color",
-               "description": "Select a color for the body text",
-               "value": "#000000"
+               "name": "Background image Settings",
+               "description": "Background image Settings",
+               "value": "",
+               "childSettings": [
+                  {
+                     "id": "1",
+                     "key": "bg-image",
+                     "type": {
+                        "handle": "IMAGE"
+                     },
+                     "version": "1.0.0",
+                     "name": "Background image",
+                     "description": "Upload a thumbnail image",
+                     "value": "https://example.com/thumbnail.png"
+                  },
+                  {
+                     "id": "2",
+                     "key": "gradient_top_color",
+                     "type": {
+                        "handle": "COLOR"
+                     },
+                     "version": "1.0.0",
+                     "name": "Gradient top color",
+                     "description": "Select a color for the header",
+                     "value": "#db0000"
+                  },
+                  {
+                     "id": "3",
+                     "key": "gradient_bottom_color",
+                     "type": {
+                        "handle": "COLOR"
+                     },
+                     "version": "1.0.0",
+                     "name": "Gradient bottom color",
+                     "description": "Select a color for the body text",
+                     "value": "#000000"
+                  }
+               ]
             },
             {
                "id": "4",
