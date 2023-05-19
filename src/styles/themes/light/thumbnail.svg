@@ -1,0 +1,12 @@
+<svg id="dark_preview" xmlns="http://www.w3.org/2000/svg" width="228" height="120" viewBox="0 0 228 120">
+  <path id="Path_1" data-name="Path 1" d="M0,0H228V120H0Z" fill="#fafafa"/>
+  <rect id="Rectangle_1" data-name="Rectangle 1" width="64" height="97" transform="translate(0 23)" fill="#f2f2f2" opacity="0.74"/>
+  <rect id="Rectangle_2" data-name="Rectangle 2" width="80" height="80" rx="2" transform="translate(96 20)" fill="#e1e1e1"/>
+  <path id="Path_2" data-name="Path 2" d="M0,0H64.191V23H0Z" fill="#e1e1e1" opacity="0.6"/>
+  <rect id="Rectangle_4" data-name="Rectangle 4" width="12" height="4" rx="2" transform="translate(8 9)" fill="#8b949e"/>
+  <rect id="Rectangle_9" data-name="Rectangle 9" width="12" height="4" rx="2" transform="translate(26 9)" fill="#8b949e"/>
+  <rect id="Rectangle_10" data-name="Rectangle 10" width="12" height="4" rx="2" transform="translate(44 9)" fill="#8b949e"/>
+  <rect id="Rectangle_7" data-name="Rectangle 7" width="6" height="6" rx="1" transform="translate(210 36)" fill="#da3633"/>
+  <rect id="Rectangle_11" data-name="Rectangle 11" width="45" height="6" rx="1" transform="translate(9.5 105.66)" fill="#23dc9d"/>
+  <rect id="Rectangle_8" data-name="Rectangle 8" width="6" height="6" rx="1" transform="translate(202 36)" fill="#3fb950"/>
+</svg>

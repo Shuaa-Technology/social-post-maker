@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 
+
 export interface FieldProps {
   id?: string;
   name?: string;
@@ -15,8 +16,8 @@ export function TypeFormField(props: TypeFormFieldProps) {
   const { editor, fieldHandle, id, name, value = "" } = props;
 
   const Field = lazy(
-    () =>
-      import(`../../Editor/${editor}/Settings/TypesFormFields/${fieldHandle}`)
+    () => 
+      import(`../../Editor/${editor}/Settings/TypesFormFields/${fieldHandle}`) 
   );
 
   return (

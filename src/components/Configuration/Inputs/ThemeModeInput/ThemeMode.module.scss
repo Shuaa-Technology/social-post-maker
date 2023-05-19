@@ -1,0 +1,45 @@
+.themeModeInput {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+  background-color: #fff;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  label {
+    width: 100%;
+    border-radius: 6px;
+
+  }
+}
+
+.themeModeInput.active {
+  border-color: var(--primary);
+}
+
+.themeModeInput:hover {
+  border-color: var(--primary);
+}
+
+.themeThumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+
+}
+.themeModeInputHeader {
+  width: 100%;
+}
+.themeModeInputBody {
+  padding: .8rem .5rem;
+  width: 100%;
+}
+.themeName {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  color: #24292e;
+}

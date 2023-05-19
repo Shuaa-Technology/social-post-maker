@@ -93,7 +93,6 @@ export const TemplatesStore = createSlice({
   },
 });
 
-export const getTemplatesStore = (state: RootState) => state.templatesStore; //with Thunk utilities
-export const getTemplates = (state: RootState) => state.templatesStore.templates;
+export const getTemplatesStore = (state: RootState) => state.templatesStore;
 
 export default TemplatesStore.reducer;

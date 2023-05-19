@@ -4,3 +4,8 @@
   font-weight: normal;
   color: var(--tabs-section-title-color);
 }
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Set 2 columns with equal width */
+  grid-gap: 10px; /* Add some gap between the items */
+}

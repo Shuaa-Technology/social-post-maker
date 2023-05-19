@@ -6,9 +6,9 @@ import { Helmet } from "react-helmet";
 
 function App() {
   const templatesLoader = useAppSelector(getTemplatesStore); //@todo pass current template to other child or find another way to get current template style
-  const themeMode = useAppSelector((state) => state.appearance.themeMode);
+  const currentThemeMode = useAppSelector((state) => state.appearance.currentThemeMode);
     return (
-      <div className={`${styles[themeMode]}`}>
+      <div className={styles[currentThemeMode.handle]}>
         <Helmet>
           <style type="text/css">
             {templatesLoader.currentTemplate.style}
