@@ -30,6 +30,11 @@
   --appearance-mode-body-bg-color: white;
   --appearance-mode-body-color: #{$light-text-color-2};
   --fields-group-bg-color: #161b22;
+  --setting-group-title-color: #000;
+  --setting-group-body-bg-color: whitesmoke;
+  --setting-group-button-border-bottom: #{lighten(#cdd4da, 10%)};
+  --setting-group-border-color: var(--input-border-color);
+
 
   --scrollbar-bg-color: #eeeeee;
   //tooltip
