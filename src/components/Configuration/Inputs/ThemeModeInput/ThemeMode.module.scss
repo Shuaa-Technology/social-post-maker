@@ -3,25 +3,25 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 16px;
-  background-color: #fff;
-  border: 1px solid #e1e4e8;
+  background-color: var(--appearance-mode-body-bg-color);
+  border: 1px solid var(--appearance-mode-border-color);
   border-radius: 6px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: border-color 0.3s ease;
+  padding: 4px;
   label {
     width: 100%;
     border-radius: 6px;
-
   }
 }
 
 .themeModeInput.active {
-  border-color: var(--primary);
+  border-color: var(--appearance-mode-active-border-color);
 }
 
 .themeModeInput:hover {
-  border-color: var(--primary);
+  border-color: var(--appearance-mode-active-border-color);
 }
 
 .themeThumbnail {
@@ -35,11 +35,13 @@
 }
 .themeModeInputBody {
   padding: .8rem .5rem;
-  width: 100%;
+  background-color: var(--appearance-mode-body-bg-color);
+  display: flex;
+  gap: 5px;
 }
 .themeName {
   font-size: 14px;
   font-weight: 500;
   text-align: center;
-  color: #24292e;
+  color: var(--appearance-mode-body-color);
 }

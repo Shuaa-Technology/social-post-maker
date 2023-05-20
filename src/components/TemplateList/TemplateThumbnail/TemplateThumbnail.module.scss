@@ -9,5 +9,6 @@
   &:hover {
     background-color: var(--template-thumb-hover-bg);
     transition: 0.3s;
+    color: var(--thumbnail-hover-text-color);
   }
 }

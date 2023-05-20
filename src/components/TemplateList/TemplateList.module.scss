@@ -20,7 +20,7 @@
 
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    background: var(--tabs-bg);
+    background: var(--scrollbar-bg-color);
     border-radius: 5px;
     transition: .4s all ease;
   }

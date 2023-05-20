@@ -30,7 +30,9 @@ export function ThemeModeInput({ handle, thumbnail, name, checked, onChange }: T
                         checked={checked}
                         onChange={handleInputChange}
                     />
-                    {name}
+                    <span className={styles.themeName}>
+                        {name}
+                    </span>
                 </div>
             </label>
         </div>

@@ -72,10 +72,9 @@ export class TemplatesService {
       version: "1.0.0",
       name: "Default template",
       description: "This is a default template.",
-      height: 600,
-      width: 600,
-      render:
-        "<span style='color:black;' >Default Template HTML <span>" /* BETTER WAY? */,
+      height: 500,
+      width: 500,
+      render: "<span style='color:black;' >Default Template HTML <span>" /* BETTER WAY? */,
       settings: [
         {
           id: "1",
