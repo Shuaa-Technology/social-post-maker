@@ -20,7 +20,7 @@ export function TypeFormField(props: TypeFormFieldProps) {
   );
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>{/* @TODO Add better loading component */} Loading...</div>}>
       <Field id={id} name={name} value={value} />
     </Suspense>
   );

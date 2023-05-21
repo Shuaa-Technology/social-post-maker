@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   color: var(--thumbnail-text-color);
+  cursor: pointer;
   &:hover {
     background-color: var(--template-thumb-hover-bg);
     transition: 0.3s;

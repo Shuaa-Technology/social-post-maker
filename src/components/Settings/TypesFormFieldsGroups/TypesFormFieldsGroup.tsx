@@ -1,4 +1,15 @@
 import { lazy, Suspense } from "react";
+import styles from "./TypesFormFieldsGroups.module.scss";
+import { FaAngleDown, FaAngleRight } from "react-icons/fa";
+import classNames from "classnames";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemButton,
+  AccordionItemHeading,
+  AccordionItemPanel,
+  AccordionItemState,
+} from "react-accessible-accordion";
 
 export interface GroupProps {
   id?: string;
@@ -22,10 +33,48 @@ export function TypesFormFieldsGroup(props: TypesFormFieldsGroup) {
   );
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Group id={id} name={name}>
-       {children}
-      </Group>
+    <Suspense
+      fallback={
+        <div> {/* @TODO Add better loading component */} Loading...</div>
+      }
+    >
+      <Accordion allowZeroExpanded>
+        <AccordionItem>
+          <div className={styles.fieldGroup}>
+            <AccordionItemHeading>
+              <AccordionItemState>
+                {({ expanded }) => (
+                  <AccordionItemButton className={styles.accordionButton}>
+                    <div className={styles.accordionTitle}>{name}</div>
+                    <div
+                      className={classNames(styles.accordionIcon, {
+                        [styles.rotate]: expanded,
+                      })}
+                    >
+                      <FaAngleRight />
+                    </div>
+                  </AccordionItemButton>
+                )}
+              </AccordionItemState>
+            </AccordionItemHeading>
+            <AccordionItemState>
+              {({ expanded }) => (
+                <AccordionItemPanel
+                  className={`${styles.accordionBody} ${
+                    expanded ? styles.expanded : ""
+                  }`}
+                >
+                  <div className={classNames(styles.fieldGroup)}>
+                    <Group id={id} name={name}>
+                      {children}
+                    </Group>
+                  </div>
+                </AccordionItemPanel>
+              )}
+            </AccordionItemState>
+          </div>
+        </AccordionItem>
+      </Accordion>
     </Suspense>
   );
 }

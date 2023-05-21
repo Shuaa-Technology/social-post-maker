@@ -1,5 +1,9 @@
+import sanitizeHtml from "sanitize-html";
 import { Template } from "./Models/Template/Template";
 import { TemplateInterface } from "./Models/Template/TemplateInterface";
+import { SANITIZE_OPTIONS } from "../config/render";
+
+
 
 export class TemplateRenderer {
   _template: TemplateInterface;
@@ -35,8 +39,8 @@ export class TemplateRenderer {
     return this;
   }
 
-  render(): string {
+  render(options?: any): string {
     /* @todo */
-    return this.output;
+    return sanitizeHtml(this.output, { ...SANITIZE_OPTIONS, ...options });
   }
 }

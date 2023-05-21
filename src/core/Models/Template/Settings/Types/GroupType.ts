@@ -7,6 +7,7 @@ export class GroupType extends SettingsType {
   static getHandle(): string {
     return "GROUP";
   }
+  
   getFormFieldHandle(): string {
     return "FormFieldGroup";
   }
