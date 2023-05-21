@@ -1,0 +1,8 @@
+@mixin generate-color-scheme($mode, $values) {
+  .#{$mode} {
+    @each $variable, $color in $values {
+      $property: '--' + $variable;
+      #{$property}: $color;
+    }
+  }
+}

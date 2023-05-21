@@ -1,37 +1,70 @@
-$primary: #3525df;
-$body-color: #D7D7E7;
+$color-scheme: (
+        dark: (
+                primary: #3525df,
+                tabs-bg: #161b22,
+                tabs-icons-color: #8b949e,
+                tabs-icons-active-color: #D7D7E7,
+                template-thumb-hover-bg: #020202,
+                template-thumb-bg: #161b22,
+                settings-label-color: #D7D7E7,
+                workspace-bg: #010409,
+                post-review-bg: #161b22,
+                post-review-border-color: #21262d,
+                left-sidebar-bg: #0d1117,
+                layout-border-color: #21262d,
+                input-border-color: #30363d,
+                input-bg: #010409,
+                input-color: #c9d1d9,
+                button-color: #D7D7E7,
+                tabs-section-title-color: #D7D7E7,
+                thumbnail-text-color: #D7D7E7,
+                thumbnail-hover-text-color: #161b22,
+                appearance-mode-active-border-color: #3525df,
+                appearance-mode-border-color: #21262d,
+                appearance-mode-body-bg-color: #161b22,
+                appearance-mode-body-color: #D7D7E7,
+                scrollbar-bg-color: #eeeeee,
+                fields-group-bg-color: #161b22,
+                setting-group-border-color: #30363d,
+                setting-group-title-color: #D7D7E7,
+                setting-group-body-bg-color: #010409,
+                setting-group-button-border-bottom: #21262d,
+                rt-color-white: #fff,
+                rt-color-dark: #020202
+        ),
+        light: (
+                primary: #19cf83,
+                tabs-bg: #000000,
+                tabs-icons-color: #8b949e,
+                tabs-icons-active-color: #64707d,
+                template-thumb-hover-bg: #e4e7eb,
+                template-thumb-bg: #000000,
+                settings-label-color: #000,
+                workspace-bg: #ffffff,
+                post-review-bg: #0000000a,
+                post-review-border-color: transparent,
+                left-sidebar-bg: #FFFFFF,
+                layout-border-color: #cdd4da,
+                input-border-color: #1f1f1f54,
+                input-bg: #ffffff,
+                input-color: #727272,
+                button-color: #ffffff,
+                tabs-section-title-color: #000,
+                thumbnail-text-color: #fff,
+                thumbnail-hover-text-color: #000,
+                appearance-mode-active-border-color: #19cf83,
+                appearance-mode-border-color: #cdd4da,
+                appearance-mode-body-bg-color: #ffffff,
+                appearance-mode-body-color: #64707d,
+                scrollbar-bg-color: #eeeeee,
+                fields-group-bg-color: #161b22,
+                setting-group-title-color: #000,
+                setting-group-body-bg-color: whitesmoke,
+                setting-group-button-border-bottom: #fff,
+                rt-color-white: #000,
+                rt-color-dark: #fff
+        )
+) !default;
 
-// TODO: Gonna make it dynamic
-
-$dark-color-1: #161b22;
-$dark-color-2: #020202;
-$dark-color-3: #161b22; //tabs
-$dark-text-color-1: #87879f;
-$dark-text-color-2: #D7D7E7;
-$dark-text-color-3: white;
-$dark-text-color-4: #ffffff17;
-
-$primary-color: #3525df;
-$light-color-1: #f5f7fa;
-$light-color-2: #e4e7eb;
-$light-color-3: #cdd4da;
-$tabs-bg: #cdd4da;
-$tabs-icons-color: #8b949e;
-$tabs-icons-active-color: #64707d;
-$template-thumb-hover-bg: #e4e7eb;
-$template-thumb-bg: #cdd4da;
-$light-text-color-1: #8b949e;
-$light-text-color-2: #64707d;
-$light-text-color-3: #cdd4da;
-$light-text-color-4: #f5f7fa;
-$workspace-bg: #ffffff;
-$post-review-bg: #f5f7fa;
-$left-sidebar-bg: #f5f7fa;
-$layout-border-color: #cdd4da;
-$input-border-color: #e4e7eb;
-$input-bg: #ffffff;
-$input-color: #64707d;
-
-//tooltip
-$rt-color-white: #fff;
-$rt-color-light: #e4e7eb;
+$color-scheme: map-merge($color-scheme, $color-overrides) !default;
+//TODO test this
