@@ -3,10 +3,11 @@ import { getTemplatesStore } from "../../app/store/TemplatesStore";
 import { SettingsType } from "../../core/Models/Template/Settings/Types/SettingsType";
 import { TypeFormField } from "./TypesFormFields/TypeFormField";
 import styles from "./Settings.module.scss";
-import { GroupType } from "../../core/Models/Template/Settings/Types/GroupType";
 import { TypesFormFieldsGroup } from "./TypesFormFieldsGroups/TypesFormFieldsGroup";
-import { SettingsTypeInterface } from "../../core/Models/Template/Settings/Types/SettingsTypeInterface";
 import { TemplateSettingsInterface } from "../../core/Models/Template/Settings/TemplateSettingsInterface";
+import { GroupSettingsType } from "../../core/Models/Template/Settings/Types/GroupSettingsType";
+import { FieldSettingsType } from "../../core/Models/Template/Settings/Types/FieldSettingsType";
+
 
 function Settings(props: { editor: string }) {
   const { currentTemplate } = useSelector(getTemplatesStore);
@@ -21,7 +22,7 @@ function Settings(props: { editor: string }) {
           } else {
             if (
               setting.type &&
-              setting.type instanceof GroupType &&
+              setting.type instanceof GroupSettingsType &&
               setting.childSettings
             ) {
               return (
@@ -29,31 +30,15 @@ function Settings(props: { editor: string }) {
                   editor={props.editor}
                   id={setting.id}
                   name={setting.name}
-                  groupHandle={setting.type.getFormFieldHandle()}
+                  groupHandle={setting.type.getFormGroupHandle()}
+                  childSettings={ setting.childSettings}
                 >
-                  {setting.childSettings.map(
-                    (setting: TemplateSettingsInterface) => {
-                      if (
-                        !setting.type ||
-                        !(setting.type instanceof SettingsType)
-                      ) {
-                        return null;
-                      } else {
-                        return (
-                          <TypeFormField
-                            editor={props.editor}
-                            id={setting.id}
-                            name={setting.name}
-                            fieldHandle={setting.type.getFormFieldHandle()}
-                            value={setting.value}
-                          />
-                        );
-                      }
-                    }
-                  )}
                 </TypesFormFieldsGroup>
               );
-            } else {
+            } else if (
+              setting.type &&
+              setting.type instanceof FieldSettingsType 
+            ) {
               return (
                 <TypeFormField
                   editor={props.editor}

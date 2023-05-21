@@ -1,13 +1,13 @@
-import { SettingsType } from "./SettingsType";
+import { FieldSettingsType } from "../FieldSettingsType";
 
-export class TextType extends SettingsType {
+export class TextType extends FieldSettingsType {
 
 
   constructor() {
    super()
 }
   static getHandle(): string {
-    return 'TEXT';
+    return 'FIELD/TEXT';
 }
   getFormFieldHandle(): string {
     return 'TextFormField';

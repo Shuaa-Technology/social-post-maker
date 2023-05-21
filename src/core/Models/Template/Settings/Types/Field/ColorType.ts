@@ -1,13 +1,14 @@
-import { SettingsType } from "./SettingsType";
+import { FieldSettingsType } from "../FieldSettingsType";
 
 
-export class ColorType extends SettingsType {
+
+export class ColorType extends FieldSettingsType {
     constructor() {
         super()
      }
 
     static getHandle(): string {
-        return 'COLOR';
+        return 'FIELD/COLOR';
     }
 
     getFormFieldHandle(): string {

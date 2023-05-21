@@ -1,12 +1,13 @@
-import { SettingsType } from "./SettingsType";
+import { FieldSettingsType } from "../FieldSettingsType";
 
-export class ImageType extends SettingsType {
+
+export class ImageType extends FieldSettingsType {
 
     constructor() {
         super()
      }
     static getHandle(): string {
-        return 'IMAGE';
+        return 'FIELD/IMAGE';
     }
 
 

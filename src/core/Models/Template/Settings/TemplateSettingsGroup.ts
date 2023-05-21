@@ -1,15 +1,9 @@
 import { TemplateSettings } from "./TemplateSettings";
 import { TemplateSettingsInterface } from "./TemplateSettingsInterface";
-import { GroupType } from "./Types/GroupType";
+import { GroupSettingsType } from "./Types/GroupSettingsType";
 
 
 export class TemplateSettingsGroup extends TemplateSettings {
-  id: string;
-  key: string;
-  type: GroupType;
-  version: string;
-  name: string;
-  description: string;
-  value: string;
+  type: GroupSettingsType;
   childSettings?: TemplateSettingsInterface[];
 }

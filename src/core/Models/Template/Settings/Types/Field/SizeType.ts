@@ -1,13 +1,13 @@
-import { SettingsType } from "./SettingsType";
+import { FieldSettingsType } from "../FieldSettingsType";
 
 
-export class SizeType extends SettingsType {
+export class SizeType extends FieldSettingsType {
 
     constructor() {
         super()
      }
     static getHandle(): string {
-        return 'SIZE';
+        return 'FIELD/SIZE';
     }
 
     getFormFieldHandle(): string {
