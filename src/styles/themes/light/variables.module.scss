@@ -1,43 +1,35 @@
 .light {
+  /* Light Mode Variables */
   --primary: #19cf83;
-  --light-color-1: #{$light-color-1};
-  --light-color-2: #{$light-color-2};
-  --light-color-3: #{$light-color-3};
   --tabs-bg: #000000;
-  --tabs-icons-color: #{$tabs-icons-color};
-  --tabs-icons-active-color: #{$tabs-icons-active-color};
-  --template-thumb-hover-bg: #{$template-thumb-hover-bg};
+  --tabs-icons-color: #8b949e;
+  --tabs-icons-active-color: #64707d;
+  --template-thumb-hover-bg: #e4e7eb;
   --template-thumb-bg: #000000;
-  --light-text-color-1: #{$light-text-color-1};
-  --light-text-color-2: #{$light-text-color-2};
-  --light-text-color-3: #{$light-text-color-3};
-  --light-text-color-4: #{$light-text-color-4};
-  --workspace-bg: #{$workspace-bg};
+  --workspace-bg: #ffffff;
   --post-review-bg: #0000000a;
   --post-review-border-color: transparent;
   --left-sidebar-bg: #FFFFFF;
-  --layout-border-color: #{$layout-border-color};
+  --layout-border-color:  #cdd4da;
   --input-border-color: #1f1f1f54;
   --input-bg: #ffffff;
+  --button-color: #ffffff;
   --input-color: #727272;
   --settings-label-color: #000;
   --tabs-section-title-color: #000;
-  --thumbnail-text-color:  white;
-  --thumbnail-hover-text-color:  #000;
-
+  --thumbnail-text-color: white;
+  --thumbnail-hover-text-color: #000;
   --appearance-mode-active-border-color: var(--primary);
   --appearance-mode-border-color: var(--layout-border-color);
   --appearance-mode-body-bg-color: white;
-  --appearance-mode-body-color: #{$light-text-color-2};
+  --appearance-mode-body-color: #64707d;
   --fields-group-bg-color: #161b22;
   --setting-group-title-color: #000;
   --setting-group-body-bg-color: whitesmoke;
-  --setting-group-button-border-bottom: #{lighten(#cdd4da, 10%)};
+  --setting-group-button-border-bottom: lighten(#cdd4da, 10%);
   --setting-group-border-color: var(--input-border-color);
-
-
   --scrollbar-bg-color: #eeeeee;
-  //tooltip
+  /* Tooltip */
   --rt-color-white: #000;
   --rt-color-dark: white;
 }

@@ -1,10 +1,10 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import TemplatesStore from "./store/TemplatesStore";
-import AppearanceSlice from "./store/AppearanceStore";
+import ConfigStore from "./store/ConfigStore";
 
 export const store = configureStore({
   reducer: {
-    appearance: AppearanceSlice,
+    configStore: ConfigStore,
     templatesStore: TemplatesStore,
   },
   middleware: (getDefaultMiddleware) =>
