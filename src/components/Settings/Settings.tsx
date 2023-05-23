@@ -1,5 +1,5 @@
 
-import { getCurrentTemplate } from "../../app/store/TemplatesStore";
+
 import { SettingsType } from "../../core/Models/Template/Settings/Types/SettingsType";
 import { TypeFormField } from "./TypesFormFields/TypeFormField";
 import styles from "./Settings.module.scss";
@@ -7,11 +7,12 @@ import { TypesFormFieldsGroup } from "./TypesFormFieldsGroups/TypesFormFieldsGro
 import { GroupSettingsType } from "../../core/Models/Template/Settings/Types/GroupSettingsType";
 import { FieldSettingsType } from "../../core/Models/Template/Settings/Types/FieldSettingsType";
 import { useAppSelector } from "../../app/hooks";
+import { TemplateInterface } from "../../core/Models/Template/TemplateInterface";
 
 
-function Settings(props: { editor: string }) {
-  const currentTemplate = useAppSelector(getCurrentTemplate);
-
+function Settings(props: { editor: string, currentTemplate:TemplateInterface }) {
+  const { editor, currentTemplate} = props;
+  
   return (
     <div className={styles.container}>
       <div className={styles.formTitle}>{currentTemplate.name} settings</div>

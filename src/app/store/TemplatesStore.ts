@@ -23,7 +23,8 @@ export const loadTemplates = createAsyncThunk(
   "templates/load/all",
   async (data, { rejectWithValue }) => {
     try {
-      const response = await templatesService.getTemplates();
+      await new Promise(resolve => setTimeout(resolve, 2000)); //mimic API loading 
+      const response = await templatesService.getTemplates(); 
       return response;
     } catch (err) {
       return rejectWithValue(err);
@@ -31,17 +32,6 @@ export const loadTemplates = createAsyncThunk(
   }
 );
 
-export const loadTemplate = createAsyncThunk(
-  "templates/load/selected",
-  async (data, { rejectWithValue }) => {
-    try {
-      const response = await initialState.currentTemplate;
-      return response;
-    } catch (err) {
-      return rejectWithValue(err);
-    }
-  }
-);
 
 export const selectTemplate = createAsyncThunk(
   "templates/select",

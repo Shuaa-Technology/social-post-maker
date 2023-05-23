@@ -12,4 +12,7 @@
     transition: 0.3s;
     color: var(--thumbnail-hover-text-color);
   }
+  &.active{
+    background-color: var(--template-thumb-active-bg);
+  }
 }

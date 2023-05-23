@@ -1,25 +1,27 @@
 import styles from "./TemplateThumbnail.module.scss";
 import { TemplateInterface } from "../../../core/Models/Template/TemplateInterface";
+import classNames from "classnames";
 
-interface Props {
+interface TemplateThumbnailProps {
   template: TemplateInterface;
+  isActive: boolean;
   onSelectTemplate: any;
 }
-function TemplateThumbnail(props: Props) {
-
+function TemplateThumbnail(props: TemplateThumbnailProps) {
+  const { template, isActive = false } = props;
   const onClick = () => {
-   props.onSelectTemplate(props.template.id);
+    props.onSelectTemplate(props.template.id);
   };
 
   return (
     <div
-      key={props.template.id}
-      className={styles.templateThumbnail}
+      key={template.id}
+      className={ isActive ? classNames(styles.templateThumbnail,styles.active) : classNames(styles.templateThumbnail)}
       onClick={() => {
         onClick();
       }}
     >
-      {props.template.name}
+      {template.name}
     </div>
   );
 }
