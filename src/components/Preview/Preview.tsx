@@ -2,6 +2,7 @@ import styles from "./Preview.module.scss";
 import { TemplateInterface } from "../../core/Models/Template/TemplateInterface";
 
 import { lazy, Suspense } from "react";
+import Loader from "../Shared/Loader";
 
 function Preview(props: {editor:string,  template: TemplateInterface }) {
   const { editor, template} = props;
@@ -19,7 +20,7 @@ function Preview(props: {editor:string,  template: TemplateInterface }) {
       }}
     >
         <div className={styles.postPreviewInner}>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loader hAuto={true} />}>
                 <Rendrer  template={template} />
             </Suspense>
         </div>

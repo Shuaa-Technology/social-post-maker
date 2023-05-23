@@ -54,7 +54,6 @@ export class TemplatesService {
           resolve(this.templates);
         })
         .catch((error) => {
-          console.error(error);
           reject(new Error(error));
         })
     );

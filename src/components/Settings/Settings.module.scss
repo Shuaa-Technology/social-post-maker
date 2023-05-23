@@ -1,14 +1,37 @@
 
 .container {
-  display: flex;
-  flex-direction: column;
-  padding: 25px;
-  border-radius: 4px;
+  height: calc(100vh - 125px);
+  overflow: scroll;
+  padding: 0 20px 4rem;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: var(--left-sidebar-bg);
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-bg-color);
+    border-radius: 5px;
+    transition: .4s all ease;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    transition: .4s all ease;
+
+  }
 }
 
 .formTitle {
   margin-bottom: 2rem;
   font-size: 1.3rem;
+  font-weight: normal;
   color: var(--tabs-section-title-color);
 }
 .button {

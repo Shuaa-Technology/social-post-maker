@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import Loader from "../../Shared/Loader";
 
 export interface FieldProps {
   id?: string;
@@ -20,7 +21,7 @@ export function TypeFormField(props: TypeFormFieldProps) {
   );
 
   return (
-    <Suspense fallback={<div>{/* @TODO Add better loading component */} Loading...</div>}>
+    <Suspense fallback={<Loader />}>
       <Field id={id} name={name} value={value} />
     </Suspense>
   );

@@ -5,6 +5,7 @@ import classNames from "classnames";
 import { TemplateSettingsInterface } from "../../../core/Models/Template/Settings/TemplateSettingsInterface";
 import { FieldSettingsType } from "../../../core/Models/Template/Settings/Types/FieldSettingsType";
 import { TypeFormField } from "../TypesFormFields/TypeFormField";
+import Loader from "../../Shared/Loader";
 
 export interface GroupProps {
   id?: string;
@@ -31,7 +32,7 @@ export function TypesFormFieldsGroup(props: TypesFormFieldsGroup) {
   return (
     <Suspense
       fallback={
-        <div> {/* @TODO Add better loading component */} Loading...</div>
+        <Loader />
       }
     >
       {/*    <Accordion allowZeroExpanded> */}

@@ -15,7 +15,7 @@ function Settings(props: { editor: string, currentTemplate:TemplateInterface }) 
   
   return (
     <div className={styles.container}>
-      <div className={styles.formTitle}>{currentTemplate.name} settings</div>
+      <h2 className={styles.formTitle}>{currentTemplate.name} settings</h2>
       <form>
         {currentTemplate.settings.map((setting) => {
           if (!setting.type || !(setting.type instanceof SettingsType)) {
