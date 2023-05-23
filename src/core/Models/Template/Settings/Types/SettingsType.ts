@@ -29,7 +29,7 @@ export abstract class SettingsType implements SettingsTypeInterface {
       case "GROUP/ACCORDION":
         const { GroupType } = require("./Group/GroupType");
         return new GroupType();
-      default: //@todo: in Production just skip it
+      default: //@todo: Add a Environement test => skip in Prod && throw exception in Dev
         throw new Error(`Unsupported setting type: ${handle}`);
     }
   }
