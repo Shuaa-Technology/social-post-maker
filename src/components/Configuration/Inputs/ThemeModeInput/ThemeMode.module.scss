@@ -4,12 +4,30 @@
   align-items: center;
   margin-bottom: 16px;
   background-color: var(--appearance-mode-body-bg-color);
-  border: 1px solid var(--appearance-mode-border-color);
+  border: 3px solid transparent;
   border-radius: 6px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: border-color 0.3s ease;
   padding: 4px;
+  position: relative;
+  &:hover {
+    border-color: var(--appearance-mode-active-border-color);
+  }
+  &.active {
+    border-color: var(--appearance-mode-active-border-color);
+
+    .checkIcon {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      color: white;
+      background-color: var(--appearance-mode-active-border-color);
+      padding: 5px;
+      border-radius: 50%;
+      font-size: 13px;
+    }
+  }
   label {
     width: 100%;
     border-radius: 6px;  
@@ -17,13 +35,7 @@
   }
 }
 
-.themeModeInput.active {
-  border-color: var(--appearance-mode-active-border-color);
-}
 
-.themeModeInput:hover {
-  border-color: var(--appearance-mode-active-border-color);
-}
 
 .themeThumbnail {
   width: 100%;

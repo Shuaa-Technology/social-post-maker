@@ -1,28 +1,28 @@
 import styles from "./TemplateThumbnail.module.scss";
 import { TemplateInterface } from "../../../core/Models/Template/TemplateInterface";
 import classNames from "classnames";
+import { FaCheck } from "react-icons/fa";
 
 interface TemplateThumbnailProps {
   template: TemplateInterface;
   isActive: boolean;
-  onSelectTemplate: any;
+  onSelectTemplate: (id: string) => void;
 }
-function TemplateThumbnail(props: TemplateThumbnailProps) {
-  const { template, isActive = false } = props;
+
+function TemplateThumbnail({ template, isActive = false, onSelectTemplate }: TemplateThumbnailProps) {
   const onClick = () => {
-    props.onSelectTemplate(props.template.id);
+    onSelectTemplate(template.id);
   };
 
+  const thumbnailClasses = classNames(styles.templateThumbnail, {
+    [styles.active]: isActive,
+  });
+
   return (
-    <div
-      key={template.id}
-      className={ isActive ? classNames(styles.templateThumbnail,styles.active) : classNames(styles.templateThumbnail)}
-      onClick={() => {
-        onClick();
-      }}
-    >
-      {template.name}
-    </div>
+      <div key={template.id} className={thumbnailClasses} onClick={onClick}>
+        {isActive && <FaCheck className={styles.checkIcon} />}
+        {template.name}
+      </div>
   );
 }
 
