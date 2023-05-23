@@ -6,14 +6,14 @@ import {
   FiEdit
 } from "react-icons/fi";
 
-import styles from "./LeftSidebar.module.scss";
+import styles from "./SideBar.module.scss";
 
 import TemplateList from "../../../../components/TemplateList/TemplateList";
 import Settings from "../../../../components/Settings/Settings";
 import {Tooltip} from "react-tooltip";
 import Configuration from "../../../../components/Configuration/Configuration";
 
-function LeftSidebar(props: { editor: string }) {
+function SideBar(props: { editor: string }) {
   const [tabIndex, setTabIndex] = useState(0);
 
   const handleTabSelect = (index: number) => {
@@ -23,7 +23,7 @@ function LeftSidebar(props: { editor: string }) {
   const isTabActive = (index: number): boolean => tabIndex === index;
 
   return (
-    <div className={styles.leftSidebar}>
+    <div className={styles.SideBar}>
       <Tabs
         selectedIndex={tabIndex}
         onSelect={handleTabSelect}
@@ -72,4 +72,4 @@ function LeftSidebar(props: { editor: string }) {
   );
 }
 
-export default LeftSidebar;
+export default SideBar;

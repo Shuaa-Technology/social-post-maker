@@ -1,16 +1,16 @@
-import { useSelector } from "react-redux";
-import { getTemplatesStore } from "../../app/store/TemplatesStore";
+
+import { getCurrentTemplate } from "../../app/store/TemplatesStore";
 import { SettingsType } from "../../core/Models/Template/Settings/Types/SettingsType";
 import { TypeFormField } from "./TypesFormFields/TypeFormField";
 import styles from "./Settings.module.scss";
 import { TypesFormFieldsGroup } from "./TypesFormFieldsGroups/TypesFormFieldsGroup";
-import { TemplateSettingsInterface } from "../../core/Models/Template/Settings/TemplateSettingsInterface";
 import { GroupSettingsType } from "../../core/Models/Template/Settings/Types/GroupSettingsType";
 import { FieldSettingsType } from "../../core/Models/Template/Settings/Types/FieldSettingsType";
+import { useAppSelector } from "../../app/hooks";
 
 
 function Settings(props: { editor: string }) {
-  const { currentTemplate } = useSelector(getTemplatesStore);
+  const currentTemplate = useAppSelector(getCurrentTemplate);
 
   return (
     <div className={styles.container}>
