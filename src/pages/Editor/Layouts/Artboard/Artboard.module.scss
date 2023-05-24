@@ -7,6 +7,52 @@
   align-items: center;
   justify-content: center;
 }
+.templateInfo {
+  padding: 1.5rem;
+  background-color: var(--post-review-bg);
+}
+.templateInfoButton {
+  background-color: var(--primary);
+  color: white;
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.exportBtn {
+  padding: .6rem 1rem;
+  background-color: var(--primary);
+  border-radius: 5px;
+  color: white;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  cursor: pointer;
+  transition: background-color .3s ease;
+  &:hover {
+    background-color: var(--dark-primary);
+  }
+}
+.templateInfoRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 35px;
+}
+.templateInfoTitle {
+ span {
+   font-size: 10px;
+   display: inline-flex;
+   align-items: center;
+   gap: 5px;
+   background-color: var(--workspace-bg);
+   padding: 6px;
+   margin-left: 10px;
+   border-radius: 14px;
+ }
+}
+.templateInfoDescription {
+
+}
 .artBoardInner {
 
 }
