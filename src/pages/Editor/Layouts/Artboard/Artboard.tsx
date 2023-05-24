@@ -12,6 +12,11 @@ function Artboard(props: { editor: string })  {
 
   return (
     <div className={styles.artBoard}>
+
+        <div className={styles.exportBtn}>
+            <FiUpload /> Export
+        </div>
+
         <div className={styles.artBoardInner}>
             <h2 className={styles.templateTitle}><FiClipboard  />{templateLoader.currentTemplate.name ?? "undefined"}</h2>
             <Preview editor={props.editor} template={templateLoader.currentTemplate} />
