@@ -20,7 +20,7 @@ function Artboard(props: { editor: string })  {
         </div>
 
         <div className={styles.artBoardInner}>
-            <Tooltip isOpen={true} className={styles.templateInfo} id="template-info" place="left" delayHide={1000} delayShow={1000}>
+            <Tooltip  className={styles.templateInfo} id="template-info" place="left" delayHide={1000} delayShow={1000}>
                 <div className={classNames(styles.templateInfoTitle, styles.templateInfoRow)}>
                     <h2>{templateLoader.currentTemplate.name}
                     <span>{templateLoader.currentTemplate.version}</span>
