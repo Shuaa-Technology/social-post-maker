@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ThemeModeInterface } from "../../core/Models/Configuration/Appearance/ThemeModeInterface";
-import { ConfigService } from "../../core/Services/ConfigService";
+import { Configuration } from "../../core/Configuration";
 import {RootState} from "../store";
 
 export interface ConfigStoreState {
@@ -8,7 +8,7 @@ export interface ConfigStoreState {
     themeModes: ThemeModeInterface[];
 }
 
-const configService = new ConfigService();
+const configService = new Configuration();
 
 const initialState: ConfigStoreState = {
     currentThemeMode: configService.getDefaultThemeMode(),

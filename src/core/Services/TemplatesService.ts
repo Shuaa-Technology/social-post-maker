@@ -8,6 +8,8 @@ import { ColorType } from "../Models/Template/Settings/Types/Field/ColorType";
 import { TextType } from "../Models/Template/Settings/Types/Field/TextType";
 import { TemplateSettingsInterface } from "../Models/Template/Settings/TemplateSettingsInterface";
 import { GroupType } from "../Models/Template/Settings/Types/Group/GroupType";
+import { API_ENABLED } from "../../config/api";
+import { resolve } from "path";
 
 export class TemplatesService {
   templates: TemplateInterface[];
@@ -17,10 +19,28 @@ export class TemplatesService {
 
   getTemplates(limit: number = PAGINATION_SIZE): Promise<TemplateInterface[]> {
     this.templates = [];
+    let _promise: any;
+    if (API_ENABLED) {
+      _promise = API.get(`templates` + (limit > 0 ? `?_limit=${limit}` : ""));
+    } else {
+      _promise = fetch(
+        `data/api.json` + (limit > 0 ? `?_limit=${limit}` : "")
+      ).then((res: any) => {
+        return res
+          .json()
+          .then((data: any) => {
+            return {data : data.templates};
+          })
+          .catch((err: any) => {
+            console.log(err);
+          });
+      });
+    }
     return new Promise<TemplateInterface[]>((resolve, reject) =>
-      API.get(`templates` + (limit > 0 ? `?_limit=${limit}` : ""))
-        .then((res) => {
-          this.templates = res.data.map((template: TemplateInterface) => {  /* @todo Use recursive */ 
+      _promise
+        .then((res: any) => {
+          this.templates = res.data.map((template: TemplateInterface) => {
+            /* @todo Use recursive */
             const settings = template.settings.map(
               (setting: TemplateSettingsInterface) => {
                 let childSettings = undefined;
@@ -53,7 +73,7 @@ export class TemplatesService {
           });
           resolve(this.templates);
         })
-        .catch((error) => {
+        .catch((error: any) => {
           reject(new Error(error));
         })
     );
@@ -73,7 +93,8 @@ export class TemplatesService {
       description: "This is a default template.",
       height: 500,
       width: 500,
-      render: "<span style='color:black;' >Default Template HTML <span>" /* BETTER WAY? */,
+      render:
+        "<span style='color:black;' >Default Template HTML <span>" /* BETTER WAY? */,
       settings: [
         {
           id: "1",

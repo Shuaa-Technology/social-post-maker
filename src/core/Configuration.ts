@@ -1,7 +1,7 @@
-import { ThemeModeInterface } from "../Models/Configuration/Appearance/ThemeModeInterface";
-import ThemeMode from "../Models/Configuration/Appearance/ThemeMode";
+import { ThemeModeInterface } from "./Models/Configuration/Appearance/ThemeModeInterface";
+import ThemeMode from "./Models/Configuration/Appearance/ThemeMode";
 
-export class ConfigService {
+export class Configuration {
   themeModes: ThemeModeInterface[];
 
   constructor() {
@@ -11,8 +11,8 @@ export class ConfigService {
   // TODO: Move require
   getThemeModes(): ThemeModeInterface[] {
     return [
-      new ThemeMode('light', 'Light Theme', require('../../styles/themes/light/thumbnail.svg').default),
-      new ThemeMode('dark', 'Dark Theme', require('../../styles/themes/dark/thumbnail.svg').default
+      new ThemeMode('light', 'Light Theme', require('../styles/themes/light/thumbnail.svg').default),
+      new ThemeMode('dark', 'Dark Theme', require('../styles/themes/dark/thumbnail.svg').default
       )
     ];
   }
@@ -28,5 +28,6 @@ export class ConfigService {
 
   getDefaultThemeMode(): ThemeModeInterface {
     return this.getThemeModeByHandle('light');
+    
   }
 }
