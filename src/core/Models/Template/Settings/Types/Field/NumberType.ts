@@ -1,17 +1,17 @@
 import { FieldSettingsType } from "../FieldSettingsType";
 
 
-export class SizeType extends FieldSettingsType {
+export class NumberType extends FieldSettingsType {
 
     constructor() {
         super()
      }
     static getHandle(): string {
-        return 'FIELD/SIZE';
+        return 'FIELD/NUMBER';
     }
 
     getFormFieldHandle(): string {
-        return 'SizeFormField';
+        return 'NumberFormField';
     }
 
     renderValue(value: string) {

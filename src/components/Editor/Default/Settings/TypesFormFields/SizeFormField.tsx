@@ -1,8 +1,8 @@
 import { FieldProps } from "../../../../Settings/TypesFormFields/TypeFormField";
-import styles from "./SizeFormField.module.scss";
+import styles from "./NumberFormField.module.scss";
 
 
-export default function SizeFormField(props: FieldProps) {
+export default function NumberFormField(props: FieldProps) {
     const { id, name, value = '' } = props;
   
     return (
