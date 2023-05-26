@@ -12,13 +12,17 @@ import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import {
   getCurrentTemplate,
   getTemplates,
+  getTemplatesStore,
   loadTemplates,
   selectTemplate,
 } from "../../../../app/store/TemplatesStore";
 
 function SideBar(props: { editor: string }) {
-  const templates = useAppSelector(getTemplates);
-  const currentTemplate = useAppSelector(getCurrentTemplate);
+
+
+  const {templates,currentTemplate,status} = useAppSelector(getTemplatesStore);
+
+
   const dispatch = useAppDispatch();
 
   const handleSelectTemplate = (id: string) => {
@@ -80,6 +84,7 @@ function SideBar(props: { editor: string }) {
         </TabPanel>
         <TabPanel>
           <TemplateList
+            isLoading={status === "loading"}
             templates={templates}
             currentTemplate={currentTemplate}
             onSelectTemplate={handleSelectTemplate}
