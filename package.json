@@ -20,6 +20,7 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.8.0",
+    "react-infinite-scroll-component": "^6.1.0",
     "react-redux": "^8.0.5",
     "react-scripts": "5.0.1",
     "react-tabs": "^6.0.1",

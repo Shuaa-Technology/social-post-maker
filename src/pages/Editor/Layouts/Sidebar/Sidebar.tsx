@@ -18,21 +18,23 @@ import {
 } from "../../../../app/store/TemplatesStore";
 
 function SideBar(props: { editor: string }) {
-
-
-  const {templates,currentTemplate,status} = useAppSelector(getTemplatesStore);
-
-
   const dispatch = useAppDispatch();
+
+  const { templates, currentTemplate, status, page } = useAppSelector(getTemplatesStore);
+
+  useEffect(() => {
+    dispatch(loadTemplates({}));
+  }, []);
+
+  const loadMoreTemplates = () => {
+    const nextPage = page + 1;
+    dispatch(loadTemplates({ page: nextPage }));
+  };
 
   const handleSelectTemplate = (id: string) => {
     dispatch(selectTemplate(id));
-    setTabIndex(0); //switch to Settings tab
+    setTabIndex(0); // Switch to the Settings tab
   };
-
-  useEffect(() => {
-    dispatch(loadTemplates());
-  }, []);
 
   const [tabIndex, setTabIndex] = useState(0);
 
@@ -43,58 +45,49 @@ function SideBar(props: { editor: string }) {
   const isTabActive = (index: number): boolean => tabIndex === index;
 
   return (
-    <div className={styles.sideBar}>
-      <Tabs
-        selectedIndex={tabIndex}
-        onSelect={handleTabSelect}
-        className={styles.tabContainer}
-      >
-        <TabList className={styles.tabList}>
-          <Tab
-            className={`${styles.tab} ${isTabActive(0) ? styles.active : ""}`}
-          >
-            <FiEdit className={`${styles.tabIcon} post-builder-icon`} />
-          </Tab>
-          <Tooltip anchorSelect=".post-builder-icon" place="top">
-            Builder
-          </Tooltip>
-          <Tab
-            data-tooltip-content="Templates"
-            data-tooltip-place="top"
-            className={`${styles.tab} ${
-              isTabActive(1) ? styles.active : ""
-            } templates-tab`}
-          >
-            <FiList className={`${styles.tabIcon} templates-icon`} />
-          </Tab>
-          <Tooltip anchorSelect=".templates-icon" place="top">
-            Templates
-          </Tooltip>
-          <Tab
-            className={`${styles.tab} ${isTabActive(2) ? styles.active : ""}`}
-          >
-            <FiSettings className={`${styles.tabIcon} config-icon`} />
-          </Tab>
-          <Tooltip anchorSelect=".config-icon" place="top">
-            Configuration
-          </Tooltip>
-        </TabList>
-        <TabPanel>
-          <Settings editor={props.editor} currentTemplate={currentTemplate} />
-        </TabPanel>
-        <TabPanel>
-          <TemplateList
-            isLoading={status === "loading"}
-            templates={templates}
-            currentTemplate={currentTemplate}
-            onSelectTemplate={handleSelectTemplate}
-          />
-        </TabPanel>
-        <TabPanel>
-          <Configuration />
-        </TabPanel>
-      </Tabs>
-    </div>
+      <div className={styles.sideBar}>
+        <Tabs selectedIndex={tabIndex} onSelect={handleTabSelect} className={styles.tabContainer}>
+          <TabList className={styles.tabList}>
+            <Tab className={`${styles.tab} ${isTabActive(0) ? styles.active : ""}`}>
+              <FiEdit className={`${styles.tabIcon} post-builder-icon`} />
+            </Tab>
+            <Tooltip anchorSelect=".post-builder-icon" place="top">
+              Builder
+            </Tooltip>
+            <Tab
+                data-tooltip-content="Templates"
+                data-tooltip-place="top"
+                className={`${styles.tab} ${isTabActive(1) ? styles.active : ""} templates-tab`}
+            >
+              <FiList className={`${styles.tabIcon} templates-icon`} />
+            </Tab>
+            <Tooltip anchorSelect=".templates-icon" place="top">
+              Templates
+            </Tooltip>
+            <Tab className={`${styles.tab} ${isTabActive(2) ? styles.active : ""}`}>
+              <FiSettings className={`${styles.tabIcon} config-icon`} />
+            </Tab>
+            <Tooltip anchorSelect=".config-icon" place="top">
+              Configuration
+            </Tooltip>
+          </TabList>
+          <TabPanel>
+            <Settings editor={props.editor} currentTemplate={currentTemplate} />
+          </TabPanel>
+          <TabPanel>
+            <TemplateList
+                isLoading={status === "loading"}
+                templates={templates}
+                currentTemplate={currentTemplate}
+                onSelectTemplate={handleSelectTemplate}
+                loadMoreTemplates={loadMoreTemplates}
+            />
+          </TabPanel>
+          <TabPanel>
+            <Configuration />
+          </TabPanel>
+        </Tabs>
+      </div>
   );
 }
 

@@ -1,4 +1,4 @@
-import { PAGINATION_SIZE } from "../../config/templates";
+import { ITEMS_PER_PAGE } from "../../config/templates";
 import API from "../API";
 
 import { TemplateInterface } from "../Models/Template/TemplateInterface";
@@ -17,65 +17,68 @@ export class TemplatesService {
     this.templates = [];
   }
 
-  getTemplates(limit: number = PAGINATION_SIZE): Promise<TemplateInterface[]> {
+  getTemplates(page: number = 1, limit: number = ITEMS_PER_PAGE): Promise<TemplateInterface[]> {
     this.templates = [];
     let _promise: any;
+    const offset = (page - 1) * limit;
+
     if (API_ENABLED) {
-      _promise = API.get(`templates` + (limit > 0 ? `?_limit=${limit}` : ""));
+      _promise = API.get(`templates` + (limit > 0 ? `?_start=${offset}&_limit=${limit}` : ""));
     } else {
       _promise = fetch(
-        `data/api.json` + (limit > 0 ? `?_limit=${limit}` : "")
+          `data/api.json` + (limit > 0 ? `?_start=${offset}&_limit=${limit}` : "")
       ).then((res: any) => {
         return res
-          .json()
-          .then((data: any) => {
-            return {data : data.templates};
-          })
-          .catch((err: any) => {
-            console.log(err);
-          });
+            .json()
+            .then((data: any) => {
+              return { data: data.templates };
+            })
+            .catch((err: any) => {
+              console.log(err);
+            });
       });
     }
+
     return new Promise<TemplateInterface[]>((resolve, reject) =>
-      _promise
-        .then((res: any) => {
-          this.templates = res.data.map((template: TemplateInterface) => {
-            /* @todo Use recursive */
-            const settings = template.settings.map(
-              (setting: TemplateSettingsInterface) => {
-                let childSettings = undefined;
-                if (
-                  setting.type.handle == GroupType.getHandle() &&
-                  setting.childSettings != undefined
-                ) {
-                  childSettings = setting.childSettings.map(
-                    (childSetting: TemplateSettingsInterface) => {
-                      const type = SettingsType.createType(
-                        childSetting.type.handle
-                      );
-                      return {
-                        ...childSetting,
-                        type,
-                      };
+        _promise
+            .then((res: any) => {
+              this.templates = res.data.map((template: TemplateInterface) => {
+                /* @todo Use recursive */
+                const settings = template.settings.map(
+                    (setting: TemplateSettingsInterface) => {
+                      let childSettings = undefined;
+                      if (
+                          setting.type.handle == GroupType.getHandle() &&
+                          setting.childSettings != undefined
+                      ) {
+                        childSettings = setting.childSettings.map(
+                            (childSetting: TemplateSettingsInterface) => {
+                              const type = SettingsType.createType(
+                                  childSetting.type.handle
+                              );
+                              return {
+                                ...childSetting,
+                                type,
+                              };
+                            }
+                        );
+                      }
+                      const type = SettingsType.createType(setting.type.handle);
+                      setting.childSettings = childSettings;
+                      setting.type = type;
+                      return setting;
                     }
-                  );
-                }
-                const type = SettingsType.createType(setting.type.handle);
-                setting.childSettings = childSettings;
-                setting.type = type;
-                return setting;
-              }
-            );
-            return {
-              ...template,
-              settings,
-            };
-          });
-          resolve(this.templates);
-        })
-        .catch((error: any) => {
-          reject(new Error(error));
-        })
+                );
+                return {
+                  ...template,
+                  settings,
+                };
+              });
+              resolve(this.templates);
+            })
+            .catch((error: any) => {
+              reject(new Error(error));
+            })
     );
   }
 

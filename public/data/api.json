@@ -57,52 +57,6 @@
                ]
             },
             {
-               "id": "1",
-               "key": "bg-image-settings",
-               "type": {
-                  "handle": "GROUP/ACCORDION"
-               },
-               "version": "1.0.0",
-               "name": "Background image Settings",
-               "description": "Background image Settings",
-               "value": "",
-               "childSettings": [
-                  {
-                     "id": "1",
-                     "key": "bg-image",
-                     "type": {
-                        "handle": "FIELD/IMAGE"
-                     },
-                     "version": "1.0.0",
-                     "name": "Background image",
-                     "description": "Upload a thumbnail image",
-                     "value": "https://example.com/thumbnail.png"
-                  },
-                  {
-                     "id": "2",
-                     "key": "gradient_top_color",
-                     "type": {
-                        "handle": "FIELD/COLOR"
-                     },
-                     "version": "1.0.0",
-                     "name": "Gradient top color",
-                     "description": "Select a color for the header",
-                     "value": "#db0000"
-                  },
-                  {
-                     "id": "3",
-                     "key": "gradient_bottom_color",
-                     "type": {
-                        "handle": "FIELD/COLOR"
-                     },
-                     "version": "1.0.0",
-                     "name": "Gradient bottom color",
-                     "description": "Select a color for the body text",
-                     "value": "#000000"
-                  }
-               ]
-            },
-            {
                "id": "4",
                "key": "title",
                "type": {
@@ -140,7 +94,7 @@
          "id": 3,
          "name": "Elegant template",
          "version": "1.0.0",
-         "description": "This is a Elegant template.",
+         "description": "This is an Elegant template.",
          "height": 500,
          "width": 500,
          "render": "<span style='color:black;' >Elegant Template HTML <span>",
@@ -160,7 +114,7 @@
          "id": 5,
          "name": "Amazing template",
          "version": "1.0.0",
-         "description": "This is a Amazing template.",
+         "description": "This is an Amazing template.",
          "height": 500,
          "width": 500,
          "render": "<span style='color:black;' >Amazing Template HTML <span>",
@@ -194,6 +148,226 @@
          "height": 500,
          "width": 500,
          "render": "<span style='color:black;' >Sunny Template HTML <span>",
+         "settings": []
+      },
+      {
+         "id": 9,
+         "name": "Template 9",
+         "version": "1.0.0",
+         "description": "This is Template 9.",
+         "height": 500,
+         "width": 500,
+         "render": "<span style='color:black;'>Template 9 HTML</span>",
+         "settings": []
+      },
+      {
+         "id": 10,
+         "name": "Template 10",
+         "version": "1.0.0",
+         "description": "This is Template 10.",
+         "height": 500,
+         "width": 500,
+         "render": "<span style='color:black;'>Template 10 HTML</span>",
+         "settings": []
+      },
+      {
+         "id": 11,
+         "name": "Template 11",
+         "version": "1.0.0",
+         "description": "This is Template 11.",
+         "height": 500,
+         "width": 500,
+         "render": "<span style='color:black;'>Template 11 HTML</span>",
+         "settings": []
+      },
+      {
+         "id": 12,
+         "name": "Template 12",
+         "version": "1.0.0",
+         "description": "This is Template 12.",
+         "height": 500,
+         "width": 500,
+         "render": "<span style='color:black;'>Template 12 HTML</span>",
+         "settings": []
+      },
+      {
+         "id": 13,
+         "name": "Template 13",
+         "version": "1.0.0",
+         "description": "This is Template 13.",
+         "height": 500,
+         "width": 500,
+         "render": "<span style='color:black;'>Template 13 HTML</span>",
+         "settings": []
+      },
+      {
+         "id": 14,
+         "name": "Template 14",
+         "version": "1.0.0",
+         "description": "This is Template 14.",
+         "height": 500,
+         "width": 500,
+         "render": "<span style='color:black;'>Template 14 HTML</span>",
+         "settings": []
+      },
+      {
+         "id": 15,
+         "name": "Template 15",
+         "version": "1.0.0",
+         "description": "This is Template 15.",
+         "height": 500,
+         "width": 500,
+         "render": "<span style='color:black;'>Template 15 HTML</span>",
+         "settings": []
+      },
+      {
+         "id": 16,
+         "name": "Template 16",
+         "version": "1.0.0",
+         "description": "This is Template 16.",
+         "height": 500,
+         "width": 500,
+         "render": "<span style='color:black;'>Template 16 HTML</span>",
+         "settings": []
+      },
+      {
+         "id": 17,
+         "name": "Template 17",
+         "version": "1.0.0",
+         "description": "This is Template 17.",
+         "height": 500,
+         "width": 500,
+         "render": "<span style='color:black;'>Template 17 HTML</span>",
+         "settings": []
+      },
+      {
+         "id": 18,
+         "name": "Template 18",
+         "version": "1.0.0",
+         "description": "This is Template 18.",
+         "height": 500,
+         "width": 500,
+         "render": "<span style='color:black;'>Template 18 HTML</span>",
+         "settings": []
+      },
+      {
+         "id": 19,
+         "name": "Template 19",
+         "version": "1.0.0",
+         "description": "This is Template 19.",
+         "height": 500,
+         "width": 500,
+         "render": "<span style='color:black;'>Template 19 HTML</span>",
+         "settings": []
+      },
+      {
+         "id": 20,
+         "name": "Template 20",
+         "version": "1.0.0",
+         "description": "This is Template 20.",
+         "height": 500,
+         "width": 500,
+         "render": "<span style='color:black;'>Template 20 HTML</span>",
+         "settings": []
+      },
+      {
+         "id": 21,
+         "name": "Template 21",
+         "version": "1.0.0",
+         "description": "This is Template 21.",
+         "height": 500,
+         "width": 500,
+         "render": "<span style='color:black;'>Template 21 HTML</span>",
+         "settings": []
+      },
+      {
+         "id": 22,
+         "name": "Template 22",
+         "version": "1.0.0",
+         "description": "This is Template 22.",
+         "height": 500,
+         "width": 500,
+         "render": "<span style='color:black;'>Template 22 HTML</span>",
+         "settings": []
+      },
+      {
+         "id": 23,
+         "name": "Template 23",
+         "version": "1.0.0",
+         "description": "This is Template 23.",
+         "height": 500,
+         "width": 500,
+         "render": "<span style='color:black;'>Template 23 HTML</span>",
+         "settings": []
+      },
+      {
+         "id": 24,
+         "name": "Template 24",
+         "version": "1.0.0",
+         "description": "This is Template 24.",
+         "height": 500,
+         "width": 500,
+         "render": "<span style='color:black;'>Template 24 HTML</span>",
+         "settings": []
+      },
+      {
+         "id": 25,
+         "name": "Template 25",
+         "version": "1.0.0",
+         "description": "This is Template 25.",
+         "height": 500,
+         "width": 500,
+         "render": "<span style='color:black;'>Template 25 HTML</span>",
+         "settings": []
+      },
+      {
+         "id": 26,
+         "name": "Template 26",
+         "version": "1.0.0",
+         "description": "This is Template 26.",
+         "height": 500,
+         "width": 500,
+         "render": "<span style='color:black;'>Template 26 HTML</span>",
+         "settings": []
+      },
+      {
+         "id": 27,
+         "name": "Template 27",
+         "version": "1.0.0",
+         "description": "This is Template 27.",
+         "height": 500,
+         "width": 500,
+         "render": "<span style='color:black;'>Template 27 HTML</span>",
+         "settings": []
+      },
+      {
+         "id": 28,
+         "name": "Template 28",
+         "version": "1.0.0",
+         "description": "This is Template 28.",
+         "height": 500,
+         "width": 500,
+         "render": "<span style='color:black;'>Template 28 HTML</span>",
+         "settings": []
+      },
+      {
+         "id": 29,
+         "name": "Template 29",
+         "version": "1.0.0",
+         "description": "This is Template 29.",
+         "height": 500,
+         "width": 500,
+         "render": "<span style='color:black;'>Template 29 HTML</span>",
+         "settings": []
+      },
+      {
+         "id": 30,
+         "name": "Template 30",
+         "version": "1.0.0",
+         "description": "This is Template 30.",
+         "height": 500,
+         "width": 500,
+         "render": "<span style='color:black;'>Template 30 HTML</span>",
          "settings": []
       }
    ]

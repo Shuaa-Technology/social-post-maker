@@ -2,36 +2,38 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 import { TemplateInterface } from "../../core/Models/Template/TemplateInterface";
 import { TemplatesService } from "../../core/Services/TemplatesService";
+import {ITEMS_PER_PAGE} from "../../config/templates";
 
 export interface TemplateLoadingState {
-  currentTemplate: TemplateInterface;
-  templates: TemplateInterface[];
-  status: "idle" | "loading" | "failed";
-  status_message: string | null;
+    currentTemplate: TemplateInterface;
+    templates: TemplateInterface[];
+    status: "idle" | "loading" | "failed";
+    status_message: string | null;
+    page: number;
 }
 
 const templatesService = new TemplatesService();
 
 const initialState: TemplateLoadingState = {
-  currentTemplate: templatesService.getDefaultTemplate(),
-  templates: [],
-  status: "idle",
-  status_message: null,
+    currentTemplate: templatesService.getDefaultTemplate(),
+    templates: [],
+    status: "idle",
+    status_message: null,
+    page: 1,
 };
 
 export const loadTemplates = createAsyncThunk(
-  "templates/load/all",
-  async (data, { rejectWithValue }) => {
-    try {
-      await new Promise(resolve => setTimeout(resolve, 2000)); //mimic API loading 
-      const response = await templatesService.getTemplates(); 
-      return response;
-    } catch (err) {
-      return rejectWithValue(err);
+    "templates/load/all",
+    async ({ page = 1, limit = ITEMS_PER_PAGE }: { page?: number; limit?: number }, { rejectWithValue, getState }) => {
+        try {
+            await new Promise((resolve) => setTimeout(resolve, 2000)); // Mimic API loading
+            const response = await templatesService.getTemplates(page, limit);
+            return { response, page };
+        } catch (err) {
+            return rejectWithValue(err);
+        }
     }
-  }
 );
-
 
 export const selectTemplate = createAsyncThunk(
   "templates/select",
@@ -58,10 +60,13 @@ export const TemplatesStore = createSlice({
         state.status = "loading";
         state.status_message = "loading data...";
       })
-      .addCase(loadTemplates.fulfilled, (state, action) => {
-        state.status = "idle";
-        state.templates = action.payload;
-      })
+        .addCase(loadTemplates.fulfilled, (state, action) => {
+            state.status = "idle";
+            const { response, page } = action.payload;
+            console.log(response)
+            state.templates = state.templates.concat(response);
+            state.page = page;
+        })
       .addCase(loadTemplates.rejected, (state) => {
         state.status = "failed";
         state.status_message = "Fetching templates  error, try again...";
