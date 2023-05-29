@@ -9,7 +9,6 @@ export interface TemplateLoadingState {
     templates: TemplateInterface[];
     status: "idle" | "loading" | "failed";
     status_message: string | null;
-    page: number;
 }
 
 const templatesService = new TemplatesService();
@@ -19,14 +18,12 @@ const initialState: TemplateLoadingState = {
     templates: [],
     status: "idle",
     status_message: null,
-    page: 1,
 };
 
 export const loadTemplates = createAsyncThunk(
     "templates/load/all",
     async ({ page = 1, limit = ITEMS_PER_PAGE }: { page?: number; limit?: number }, { rejectWithValue, getState }) => {
         try {
-            await new Promise((resolve) => setTimeout(resolve, 2000)); // Mimic API loading
             const response = await templatesService.getTemplates(page, limit);
             return { response, page };
         } catch (err) {
@@ -65,7 +62,7 @@ export const TemplatesStore = createSlice({
             const { response, page } = action.payload;
             console.log(response)
             state.templates = state.templates.concat(response);
-            state.page = page;
+          //  state.page = page;
         })
       .addCase(loadTemplates.rejected, (state) => {
         state.status = "failed";

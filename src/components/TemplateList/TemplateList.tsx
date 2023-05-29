@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef,useState } from "react";
 import styles from "./TemplateList.module.scss";
 import TemplateThumbnail from "./TemplateThumbnail/TemplateThumbnail";
 import { TemplateInterface } from "../../core/Models/Template/TemplateInterface";
@@ -8,8 +8,8 @@ interface TemplatesListProps {
   isLoading: boolean;
   templates: TemplateInterface[];
   currentTemplate: TemplateInterface;
-  onSelectTemplate: any;
-  loadMoreTemplates: () => void;
+  onSelectTemplate: (id: string)  => void ;
+  loadMoreTemplates: (nextPage:number) => void;
 }
 
 function TemplateList(props: TemplatesListProps) {
@@ -22,13 +22,7 @@ function TemplateList(props: TemplatesListProps) {
   } = props;
 
   const containerRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    // Reset the scroll position when new templates are loaded
-    if (containerRef.current) {
-      containerRef.current.scrollTop = 0;
-    }
-  }, [templates]);
+  const currentPage = useRef<number>(1);
 
   const handleScroll = async () => {
     if (
@@ -38,7 +32,8 @@ function TemplateList(props: TemplatesListProps) {
         containerRef.current.scrollHeight - 20 && // Adjust the threshold as needed
         !isLoading
     ) {
-      await loadMoreTemplates();
+        currentPage.current = currentPage.current+1
+        loadMoreTemplates( currentPage.current);
     }
   };
 

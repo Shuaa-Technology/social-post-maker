@@ -11,11 +11,11 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+ /*  <React.StrictMode> */ /* @see https://stackoverflow.com/questions/60618844/react-hooks-useeffect-is-called-twice-even-if-an-empty-array-is-used-as-an-ar */
     <Provider store={store}>
       <App />
     </Provider>
-  </React.StrictMode>
+/*   </React.StrictMode> */
 );
 
 // If you want to start measuring performance in your app, pass a function

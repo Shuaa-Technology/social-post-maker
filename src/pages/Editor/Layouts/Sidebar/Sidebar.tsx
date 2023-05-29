@@ -20,14 +20,14 @@ import {
 function SideBar(props: { editor: string }) {
   const dispatch = useAppDispatch();
 
-  const { templates, currentTemplate, status, page } = useAppSelector(getTemplatesStore);
+  const { templates, currentTemplate, status } = useAppSelector(getTemplatesStore);
+
 
   useEffect(() => {
     dispatch(loadTemplates({}));
   }, []);
 
-  const loadMoreTemplates = () => {
-    const nextPage = page + 1;
+  const handleLoadMoreTemplates = (nextPage:number) => {
     dispatch(loadTemplates({ page: nextPage }));
   };
 
@@ -80,7 +80,7 @@ function SideBar(props: { editor: string }) {
                 templates={templates}
                 currentTemplate={currentTemplate}
                 onSelectTemplate={handleSelectTemplate}
-                loadMoreTemplates={loadMoreTemplates}
+                loadMoreTemplates={handleLoadMoreTemplates}
             />
           </TabPanel>
           <TabPanel>
