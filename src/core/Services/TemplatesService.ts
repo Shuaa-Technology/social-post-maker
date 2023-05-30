@@ -9,7 +9,7 @@ import { TextType } from "../Models/Template/Settings/Types/Field/TextType";
 import { TemplateSettingsInterface } from "../Models/Template/Settings/TemplateSettingsInterface";
 import { GroupType } from "../Models/Template/Settings/Types/Group/GroupType";
 import { API_ENABLED } from "../../config/api";
-import { resolve } from "path";
+
 
 export class TemplatesService {
   templates: TemplateInterface[];
@@ -31,7 +31,7 @@ export class TemplatesService {
         return res
             .json()
             .then((data: any) => {
-              return { data: data.templates };
+              return { data: data.templates.slice(offset, limit) };
             })
             .catch((err: any) => {
               console.log(err);

@@ -6,7 +6,6 @@ import styles from "./Settings.module.scss";
 import { TypesFormFieldsGroup } from "./TypesFormFieldsGroups/TypesFormFieldsGroup";
 import { GroupSettingsType } from "../../core/Models/Template/Settings/Types/GroupSettingsType";
 import { FieldSettingsType } from "../../core/Models/Template/Settings/Types/FieldSettingsType";
-import { useAppSelector } from "../../app/hooks";
 import { TemplateInterface } from "../../core/Models/Template/TemplateInterface";
 
 
