@@ -35,7 +35,6 @@ export function TypesFormFieldsGroup(props: TypesFormFieldsGroup) {
         <Loader />
       }
     >
-      {/*    <Accordion allowZeroExpanded> */}
       <div className={classNames(styles.fieldGroup)}>
         <Group id={id} name={name}>
           {childSettings.map((setting: TemplateSettingsInterface) => {
@@ -55,7 +54,6 @@ export function TypesFormFieldsGroup(props: TypesFormFieldsGroup) {
         </Group>
       </div>
 
-      {/*   </Accordion> */}
     </Suspense>
   );
 }
