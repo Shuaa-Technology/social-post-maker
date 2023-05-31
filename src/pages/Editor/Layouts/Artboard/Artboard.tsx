@@ -5,7 +5,7 @@ import styles from "./Artboard.module.scss";
 import { useAppSelector } from "../../../../app/hooks";
 import { getTemplatesStore } from "../../../../app/store/TemplatesStore";
 import Preview from "../../../../components/Preview/Preview";
-import {FiChevronDown, FiChevronUp, FiClipboard, FiCode, FiFileText, FiInfo, FiShare2, FiUpload} from 'react-icons/fi';
+import { FiInfo, FiUpload} from 'react-icons/fi';
 import {Tooltip} from "react-tooltip";
 import classNames from "classnames";
 
@@ -20,7 +20,7 @@ function Artboard(props: { editor: string })  {
         </div>
 
         <div className={styles.artBoardInner}>
-            <Tooltip  className={styles.templateInfo} id="template-info" place="left" delayHide={1000} delayShow={1000}>
+            <Tooltip  className={styles.templateInfo} id="template-info" place="left" delayHide={100} delayShow={100}>
                 <div className={classNames(styles.templateInfoTitle, styles.templateInfoRow)}>
                     <h2>{templateLoader.currentTemplate.name}
                     <span>{templateLoader.currentTemplate.version}</span>

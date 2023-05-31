@@ -46,4 +46,15 @@ export class Template implements TemplateInterface {
       return el.key === key;
     })[0];
   }
+  /* For  now   as  Static */
+  public static updateSettingsByKey(
+    template: TemplateInterface,
+    key: string,
+    value: string
+  ): TemplateInterface {
+    template.settings =  template.settings.map((el: TemplateSettingsInterface) =>
+      el.key === key ? { ...el, value: value } : el
+    );
+    return template
+  }
 }
