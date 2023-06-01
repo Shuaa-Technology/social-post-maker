@@ -1,4 +1,5 @@
 import { TemplateSettingsInterface } from "./Settings/TemplateSettingsInterface";
+import { GroupType } from "./Settings/Types/Group/GroupType";
 import { TemplateInterface } from "./TemplateInterface";
 
 export class Template implements TemplateInterface {
@@ -37,24 +38,60 @@ export class Template implements TemplateInterface {
     return this;
   } */
 
+  public static findById(
+    data: any,
+    key: any
+  ) /* :TemplateSettingsInterface | null */ {
+    function iter(a: any) {
+      if (a.key === key) {
+        result = a;
+        return true;
+      }
+      return Array.isArray(a.childSettings) && a.childSettings.some(iter);
+    }
+
+    var result: any;
+    data.some(iter);
+    return result;
+  }
+
   /* For  now   as  Static */
   public static getSettingsByKey(
     template: TemplateInterface,
     key: string
-  ): TemplateSettingsInterface | null {
-    return template.settings.filter(function (el: TemplateSettingsInterface) {
-      return el.key === key;
-    })[0];
+  ): any {
+    return this.findById(template.settings, key);
   }
+
   /* For  now   as  Static */
   public static updateSettingsByKey(
     template: TemplateInterface,
     key: string,
     value: string
   ): TemplateInterface {
-    template.settings =  template.settings.map((el: TemplateSettingsInterface) =>
-      el.key === key ? { ...el, value: value } : el
-    );
-    return template
+    let newSettings: TemplateSettingsInterface[] = [];
+    template.settings.forEach((element) => {
+      if (
+        element.childSettings != undefined &&
+        Array.isArray(element.childSettings)
+      ) {
+        let newChilds: TemplateSettingsInterface[] = [];
+        console.log(element.childSettings);
+        element.childSettings.forEach((elChild) => {
+          if (elChild.key == key) {
+            elChild.value = value;
+          }
+          newChilds.push(elChild);
+        });
+        element.childSettings = newChilds;
+      }
+      newSettings.push(
+        element.key == key ? { ...element, value: value } : element
+      );
+    });
+
+    template.settings = newSettings;
+    template.version = (Number(template.version) + 0.01).toString().substring(0,8);
+    return template;
   }
 }

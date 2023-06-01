@@ -1,7 +1,9 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useMemo } from "react";
 import Loader from "../../Shared/Loader";
 import { updateTemplateSettings } from "../../../app/store/TemplatesStore";
 import { useAppDispatch } from "../../../app/hooks";
+
+
 
 export interface FieldProps {
   id?: string;
@@ -21,9 +23,16 @@ export interface TypeFormFieldProps {
 export function TypeFormField(props: TypeFormFieldProps) {
   const { editor, fieldHandle, id, name, value = "" } = props;
   const dispatch = useAppDispatch();
-  const Field = lazy(
+  
+  const Field = useMemo(
     () =>
-      import(`../../Editor/${editor}/Settings/TypesFormFields/${fieldHandle}`)
+      lazy(
+        () =>
+          import(
+            `../../Editor/${editor}/Settings/TypesFormFields/${fieldHandle}`
+          )
+      ),
+    [fieldHandle]
   );
 
   const handleOnFieldChange = (handle: string, value: string) => {

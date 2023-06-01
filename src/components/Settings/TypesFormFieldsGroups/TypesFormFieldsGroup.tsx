@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useMemo } from "react";
 import styles from "./TypesFormFieldsGroup.module.scss";
 import classNames from "classnames";
 
@@ -22,19 +22,19 @@ export interface TypesFormFieldsGroup extends GroupProps {
 export function TypesFormFieldsGroup(props: TypesFormFieldsGroup) {
   const { editor, groupHandle, id, name, childSettings } = props;
 
-  const Group = lazy(
+  const Group = useMemo(
     () =>
-      import(
-        `../../Editor/${editor}/Settings/TypesFormFieldGroups/${groupHandle}`
-      )
+      lazy(
+        () =>
+          import(
+            `../../Editor/${editor}/Settings/TypesFormFieldGroups/${groupHandle}`
+          )
+      ),
+    [groupHandle]
   );
 
   return (
-    <Suspense
-      fallback={
-        <Loader />
-      }
-    >
+    <Suspense fallback={<Loader />}>
       <div className={classNames(styles.fieldGroup)}>
         <Group id={id} name={name}>
           {childSettings.map((setting: TemplateSettingsInterface) => {
@@ -43,7 +43,7 @@ export function TypesFormFieldsGroup(props: TypesFormFieldsGroup) {
               return (
                 <TypeFormField
                   editor={props.editor}
-                  id={setting.id}
+                  id={setting.key}
                   name={setting.name}
                   fieldHandle={settingFieldType.getFormFieldHandle()}
                   value={setting.value}
@@ -53,7 +53,6 @@ export function TypesFormFieldsGroup(props: TypesFormFieldsGroup) {
           })}
         </Group>
       </div>
-
     </Suspense>
   );
 }

@@ -16,11 +16,19 @@ import {
   loadTemplates,
   selectTemplate,
 } from "../../../../app/store/TemplatesStore";
+import { shallowEqual } from "react-redux";
 
 function SideBar(props: { editor: string }) {
   const dispatch = useAppDispatch();
 
-  const { templates, currentTemplate, status } = useAppSelector(getTemplatesStore);
+  const comparisonFunc = (newSelectedState:any, latestSelectedState:any) => {
+    const equality = newSelectedState.version === newSelectedState.version
+    console.log(`[StatusDisplay] — Call comparisonFunc — new: ${newSelectedState.version} | old: ${latestSelectedState.version} | equal?: ${equality}`)
+    return equality
+  }
+  const { templates, status } = useAppSelector(getTemplatesStore);
+
+  const currentTemplate = useAppSelector(getCurrentTemplate);
 
 
   useEffect(() => {

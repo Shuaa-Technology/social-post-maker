@@ -3,12 +3,12 @@
       {
          "id": 1,
          "name": "Start template",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is a Start template.",
          "height": 500,
          "width": 500,
-         "style": ".start_template__bg_image { height:100%; background-image: linear-gradient( rgba(70, 130, 180, 0.8), rgba(178, 34, 34, 0.8) ), url(https://source.unsplash.com/VWcPlbHglYc); background-size: cover; background-position: center; color: #fff; } .content { display: grid; place-content: center; text-align: center; min-height: 500px; } .content h2 { font-size: 3.5rem; } .content p { font-size: 20px; } ",
-         "render": "<div class='start_template__bg_image'><div class='content'><h2>%title%</h2><p>%description%</p></div></div>",
+         "style": ".start_template__bg_image { height:100%; background-image: linear-gradient( %gradient_top_color% , %gradient_bottom_color% ), url(https://images.unsplash.com/photo-1497215728101-856f4ea42174?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit); background-size: cover; background-position: center; color: #fff; } .content { display: grid; place-content: center; text-align: center; min-height: 500px; } .content h2 { font-size: 3.5rem; } .content p { font-size: 20px; } ",
+         "render": "<div class='start_template__bg_image'><div class='content'><h2>%title%</h2><p>%description% %gradient_top_color% </p></div></div>",
          "settings": [
             {
                "id": "1",
@@ -16,7 +16,7 @@
                "type": {
                   "handle": "GROUP/ACCORDION"
                },
-               "version": "1.0.0",
+               "version": "0",
                "name": "Background image Settings",
                "description": "Background image Settings",
                "value": "",
@@ -27,7 +27,7 @@
                      "type": {
                         "handle": "FIELD/IMAGE"
                      },
-                     "version": "1.0.0",
+                     "version": "0",
                      "name": "Background image",
                      "description": "Upload a thumbnail image",
                      "value": "https://example.com/thumbnail.png"
@@ -38,10 +38,10 @@
                      "type": {
                         "handle": "FIELD/COLOR"
                      },
-                     "version": "1.0.0",
+                     "version": "0",
                      "name": "Gradient top color",
                      "description": "Select a color for the header",
-                     "value": "#db0000"
+                     "value": "#4682b4"
                   },
                   {
                      "id": "3",
@@ -49,10 +49,10 @@
                      "type": {
                         "handle": "FIELD/COLOR"
                      },
-                     "version": "1.0.0",
+                     "version": "0",
                      "name": "Gradient bottom color",
                      "description": "Select a color for the body text",
-                     "value": "#000000"
+                     "value": "#b22222"
                   }
                ]
             },
@@ -62,7 +62,7 @@
                "type": {
                   "handle": "FIELD/TEXT"
                },
-               "version": "1.0.0",
+               "version": "0",
                "name": "Title",
                "description": "Enter a heading for the template",
                "value": "Example Heading after parsing"
@@ -73,7 +73,7 @@
                "type": {
                   "handle": "FIELD/TEXT"
                },
-               "version": "1.0.0",
+               "version": "0",
                "name": "Description",
                "description": "Enter a heading for the template",
                "value": "Example description after parsing"
@@ -83,7 +83,7 @@
       {
          "id": 2,
          "name": "Fancy template",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is a Fancy template.",
          "height": 500,
          "width": 500,
@@ -93,7 +93,7 @@
       {
          "id": 3,
          "name": "Elegant template",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is an Elegant template.",
          "height": 500,
          "width": 500,
@@ -103,7 +103,7 @@
       {
          "id": 4,
          "name": "Dreamer template",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is a Dreamer template.",
          "height": 500,
          "width": 500,
@@ -113,7 +113,7 @@
       {
          "id": 5,
          "name": "Amazing template",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is an Amazing template.",
          "height": 500,
          "width": 500,
@@ -123,7 +123,7 @@
       {
          "id": 6,
          "name": "Black&White template",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is a Black&White template.",
          "height": 500,
          "width": 500,
@@ -133,7 +133,7 @@
       {
          "id": 7,
          "name": "Nerdy template",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is a Nerdy template.",
          "height": 500,
          "width": 500,
@@ -143,7 +143,7 @@
       {
          "id": 8,
          "name": "Sunny template",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is a Sunny template.",
          "height": 500,
          "width": 500,
@@ -153,7 +153,7 @@
       {
          "id": 9,
          "name": "Template 9",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is Template 9.",
          "height": 500,
          "width": 500,
@@ -163,7 +163,7 @@
       {
          "id": 10,
          "name": "Template 10",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is Template 10.",
          "height": 500,
          "width": 500,
@@ -173,7 +173,7 @@
       {
          "id": 11,
          "name": "Template 11",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is Template 11.",
          "height": 500,
          "width": 500,
@@ -183,7 +183,7 @@
       {
          "id": 12,
          "name": "Template 12",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is Template 12.",
          "height": 500,
          "width": 500,
@@ -193,7 +193,7 @@
       {
          "id": 13,
          "name": "Template 13",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is Template 13.",
          "height": 500,
          "width": 500,
@@ -203,7 +203,7 @@
       {
          "id": 14,
          "name": "Template 14",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is Template 14.",
          "height": 500,
          "width": 500,
@@ -213,7 +213,7 @@
       {
          "id": 15,
          "name": "Template 15",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is Template 15.",
          "height": 500,
          "width": 500,
@@ -223,7 +223,7 @@
       {
          "id": 16,
          "name": "Template 16",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is Template 16.",
          "height": 500,
          "width": 500,
@@ -233,7 +233,7 @@
       {
          "id": 17,
          "name": "Template 17",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is Template 17.",
          "height": 500,
          "width": 500,
@@ -243,7 +243,7 @@
       {
          "id": 18,
          "name": "Template 18",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is Template 18.",
          "height": 500,
          "width": 500,
@@ -253,7 +253,7 @@
       {
          "id": 19,
          "name": "Template 19",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is Template 19.",
          "height": 500,
          "width": 500,
@@ -263,7 +263,7 @@
       {
          "id": 20,
          "name": "Template 20",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is Template 20.",
          "height": 500,
          "width": 500,
@@ -273,7 +273,7 @@
       {
          "id": 21,
          "name": "Template 21",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is Template 21.",
          "height": 500,
          "width": 500,
@@ -283,7 +283,7 @@
       {
          "id": 22,
          "name": "Template 22",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is Template 22.",
          "height": 500,
          "width": 500,
@@ -293,7 +293,7 @@
       {
          "id": 23,
          "name": "Template 23",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is Template 23.",
          "height": 500,
          "width": 500,
@@ -303,7 +303,7 @@
       {
          "id": 24,
          "name": "Template 24",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is Template 24.",
          "height": 500,
          "width": 500,
@@ -313,7 +313,7 @@
       {
          "id": 25,
          "name": "Template 25",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is Template 25.",
          "height": 500,
          "width": 500,
@@ -323,7 +323,7 @@
       {
          "id": 26,
          "name": "Template 26",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is Template 26.",
          "height": 500,
          "width": 500,
@@ -333,7 +333,7 @@
       {
          "id": 27,
          "name": "Template 27",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is Template 27.",
          "height": 500,
          "width": 500,
@@ -343,7 +343,7 @@
       {
          "id": 28,
          "name": "Template 28",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is Template 28.",
          "height": 500,
          "width": 500,
@@ -353,7 +353,7 @@
       {
          "id": 29,
          "name": "Template 29",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is Template 29.",
          "height": 500,
          "width": 500,
@@ -363,7 +363,7 @@
       {
          "id": 30,
          "name": "Template 30",
-         "version": "1.0.0",
+         "version": "0",
          "description": "This is Template 30.",
          "height": 500,
          "width": 500,
