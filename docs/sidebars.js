@@ -21,6 +21,16 @@ const sidebars = {
       label: 'Guides',
       items: [
         'guides/layouts', // Layouts subpage
+        'guides/usage',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Development',
+      items: [
+        'development/structure',
+        'development/add_template',
+        'development/customize_theme_mode',
       ],
     },
   ],
