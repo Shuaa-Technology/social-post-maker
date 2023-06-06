@@ -1,6 +1,119 @@
 {
    "templates": [
       {
+         "id": 222,
+         "name": "Event",
+         "version": "0",
+         "description": "This is an Event template.",
+         "height": 500,
+         "width": 500,
+         "style": ".event_template__outer { height: 100%; background-image: linear-gradient(%gradient_top_color%, %gradient_bottom_color%); padding: %space_between_outer_inner%px; } .event_template__inner { height: 100%; width: 100%; background-color: %inner_rectangle_color%; display: flex; flex-direction: column; justify-content: space-between;} .event_template__logo { width: 50px; height: 50px; object-fit: contain; } .event_template__content { flex: 1; display: flex; flex-direction: column; justify-content: center; } .event_template__title { font-size: 20px; font-weight: bold; } .event_template__overline { font-size: 16px; font-weight: bold; } .event_template__footer { font-size: 14px; }",
+         "render": "<div class='event_template__outer'><div class='event_template__inner'><img class='event_template__logo' src='%logo_url%' alt='Logo'><div class='event_template__content'><h2 class='event_template__title'>%title%</h2><p class='event_template__overline'>%overline%</p><p class='event_template__footer'>%footer_text%</p></div></div></div>",
+         "settings": [
+            {
+               "id": "1",
+               "key": "bg-gradient-settings",
+               "type": {
+                  "handle": "GROUP/ACCORDION"
+               },
+               "version": "0",
+               "name": "Background Gradient Settings",
+               "description": "Background Gradient Settings",
+               "value": "",
+               "childSettings": [
+                  {
+                     "id": "1",
+                     "key": "gradient_top_color",
+                     "type": {
+                        "handle": "FIELD/COLOR"
+                     },
+                     "version": "0",
+                     "name": "Gradient Top Color",
+                     "description": "Select a color for the top gradient",
+                     "value": "#4682b4"
+                  },
+                  {
+                     "id": "2",
+                     "key": "gradient_bottom_color",
+                     "type": {
+                        "handle": "FIELD/COLOR"
+                     },
+                     "version": "0",
+                     "name": "Gradient Bottom Color",
+                     "description": "Select a color for the bottom gradient",
+                     "value": "#b22222"
+                  }
+               ]
+            },
+            {
+               "id": "2",
+               "key": "inner_rectangle_color",
+               "type": {
+                  "handle": "FIELD/COLOR"
+               },
+               "version": "0",
+               "name": "Inner Rectangle Color",
+               "description": "Select a color for the inner rectangle",
+               "value": ""
+            },
+            {
+               "id": "3",
+               "key": "space_between_outer_inner",
+               "type": {
+                  "handle": "FIELD/NUMBER"
+               },
+               "version": "0",
+               "name": "Space Between Outer and Inner Rectangle",
+               "description": "Enter the space in pixels",
+               "value": 25
+            },
+            {
+               "id": "4",
+               "key": "logo_url",
+               "type": {
+                  "handle": "FIELD/IMAGE"
+               },
+               "version": "0",
+               "name": "Logo",
+               "description": "Upload a logo image",
+               "value": "https://shuaa-sticky.netlify.app/assets/img/logo-icon.png"
+            },
+            {
+               "id": "5",
+               "key": "title",
+               "type": {
+                  "handle": "FIELD/TEXT"
+               },
+               "version": "0",
+               "name": "Title",
+               "description": "Enter the title",
+               "value": "Event Title"
+            },
+            {
+               "id": "6",
+               "key": "overline",
+               "type": {
+                  "handle": "FIELD/TEXT"
+               },
+               "version": "0",
+               "name": "Overline",
+               "description": "Enter the overline text",
+               "value": "Overline Text"
+            },
+            {
+               "id": "7",
+               "key": "footer_text",
+               "type": {
+                  "handle": "FIELD/TEXT"
+               },
+               "version": "0",
+               "name": "Footer Text",
+               "description": "Enter the footer text",
+               "value": "Footer Text"
+            }
+         ]
+      },
+      {
          "id": 1,
          "name": "Start template",
          "version": "0",

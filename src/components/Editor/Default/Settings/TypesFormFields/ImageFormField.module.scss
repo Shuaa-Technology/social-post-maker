@@ -40,7 +40,31 @@
 
   .filePreview {
     margin-top: 10px;
+    &:hover {
+      .removeIcon {
+        opacity: 1;
+      }
+    }
 
+    .removeIcon {
+      opacity: 0;
+      background-color: #160e03ab;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      color: white;
+      justify-content: center;
+      font-size: 18px;
+      bottom: 0;
+      transition: .3s opacity ease;
+      cursor: pointer;
+    }
+    .imageWrapper {
+        position: relative;
+    }
     .previewImage {
       width: 90px;
       max-height: 50px;
