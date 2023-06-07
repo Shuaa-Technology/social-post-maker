@@ -1,13 +1,20 @@
 import styles from "./Preview.module.scss";
 import { TemplateInterface } from "../../core/Models/Template/TemplateInterface";
 
-import { lazy, Suspense } from "react";
+import { lazy, Suspense,useMemo } from "react";
 import Loader from "../Shared/Loader";
 
 function Preview(props: { editor: string; template: TemplateInterface }) {
   const { editor, template } = props;
 
-  const Rendrer = lazy(() => import(`../Editor/${editor}/Preview/Rendrer`));
+
+
+
+  const Rendrer = useMemo(
+    () =>
+    lazy(() => import(`../Editor/${editor}/Preview/Rendrer`)),
+    [editor]
+  );
 
   const style = {
     width: template.width,
