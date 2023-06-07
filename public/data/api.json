@@ -7,8 +7,8 @@
          "description": "This is an Event template.",
          "height": 500,
          "width": 500,
-         "style": ".event_template__content-right * {margin: 0;} .event_template__content-right *:not(:last-child) {margin-bottom: 5px;} .event_template__outer { height: 100%; background-image: linear-gradient(%gradient_top_color%, %gradient_bottom_color%); padding: %space_between_outer_inner%px; } .event_template__inner { color: %content_color%; position: relative; height: 100%; width: 100%; background-color: %inner_rectangle_color%; display: flex; flex-direction: column; justify-content: center; align-items: center;} .event_template__logo {font-size: 60px; font-weight: 800;} .event_template__content { display: flex; gap: 25px; align-items:center; justify-content: center; } .event_template__title { font-size: 20px; font-weight: bold; } .event_template__subtitle { font-size: 16px; font-weight: bold; } .event_template__footer { font-size: 14px; position: absolute; bottom: 14px; }",
-         "render": "<div class='event_template__outer'>\n  <div class='event_template__inner'>\n    <div class='event_template__content'>\n        <div class=\"event_template__content-left\">\n            <img class='event_template__logo' src=\"%logo_url%\">\n        </div>\n        <div class=\"event_template__content-right\">\n            <h2 class='event_template__title'>%title%</h2>\n            <p class='event_template__subtitle'>%subtitle%</p>\n        </div>\n    </div>\n    <div class=\"event_template__footer\">\n        %footer_text%\n    </div>\n  </div>\n</div>\n",
+         "style": ".event_template__content-right * {margin: 0;} .event_template__content-right *:not(:last-child) {margin-bottom: 5px;} .event_template__outer { height: 100%; background-image: linear-gradient(%gradient_top_color%, %gradient_bottom_color%); padding: %space_between_outer_inner%px; } .event_template__inner { color: %content_color%; position: relative; height: 100%; width: 100%; background-color: %inner_rectangle_color%; display: flex; flex-direction: column; justify-content: center; align-items: center;} .event_template__logo {height: %logo_height%px;} .event_template__content { display: flex; gap: 10px; align-items:center; justify-content: center; } .event_template__title { font-size: 20px; font-weight: bold; } .event_template__subtitle { font-size: 16px; font-weight: bold; } .event_template__footer { font-size: 14px; position: absolute; bottom: 14px; }",
+         "render": "<div class='event_template__outer'><div class='event_template__inner'><div class='event_template__content'><div class=event_template__content-left><img class='event_template__logo' src='%logo_url%'></div><div class=event_template__content-right><h2 class='event_template__title'>%title%</h2><p class='event_template__subtitle'>%subtitle%</p></div></div><div class=event_template__footer>%footer_text%</div></div></div>",
          "settings": [
             {
                "id": "1",
@@ -66,6 +66,17 @@
                "name": "Space Between Outer and Inner Rectangle",
                "description": "Enter the space in pixels",
                "value": 25
+            },
+            {
+               "id": "9",
+               "key": "logo_height",
+               "type": {
+                  "handle": "FIELD/NUMBER"
+               },
+               "version": "1.0",
+               "name": "Logo Height",
+               "description": "Enter the height in pixels",
+               "value": 100
             },
             {
                "id": "4",

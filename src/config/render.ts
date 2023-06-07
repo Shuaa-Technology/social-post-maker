@@ -10,7 +10,7 @@ export const SANITIZE_OPTIONS = {
     h4: ["id","style", "class"],
     h5: ["id","style", "class"],
     h6: ["id","style", "class"],
-    img: ["id","style", "class"],
+    img: ["id","style", "class", "src"],
     section: ["id","style", "class"],
   },
   allowedIframeHostnames: [],
