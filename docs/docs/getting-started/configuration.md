@@ -2,7 +2,7 @@
 
 To configure your application, you can modify the following variables in the `src/config.js` file:
 
-- `API_ENABLED`: Specifies whether the API is enabled or not. Set it to `true` to enable the API.
+- `API_ENABLED`: Specifies whether the API is enabled or not. Set it to `true` to enable the API (Or will use `public/data/api.json` file as a fallback).
 - `API_URL`: The URL of the API. By default, it is set to `http://localhost`.
 - `API_PORT`: The port on which the API is running. By default, it is set to `3000`.
 
