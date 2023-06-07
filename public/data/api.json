@@ -3,12 +3,12 @@
       {
          "id": 222,
          "name": "Event",
-         "version": "0",
+         "version": "1.0",
          "description": "This is an Event template.",
          "height": 500,
          "width": 500,
-         "style": ".event_template__outer { height: 100%; background-image: linear-gradient(%gradient_top_color%, %gradient_bottom_color%); padding: %space_between_outer_inner%px; } .event_template__inner { height: 100%; width: 100%; background-color: %inner_rectangle_color%; display: flex; flex-direction: column; justify-content: space-between;} .event_template__logo { width: 50px; height: 50px; object-fit: contain; } .event_template__content { flex: 1; display: flex; flex-direction: column; justify-content: center; } .event_template__title { font-size: 20px; font-weight: bold; } .event_template__overline { font-size: 16px; font-weight: bold; } .event_template__footer { font-size: 14px; }",
-         "render": "<div class='event_template__outer'><div class='event_template__inner'><img class='event_template__logo' src='%logo_url%' alt='Logo'><div class='event_template__content'><h2 class='event_template__title'>%title%</h2><p class='event_template__overline'>%overline%</p><p class='event_template__footer'>%footer_text%</p></div></div></div>",
+         "style": ".event_template__content-right * {margin: 0;} .event_template__content-right *:not(:last-child) {margin-bottom: 5px;} .event_template__outer { height: 100%; background-image: linear-gradient(%gradient_top_color%, %gradient_bottom_color%); padding: %space_between_outer_inner%px; } .event_template__inner { color: %content_color%; position: relative; height: 100%; width: 100%; background-color: %inner_rectangle_color%; display: flex; flex-direction: column; justify-content: center; align-items: center;} .event_template__logo {font-size: 60px; font-weight: 800;} .event_template__content { display: flex; gap: 25px; align-items:center; justify-content: center; } .event_template__title { font-size: 20px; font-weight: bold; } .event_template__subtitle { font-size: 16px; font-weight: bold; } .event_template__footer { font-size: 14px; position: absolute; bottom: 14px; }",
+         "render": "<div class='event_template__outer'>\n  <div class='event_template__inner'>\n    <div class='event_template__content'>\n        <div class=\"event_template__content-left\">\n            <div class='event_template__logo'>LOGO</div>\n        </div>\n        <div class=\"event_template__content-right\">\n            <h2 class='event_template__title'>%title%</h2>\n            <p class='event_template__subtitle'>%subtitle%</p>\n        </div>\n    </div>\n    <div class=\"event_template__footer\">\n        %footer_text%\n    </div>\n  </div>\n</div>\n",
          "settings": [
             {
                "id": "1",
@@ -16,7 +16,7 @@
                "type": {
                   "handle": "GROUP/ACCORDION"
                },
-               "version": "0",
+               "version": "1.0",
                "name": "Background Gradient Settings",
                "description": "Background Gradient Settings",
                "value": "",
@@ -27,10 +27,10 @@
                      "type": {
                         "handle": "FIELD/COLOR"
                      },
-                     "version": "0",
+                     "version": "1.0",
                      "name": "Gradient Top Color",
                      "description": "Select a color for the top gradient",
-                     "value": "#4682b4"
+                     "value": "#00ccff"
                   },
                   {
                      "id": "2",
@@ -38,10 +38,10 @@
                      "type": {
                         "handle": "FIELD/COLOR"
                      },
-                     "version": "0",
+                     "version": "1.0",
                      "name": "Gradient Bottom Color",
                      "description": "Select a color for the bottom gradient",
-                     "value": "#b22222"
+                     "value": "#acff80"
                   }
                ]
             },
@@ -51,10 +51,10 @@
                "type": {
                   "handle": "FIELD/COLOR"
                },
-               "version": "0",
+               "version": "1.0",
                "name": "Inner Rectangle Color",
                "description": "Select a color for the inner rectangle",
-               "value": ""
+               "value": "#060E32"
             },
             {
                "id": "3",
@@ -62,7 +62,7 @@
                "type": {
                   "handle": "FIELD/NUMBER"
                },
-               "version": "0",
+               "version": "1.0",
                "name": "Space Between Outer and Inner Rectangle",
                "description": "Enter the space in pixels",
                "value": 25
@@ -73,7 +73,7 @@
                "type": {
                   "handle": "FIELD/IMAGE"
                },
-               "version": "0",
+               "version": "1.0",
                "name": "Logo",
                "description": "Upload a logo image",
                "value": "https://shuaa-sticky.netlify.app/assets/img/logo-icon.png"
@@ -84,21 +84,21 @@
                "type": {
                   "handle": "FIELD/TEXT"
                },
-               "version": "0",
+               "version": "1.0",
                "name": "Title",
                "description": "Enter the title",
                "value": "Event Title"
             },
             {
                "id": "6",
-               "key": "overline",
+               "key": "subtitle",
                "type": {
                   "handle": "FIELD/TEXT"
                },
-               "version": "0",
-               "name": "Overline",
-               "description": "Enter the overline text",
-               "value": "Overline Text"
+               "version": "1.0",
+               "name": "Subtitle",
+               "description": "Enter the subtitle text",
+               "value": "Subtitle Text"
             },
             {
                "id": "7",
@@ -106,17 +106,28 @@
                "type": {
                   "handle": "FIELD/TEXT"
                },
-               "version": "0",
+               "version": "1.0",
                "name": "Footer Text",
                "description": "Enter the footer text",
-               "value": "Footer Text"
+               "value": "07 - JUNE / Location"
+            },
+            {
+               "id": "8",
+               "key": "content_color",
+               "type": {
+                  "handle": "FIELD/COLOR"
+               },
+               "version": "1.0",
+               "name": "Content Color",
+               "description": "Select a color for content texts",
+               "value": "white"
             }
          ]
       },
       {
          "id": 1,
          "name": "Start template",
-         "version": "0",
+         "version": "1.0",
          "description": "This is a Start template.",
          "height": 500,
          "width": 500,
@@ -129,7 +140,7 @@
                "type": {
                   "handle": "GROUP/ACCORDION"
                },
-               "version": "0",
+               "version": "1.0",
                "name": "Background image Settings",
                "description": "Background image Settings",
                "value": "",
@@ -140,7 +151,7 @@
                      "type": {
                         "handle": "FIELD/IMAGE"
                      },
-                     "version": "0",
+                     "version": "1.0",
                      "name": "Background image",
                      "description": "Upload a thumbnail image",
                      "value": "https://example.com/thumbnail.png"
@@ -151,7 +162,7 @@
                      "type": {
                         "handle": "FIELD/COLOR"
                      },
-                     "version": "0",
+                     "version": "1.0",
                      "name": "Gradient top color",
                      "description": "Select a color for the header",
                      "value": "#4682b4"
@@ -162,7 +173,7 @@
                      "type": {
                         "handle": "FIELD/COLOR"
                      },
-                     "version": "0",
+                     "version": "1.0",
                      "name": "Gradient bottom color",
                      "description": "Select a color for the body text",
                      "value": "#b22222"
@@ -175,7 +186,7 @@
                "type": {
                   "handle": "FIELD/TEXT"
                },
-               "version": "0",
+               "version": "1.0",
                "name": "Title",
                "description": "Enter a heading for the template",
                "value": "Example Heading after parsing"
@@ -186,7 +197,7 @@
                "type": {
                   "handle": "FIELD/TEXT"
                },
-               "version": "0",
+               "version": "1.0",
                "name": "Description",
                "description": "Enter a heading for the template",
                "value": "Example description after parsing"
@@ -196,7 +207,7 @@
       {
          "id": 2,
          "name": "Fancy template",
-         "version": "0",
+         "version": "1.0",
          "description": "This is a Fancy template.",
          "height": 500,
          "width": 500,
@@ -206,7 +217,7 @@
       {
          "id": 3,
          "name": "Elegant template",
-         "version": "0",
+         "version": "1.0",
          "description": "This is an Elegant template.",
          "height": 500,
          "width": 500,
@@ -216,7 +227,7 @@
       {
          "id": 4,
          "name": "Dreamer template",
-         "version": "0",
+         "version": "1.0",
          "description": "This is a Dreamer template.",
          "height": 500,
          "width": 500,
@@ -226,7 +237,7 @@
       {
          "id": 5,
          "name": "Amazing template",
-         "version": "0",
+         "version": "1.0",
          "description": "This is an Amazing template.",
          "height": 500,
          "width": 500,
@@ -236,7 +247,7 @@
       {
          "id": 6,
          "name": "Black&White template",
-         "version": "0",
+         "version": "1.0",
          "description": "This is a Black&White template.",
          "height": 500,
          "width": 500,
@@ -246,7 +257,7 @@
       {
          "id": 7,
          "name": "Nerdy template",
-         "version": "0",
+         "version": "1.0",
          "description": "This is a Nerdy template.",
          "height": 500,
          "width": 500,
@@ -256,7 +267,7 @@
       {
          "id": 8,
          "name": "Sunny template",
-         "version": "0",
+         "version": "1.0",
          "description": "This is a Sunny template.",
          "height": 500,
          "width": 500,
@@ -266,7 +277,7 @@
       {
          "id": 9,
          "name": "Template 9",
-         "version": "0",
+         "version": "1.0",
          "description": "This is Template 9.",
          "height": 500,
          "width": 500,
@@ -276,7 +287,7 @@
       {
          "id": 10,
          "name": "Template 10",
-         "version": "0",
+         "version": "1.0",
          "description": "This is Template 10.",
          "height": 500,
          "width": 500,
@@ -286,7 +297,7 @@
       {
          "id": 11,
          "name": "Template 11",
-         "version": "0",
+         "version": "1.0",
          "description": "This is Template 11.",
          "height": 500,
          "width": 500,
@@ -296,7 +307,7 @@
       {
          "id": 12,
          "name": "Template 12",
-         "version": "0",
+         "version": "1.0",
          "description": "This is Template 12.",
          "height": 500,
          "width": 500,
@@ -306,7 +317,7 @@
       {
          "id": 13,
          "name": "Template 13",
-         "version": "0",
+         "version": "1.0",
          "description": "This is Template 13.",
          "height": 500,
          "width": 500,
@@ -316,7 +327,7 @@
       {
          "id": 14,
          "name": "Template 14",
-         "version": "0",
+         "version": "1.0",
          "description": "This is Template 14.",
          "height": 500,
          "width": 500,
@@ -326,7 +337,7 @@
       {
          "id": 15,
          "name": "Template 15",
-         "version": "0",
+         "version": "1.0",
          "description": "This is Template 15.",
          "height": 500,
          "width": 500,
@@ -336,7 +347,7 @@
       {
          "id": 16,
          "name": "Template 16",
-         "version": "0",
+         "version": "1.0",
          "description": "This is Template 16.",
          "height": 500,
          "width": 500,
@@ -346,7 +357,7 @@
       {
          "id": 17,
          "name": "Template 17",
-         "version": "0",
+         "version": "1.0",
          "description": "This is Template 17.",
          "height": 500,
          "width": 500,
@@ -356,7 +367,7 @@
       {
          "id": 18,
          "name": "Template 18",
-         "version": "0",
+         "version": "1.0",
          "description": "This is Template 18.",
          "height": 500,
          "width": 500,
@@ -366,7 +377,7 @@
       {
          "id": 19,
          "name": "Template 19",
-         "version": "0",
+         "version": "1.0",
          "description": "This is Template 19.",
          "height": 500,
          "width": 500,
@@ -376,7 +387,7 @@
       {
          "id": 20,
          "name": "Template 20",
-         "version": "0",
+         "version": "1.0",
          "description": "This is Template 20.",
          "height": 500,
          "width": 500,
@@ -386,7 +397,7 @@
       {
          "id": 21,
          "name": "Template 21",
-         "version": "0",
+         "version": "1.0",
          "description": "This is Template 21.",
          "height": 500,
          "width": 500,
@@ -396,7 +407,7 @@
       {
          "id": 22,
          "name": "Template 22",
-         "version": "0",
+         "version": "1.0",
          "description": "This is Template 22.",
          "height": 500,
          "width": 500,
@@ -406,7 +417,7 @@
       {
          "id": 23,
          "name": "Template 23",
-         "version": "0",
+         "version": "1.0",
          "description": "This is Template 23.",
          "height": 500,
          "width": 500,
@@ -416,7 +427,7 @@
       {
          "id": 24,
          "name": "Template 24",
-         "version": "0",
+         "version": "1.0",
          "description": "This is Template 24.",
          "height": 500,
          "width": 500,
@@ -426,7 +437,7 @@
       {
          "id": 25,
          "name": "Template 25",
-         "version": "0",
+         "version": "1.0",
          "description": "This is Template 25.",
          "height": 500,
          "width": 500,
@@ -436,7 +447,7 @@
       {
          "id": 26,
          "name": "Template 26",
-         "version": "0",
+         "version": "1.0",
          "description": "This is Template 26.",
          "height": 500,
          "width": 500,
@@ -446,7 +457,7 @@
       {
          "id": 27,
          "name": "Template 27",
-         "version": "0",
+         "version": "1.0",
          "description": "This is Template 27.",
          "height": 500,
          "width": 500,
@@ -456,7 +467,7 @@
       {
          "id": 28,
          "name": "Template 28",
-         "version": "0",
+         "version": "1.0",
          "description": "This is Template 28.",
          "height": 500,
          "width": 500,
@@ -466,7 +477,7 @@
       {
          "id": 29,
          "name": "Template 29",
-         "version": "0",
+         "version": "1.0",
          "description": "This is Template 29.",
          "height": 500,
          "width": 500,
@@ -476,7 +487,7 @@
       {
          "id": 30,
          "name": "Template 30",
-         "version": "0",
+         "version": "1.0",
          "description": "This is Template 30.",
          "height": 500,
          "width": 500,
