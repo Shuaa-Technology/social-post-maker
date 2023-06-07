@@ -1,5 +1,4 @@
 import { TemplateSettingsInterface } from "./Settings/TemplateSettingsInterface";
-import { GroupType } from "./Settings/Types/Group/GroupType";
 import { TemplateInterface } from "./TemplateInterface";
 
 export class Template implements TemplateInterface {
