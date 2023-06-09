@@ -20,6 +20,9 @@ export abstract class SettingsType implements SettingsTypeInterface {
       case "FIELD/TEXT":
         const { TextType } = require("./Field/TextType");
         return new TextType();
+      case "FIELD/URL":
+        const { UrlType } = require("./Field/UrlType");
+        return new UrlType();
       case "FIELD/NUMBER":
         const { NumberType } = require("./Field/NumberType");
         return new NumberType();
