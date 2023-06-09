@@ -33,6 +33,7 @@ function SideBar(props: { editor: string }) {
 
   useEffect(() => {
     dispatch(loadTemplates({}));
+    setTabIndex(1);
   }, []);
 
   const handleLoadMoreTemplates = (nextPage:number) => {

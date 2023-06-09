@@ -101,7 +101,7 @@ export class TemplatesService {
       description: "This is a default template.",
       height: 500,
       width: 500,
-      render: "<span style='color:black;' >%Heading% <span>",
+      render: "<span style='color:black;' >%heading% <span>",
       settings: [
         {
           id: "1",
