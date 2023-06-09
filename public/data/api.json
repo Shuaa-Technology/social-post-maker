@@ -160,12 +160,12 @@
                      "id": "1",
                      "key": "bg-image",
                      "type": {
-                        "handle": "FIELD/IMAGE"
+                        "handle": "FIELD/URL"
                      },
                      "version": "1.0",
                      "name": "Background image",
                      "description": "Upload a thumbnail image",
-                     "value": "https://example.com/thumbnail.png"
+                     "value": "https://loremflickr.com/cache/resized/1238_1116489949_9015d8ec0e_c_600_600_nofilter.jpg"
                   },
                   {
                      "id": "2",

@@ -9,7 +9,7 @@ import { TextType } from "../Models/Template/Settings/Types/Field/TextType";
 import { TemplateSettingsInterface } from "../Models/Template/Settings/TemplateSettingsInterface";
 import { GroupType } from "../Models/Template/Settings/Types/Group/GroupType";
 import { API_ENABLED } from "../../config/api";
-
+import { UrlType } from "../Models/Template/Settings/Types/Field/UrlType";
 
 export class TemplatesService {
   templates: TemplateInterface[];
@@ -17,68 +17,73 @@ export class TemplatesService {
     this.templates = [];
   }
 
-  getTemplates(page: number = 1, limit: number = ITEMS_PER_PAGE): Promise<TemplateInterface[]> {
+  getTemplates(
+    page: number = 1,
+    limit: number = ITEMS_PER_PAGE
+  ): Promise<TemplateInterface[]> {
     this.templates = [];
     let _promise: any;
     const offset = (page - 1) * limit;
 
     if (API_ENABLED) {
-      _promise = API.get(`templates` + (limit > 0 ? `?_start=${offset}&_limit=${limit}` : ""));
+      _promise = API.get(
+        `templates` + (limit > 0 ? `?_start=${offset}&_limit=${limit}` : "")
+      );
     } else {
       _promise = fetch(
-          `data/api.json` + (limit > 0 ? `?_start=${offset}&_limit=${limit}` : "")
+        `data/api.json` + (limit > 0 ? `?_start=${offset}&_limit=${limit}` : "")
       ).then((res: any) => {
         return res
-            .json()
-            .then((data: any) => {
-              return { data: data.templates.slice(offset, limit) };
-            })
-            .catch((err: any) => {
-              console.log(err);
-            });
+          .json()
+          .then((data: any) => {
+            return { data: data.templates.slice(offset, limit) };
+          })
+          .catch((err: any) => {
+            console.log(err);
+          });
       });
     }
 
     return new Promise<TemplateInterface[]>((resolve, reject) =>
-        _promise
-            .then((res: any) => {
-              this.templates = res.data.map((template: TemplateInterface) => {
-                /* @todo Use recursive */
-                const settings = template.settings.map(
-                    (setting: TemplateSettingsInterface) => {
-                      let childSettings = undefined;
-                      if (
-                          setting.type.handle == GroupType.getHandle() &&
-                          setting.childSettings != undefined
-                      ) {
-                        childSettings = setting.childSettings.map(
-                            (childSetting: TemplateSettingsInterface) => {
-                              const type = SettingsType.createType(
-                                  childSetting.type.handle
-                              );
-                              return {
-                                ...childSetting,
-                                type,
-                              };
-                            }
-                        );
-                      }
-                      const type = SettingsType.createType(setting.type.handle);
-                      setting.childSettings = childSettings;
-                      setting.type = type;
-                      return setting;
+      _promise
+        .then((res: any) => {
+          this.templates = res.data.map((template: TemplateInterface) => {
+            /* @todo Use recursive */
+            const settings = template.settings.map(
+              (setting: TemplateSettingsInterface) => {
+                let childSettings = undefined;
+                if (
+                  setting.type.handle == GroupType.getHandle() &&
+                  setting.childSettings != undefined
+                ) {
+                  childSettings = setting.childSettings.map(
+                    (childSetting: TemplateSettingsInterface) => {
+                      const type = SettingsType.createType(
+                        childSetting.type.handle
+                      );
+                      return {
+                        ...childSetting,
+                        type,
+                      };
                     }
-                );
-                return {
-                  ...template,
-                  settings,
-                };
-              });
-              resolve(this.templates);
-            })
-            .catch((error: any) => {
-              reject(new Error(error));
-            })
+                  );
+                }
+                const type = SettingsType.createType(setting.type.handle);
+                setting.childSettings = childSettings;
+                setting.type = type;
+                return setting;
+              }
+            );
+            return {
+              ...template,
+              settings,
+            };
+          });
+          resolve(this.templates);
+        })
+        .catch((error: any) => {
+          reject(new Error(error));
+        })
     );
   }
 
@@ -96,55 +101,16 @@ export class TemplatesService {
       description: "This is a default template.",
       height: 500,
       width: 500,
-      render:
-        "<span style='color:black;' >Default Template HTML <span>" /* BETTER WAY? */,
+      render: "<span style='color:black;' >%Heading% <span>",
       settings: [
         {
           id: "1",
-          key: "thumbnail",
-          type: new ImageType(),
-          version: "1.0.0",
-          name: "Thumbnail",
-          description: "Upload a thumbnail image",
-          value:
-            "https://images.unsplash.com/photo-1682687220063-4742bd7fd538?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=775&q=80",
-        },
-        {
-          id: "2",
-          key: "headerColor",
-          type: new ColorType(),
-          version: "1.0.0",
-          name: "Header Color",
-          description: "Select a color for the header",
-          value: "#ffffff",
-        },
-        {
-          id: "3",
-          key: "bodyTextColor",
-          type: new ColorType(),
-          version: "1.0.0",
-          name: "Body Text Color",
-          description: "Select a color for the body text",
-          value: "#000000",
-        },
-        {
-          id: "4",
           key: "heading",
           type: new TextType(),
           version: "1.0.0",
           name: "Heading",
           description: "Enter a heading for the template",
-          value: "Example Heading",
-        },
-        {
-          id: "5",
-          key: "body",
-          type: new TextType(),
-          version: "1.0.0",
-          name: "Body",
-          description: "Enter the body content for the template",
-          value:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu felis quis mi dignissim laoreet.",
+          value: "Default Template HTML",
         },
       ],
     };
