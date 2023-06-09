@@ -3,13 +3,10 @@ import API from "../API";
 
 import { TemplateInterface } from "../Models/Template/TemplateInterface";
 import { SettingsType } from "../Models/Template/Settings/Types/SettingsType";
-import { ImageType } from "../Models/Template/Settings/Types/Field/ImageType";
-import { ColorType } from "../Models/Template/Settings/Types/Field/ColorType";
 import { TextType } from "../Models/Template/Settings/Types/Field/TextType";
 import { TemplateSettingsInterface } from "../Models/Template/Settings/TemplateSettingsInterface";
 import { GroupType } from "../Models/Template/Settings/Types/Group/GroupType";
 import { API_ENABLED } from "../../config/api";
-import { UrlType } from "../Models/Template/Settings/Types/Field/UrlType";
 
 export class TemplatesService {
   templates: TemplateInterface[];

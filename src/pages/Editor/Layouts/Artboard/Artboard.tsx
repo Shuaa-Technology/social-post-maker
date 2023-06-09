@@ -3,7 +3,6 @@ import styles from "./Artboard.module.scss";
 import { useAppSelector } from "../../../../app/hooks";
 import {
   getCurrentTemplate,
-  getTemplatesStore,
 } from "../../../../app/store/TemplatesStore";
 import Preview from "../../../../components/Preview/Preview";
 import { FiInfo, FiUpload } from "react-icons/fi";
