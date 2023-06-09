@@ -12,7 +12,7 @@ function Rendrer(props: { template: TemplateInterface }) {
     .render();
   return (
     <>
-      <div className={styles.rendered} dangerouslySetInnerHTML={{ __html: render }}></div>
+      <div id="render-layer" className={styles.rendered}  dangerouslySetInnerHTML={{ __html: render }}></div>
     </>
   );
 }

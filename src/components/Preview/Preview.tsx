@@ -9,7 +9,6 @@ function Preview(props: { editor: string; template: TemplateInterface }) {
 
 
 
-
   const Rendrer = useMemo(
     () =>
     lazy(() => import(`../Editor/${editor}/Preview/Rendrer`)),
