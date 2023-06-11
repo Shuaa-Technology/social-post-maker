@@ -1,4 +1,4 @@
-import { lazy, Suspense, useMemo } from "react";
+import { useMemo } from "react";
 import { SettingsType } from "../../core/Models/Template/Settings/Types/SettingsType";
 import { TypeFormField } from "./TypesFormFields/TypeFormField";
 import styles from "./Settings.module.scss";
@@ -15,7 +15,7 @@ function Settings(props: {
 
   const _currentTemplate = useMemo(() => {
     return currentTemplate;
-  }, [currentTemplate.version]);
+  }, [currentTemplate.id]);
 
   return (
     <div className={styles.container}>
@@ -32,7 +32,7 @@ function Settings(props: {
             ) {
               return (
                 <TypesFormFieldsGroup
-                  editor={props.editor}
+                  editor={editor}
                   id={setting.key}
                   name={setting.name}
                   groupHandle={setting.type.getFormGroupHandle()}
@@ -45,7 +45,7 @@ function Settings(props: {
             ) {
               return (
                 <TypeFormField
-                  editor={props.editor}
+                  editor={editor}
                   id={setting.key}
                   name={setting.name}
                   fieldHandle={setting.type.getFormFieldHandle()}
@@ -55,9 +55,6 @@ function Settings(props: {
             }
           }
         })}
-        <button className={styles.button} type="submit">
-          Save
-        </button>
       </form>
     </div>
   );

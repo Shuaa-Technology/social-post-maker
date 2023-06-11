@@ -12,7 +12,7 @@
  npm install
 ```
 
-5. Start: This will start the development server on port 3000.
+5. Start: This will start the development server on port 3006.
 ```bash
  npm start
 ```
