@@ -15,7 +15,7 @@ function Settings(props: {
 
   const _currentTemplate = useMemo(() => {
     return currentTemplate;
-  }, [currentTemplate.id]);
+  }, [currentTemplate.id,currentTemplate.version]);
 
   return (
     <div className={styles.container}>

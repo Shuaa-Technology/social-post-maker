@@ -14,26 +14,25 @@ export class TemplatesService {
     this.templates = [];
   }
 
-  getTemplates(
+  fetchTemplates(
     page: number = 1,
     limit: number = ITEMS_PER_PAGE
   ): Promise<TemplateInterface[]> {
-    this.templates = [];
+    let templates = [];
     let _promise: any;
     const offset = (page - 1) * limit;
-
     if (API_ENABLED) {
       _promise = API.get(
         `templates` + (limit > 0 ? `?_start=${offset}&_limit=${limit}` : "")
       );
     } else {
       _promise = fetch(
-        `data/api.json` + (limit > 0 ? `?_start=${offset}&_limit=${limit}` : "")
+        `data/api.json` 
       ).then((res: any) => {
         return res
           .json()
           .then((data: any) => {
-            return { data: data.templates.slice(offset, limit) };
+            return { data: data.templates.slice(offset, offset + limit) };
           })
           .catch((err: any) => {
             console.log(err);
@@ -44,7 +43,7 @@ export class TemplatesService {
     return new Promise<TemplateInterface[]>((resolve, reject) =>
       _promise
         .then((res: any) => {
-          this.templates = res.data.map((template: TemplateInterface) => {
+          templates = res.data.map((template: TemplateInterface) => {
             /* @todo Use recursive */
             const settings = template.settings.map(
               (setting: TemplateSettingsInterface) => {
@@ -76,7 +75,7 @@ export class TemplatesService {
               settings,
             };
           });
-          resolve(this.templates);
+          resolve(templates);
         })
         .catch((error: any) => {
           reject(new Error(error));
@@ -88,6 +87,14 @@ export class TemplatesService {
     return this.templates.filter(function (el) {
       return el.id === id;
     })[0];
+  }
+
+ getTemplates(): TemplateInterface[] {
+    return  this.templates;
+ }
+  addTemplates(templates:TemplateInterface[]): TemplatesService {
+    this.templates = this.templates.concat(templates)
+     return this;
   }
 
   getDefaultTemplate(): TemplateInterface {

@@ -7,7 +7,6 @@ import { Template } from "../../core/Models/Template/Template";
 
 export interface TemplateLoadingState {
   currentTemplate: TemplateInterface;
-  _currentTemplate: TemplateInterface; //temporary changes holders
   templates: TemplateInterface[];
   status: "idle" | "loading" | "failed";
   status_message: string | null;
@@ -17,7 +16,6 @@ const templatesService = new TemplatesService();
 
 const initialState: TemplateLoadingState = {
   currentTemplate: templatesService.getDefaultTemplate(),
-  _currentTemplate: templatesService.getDefaultTemplate(),
   templates: [],
   status: "idle",
   status_message: null,
@@ -30,8 +28,8 @@ export const loadTemplates = createAsyncThunk(
     { rejectWithValue, getState }
   ) => {
     try {
-      const response = await templatesService.getTemplates(page, limit);
-      return { response, page };
+      const response = await templatesService.fetchTemplates(page, limit);
+      return response;
     } catch (err) {
       return rejectWithValue(err);
     }
@@ -41,7 +39,7 @@ export const loadTemplates = createAsyncThunk(
 export const selectTemplate = createAsyncThunk(
   "templates/select",
   async (id: string, { rejectWithValue }) => {
-    try {
+    try { 
       const response = await templatesService.getTemplateById(id);
       return response;
     } catch (err) {
@@ -72,9 +70,9 @@ export const TemplatesStore = createSlice({
       })
       .addCase(loadTemplates.fulfilled, (state, action) => {
         state.status = "idle";
-        const { response, page } = action.payload;
-        console.log(response);
-        state.templates = state.templates.concat(response);
+        const  response = action.payload;
+        const  templates = templatesService.addTemplates(response).getTemplates()
+        state.templates = templates;
         //  state.page = page;
       })
       .addCase(loadTemplates.rejected, (state) => {
@@ -90,7 +88,6 @@ export const TemplatesStore = createSlice({
         state.status = "idle";
         state.currentTemplate =
           action.payload ?? templatesService.getDefaultTemplate();
-          state._currentTemplate =  state.currentTemplate
       })
       .addCase(selectTemplate.rejected, (state) => {
         state.status = "failed";

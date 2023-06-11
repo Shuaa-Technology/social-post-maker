@@ -90,7 +90,7 @@ export class Template implements TemplateInterface {
     });
 
     template.settings = newSettings;
-    template.version = (Number(template.version) + 0.01).toString().substring(0,8);
+    template.version = (Number(template.version) + 1).toString();
     return template;
   }
 }
