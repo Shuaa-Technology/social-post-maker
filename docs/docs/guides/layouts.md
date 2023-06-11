@@ -1,11 +1,27 @@
-# Layouts
+# Usage & Layouts
+
+## Navigation Menu
+This menu provides easy access to the three main sections of the app
 
 ![Navigation Menu](../assets/nav.png)
-*Figure 1: Navigation Menu*
+
+## Artboard
+See your posts come to life.
 
 ![Artboard](../assets/artboard.png)
-*Figure 2: Artboard - Bring Your Posts to Life*
+
+
+## Settings Panel
+Modify and save your post settings.
 
 ![Settings Panel](../assets/panel.png)
-*Figure 3: Settings Panel - Customize and Configure Your Design*
 
+## Templates List
+Select the wanted template and start editing.
+
+![Settings Panel](../assets/template_list.png)
+
+## Appearance
+Select the wanted theme mode.
+
+![Settings Panel](../assets/appearance.png)

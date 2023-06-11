@@ -1,4 +1,4 @@
-# Structure
+# Project Structure
 
 ```bash
     |   App.module.scss

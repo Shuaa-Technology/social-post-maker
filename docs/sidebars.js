@@ -20,8 +20,7 @@ const sidebars = {
       type: 'category',
       label: 'Guides',
       items: [
-        'guides/layouts', // Layouts subpage
-        'guides/usage',
+        'guides/layouts'
       ],
     },
     {

@@ -1,4 +1,4 @@
-# Customization
+# Theme Modes Customization
 
 ## Customizing Colors in the Application
 

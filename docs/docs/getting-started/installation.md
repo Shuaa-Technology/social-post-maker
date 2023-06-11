@@ -1,6 +1,6 @@
 # Installation
 
-1. Download the Code Craft source code from CodeCanyon.
+1. Download the Social Craft source code from CodeCanyon.
 
 2. Extract the downloaded ZIP file to a folder on your local machine.
 
