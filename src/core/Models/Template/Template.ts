@@ -24,23 +24,10 @@ export class Template implements TemplateInterface {
     return this;
   }
 
-  /*   public getSettingsByKey(key: string): TemplateSettings | null {
-    return this.settings.filter(function (el: TemplateSettings) {
-      return el.key === key;
-    })[0];
-  }
-
-  public parse(): Template {
-    this.render = this.render.replace(/%\w+%/g, (placeholder: string) => {
-      return this.getSettingsByKey(placeholder)?.value || placeholder;
-    });
-    return this;
-  } */
-
   public static findById(
     data: any,
     key: any
-  ) /* :TemplateSettingsInterface | null */ {
+  )  {
     function iter(a: any) {
       if (a.key === key) {
         result = a;
@@ -54,7 +41,7 @@ export class Template implements TemplateInterface {
     return result;
   }
 
-  /* For  now   as  Static */
+ 
   public static getSettingsByKey(
     template: TemplateInterface,
     key: string
@@ -62,7 +49,7 @@ export class Template implements TemplateInterface {
     return this.findById(template.settings, key);
   }
 
-  /* For  now   as  Static */
+
   public static updateSettingsByKey(
     template: TemplateInterface,
     key: string,

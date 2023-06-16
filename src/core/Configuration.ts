@@ -8,7 +8,7 @@ export class Configuration {
     this.themeModes = this.getThemeModes();
   }
 
-  // TODO: Move require
+
   getThemeModes(): ThemeModeInterface[] {
     return [
       new ThemeMode('light', 'Light Theme', require('../styles/themes/light/thumbnail.svg').default),

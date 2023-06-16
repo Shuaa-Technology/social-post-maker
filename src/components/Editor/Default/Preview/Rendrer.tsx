@@ -3,12 +3,10 @@ import { TemplateInterface } from "../../../../core/Models/Template/TemplateInte
 import { TemplateRenderer } from "../../../../core/TemplateRenderer";
 
 
-/* @note: Responsable of template parsing and rendring html with highlighting  */
 function Rendrer(props: { template: TemplateInterface }) {
   const render = new TemplateRenderer()
     .setTemplate(props.template)
     .parse()
-    .highlight()
     .render();
   return (
     <>

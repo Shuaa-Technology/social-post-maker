@@ -11,6 +11,5 @@ export interface TemplateInterface {
   render: string;
   settings: TemplateSettingsInterface[];
 
-  /*   getRender(): string;
-  parse(): TemplateInterface; */
+ 
 }

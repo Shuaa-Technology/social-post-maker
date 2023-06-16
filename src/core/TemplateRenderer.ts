@@ -50,13 +50,7 @@ export class TemplateRenderer {
     return this._style;
   }
 
-  highlight(): TemplateRenderer {
-    /* @todo */
-    return this;
-  }
-
   render(options?: any): string {
-    /* @todo */
     return sanitizeHtml(this._output, { ...SANITIZE_OPTIONS, ...options });
   }
 }
