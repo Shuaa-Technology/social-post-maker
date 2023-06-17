@@ -136,6 +136,303 @@
          ]
       },
       {
+         "id": 223,
+         "name": "Did You Know?",
+         "version": "1.0",
+         "description": "This is a DidYou template.",
+         "height": 500,
+         "width": 500,
+         "style": ".didyou-template { display: flex; flex-direction: column; height: 100%; } .didyou-template__top-overlay { background: rgba(0, 0, 0, %overlay_opacity%); width: 100%; height: 100%; } .didyou-template__bot-content { color: %fact_color%; } .didyou-template__top { background-size: cover; position: relative; background-image: url(%cover_image_url%); flex-basis: 60%; } .didyou-template__bot-title { color: %title_color%; background: %title_bg_color%; width: 259px; padding: 13px; font-size: 29px; text-align: center; font-weight: 900; z-index: 13; position: absolute; left: 50%; top: 0; transform: translate(-50%, -60%); } .didyou-template__bot-footer { margin-top: 30px; font-size: 12px; color: %footer_color%; } .didyou-template__bot { font-size: 20px; position: relative; padding: 40px; background: %content_bg_color%; flex-basis: 40%; }",
+         "render": "<div class='didyou-template'><div class='didyou-template__top'><div class='didyou-template__top-overlay'></div></div><div class='didyou-template__bot'><div class='didyou-template__bot-title'>%title%</div><div class='didyou-template__bot-content'>%fact%</div><div class='didyou-template__bot-footer'>%footer_text%</div></div></div>",
+         "settings": [
+            {
+               "id": "10",
+               "key": "post_cover",
+               "type": {
+                  "handle": "GROUP/ACCORDION"
+               },
+               "version": "1.0",
+               "name": "Post Cover",
+               "description": "Settings for the post cover",
+               "value": "",
+               "childSettings": [
+                  {
+                     "id": "11",
+                     "key": "overlay_opacity",
+                     "type": {
+                        "handle": "FIELD/NUMBER"
+                     },
+                     "version": "1.0",
+                     "name": "Overlay Opacity",
+                     "description": "Enter the overlay opacity (0-1)",
+                     "value": 0.2
+                  },
+                  {
+                     "id": "12",
+                     "key": "cover_image_url",
+                     "type": {
+                        "handle": "FIELD/URL"
+                     },
+                     "version": "1.0",
+                     "name": "Cover Image URL",
+                     "description": "Enter the URL of the cover image",
+                     "value": "https://images.unsplash.com/photo-1587049352895-5caf69ef3b6e"
+                  }
+               ]
+            },
+            {
+               "id": "13",
+               "key": "post_content",
+               "type": {
+                  "handle": "GROUP/ACCORDION"
+               },
+               "version": "1.0",
+               "name": "Post Content",
+               "description": "Settings for the post content",
+               "value": "",
+               "childSettings": [
+                  {
+                     "id": "14",
+                     "key": "title_color",
+                     "type": {
+                        "handle": "FIELD/COLOR"
+                     },
+                     "version": "1.0",
+                     "name": "Title Color",
+                     "description": "Select a color for the title",
+                     "value": "#000000"
+                  },
+                  {
+                     "id": "15",
+                     "key": "title_bg_color",
+                     "type": {
+                        "handle": "FIELD/COLOR"
+                     },
+                     "version": "1.0",
+                     "name": "Title Background Color",
+                     "description": "Select a color for the title background",
+                     "value": "#ffd60d"
+                  },
+                  {
+                     "id": "16",
+                     "key": "footer_color",
+                     "type": {
+                        "handle": "FIELD/COLOR"
+                     },
+                     "version": "1.0",
+                     "name": "Footer Color",
+                     "description": "Select a color for the footer",
+                     "value": "white"
+                  },
+                  {
+                     "id": "17",
+                     "key": "content_bg_color",
+                     "type": {
+                        "handle": "FIELD/COLOR"
+                     },
+                     "version": "1.0",
+                     "name": "Content Background Color",
+                     "description": "Select a color for the content background",
+                     "value": "#1b1b1b"
+                  },
+                  {
+                     "id": "18",
+                     "key": "fact",
+                     "type": {
+                        "handle": "FIELD/TEXT"
+                     },
+                     "version": "1.0",
+                     "name": "Fact",
+                     "description": "Enter an interesting fact about food",
+                     "value": "Did you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible!"
+                  },
+                  {
+                     "id": 14,
+                     "key": "title",
+                     "type": {
+                        "handle": "FIELD/TEXT"
+                     },
+                     "version": "1.0",
+                     "name": "Title",
+                     "description": "Enter the Title",
+                     "value": "Did you know?"
+                  },
+                  {
+                     "id": "19",
+                     "key": "fact_color",
+                     "type": {
+                        "handle": "FIELD/COLOR"
+                     },
+                     "version": "1.0",
+                     "name": "Fact Color",
+                     "description": "Select a color for the fact",
+                     "value": "white"
+                  },
+                  {
+                     "id": "20",
+                     "key": "footer_text",
+                     "type": {
+                        "handle": "FIELD/TEXT"
+                     },
+                     "version": "1.0",
+                     "name": "Footer Text",
+                     "description": "Enter the footer text",
+                     "value": "Learn more about food facts!"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "id": 225,
+         "name": "Fun Fact Left",
+         "version": "1.0",
+         "description": "This is a Fun Fact template with image on the left.",
+         "height": 500,
+         "width": 500,
+         "style": ".funfact-template { display: flex; flex-direction: row; height: 100%; } .funfact-template__left-overlay { background: rgba(0, 0, 0, %overlay_opacity%); width: 100%; height: 100%; } .funfact-template__left { background-size: cover; position: relative; background-image: url(%cover_image_url%); flex-basis: 60%; } .funfact-template__right {display: flex; flex-direction: column; padding: 20px; background: %content_bg_color%; flex-basis: 40%; } .funfact-template__right-title { color: %title_color%; background: %title_bg_color%; padding: 13px; font-size: 18px; text-align: center; font-weight: 900; display: inline-block; margin-bottom: 19px; } .funfact-template__right-content { color: %fact_color%; } .funfact-template__right-footer { margin-top: auto; font-size: 12px; color: %footer_color%; }",
+         "render": "<div class='funfact-template'><div class='funfact-template__left'><div class='funfact-template__left-overlay'></div></div><div class='funfact-template__right'><div class='funfact-template__right-title'>%title%</div><div class='funfact-template__right-content'>%fact%</div><div class='funfact-template__right-footer'>%footer_text%</div></div></div>",
+         "settings": [
+            {
+               "id": "32",
+               "key": "post_cover",
+               "type": {
+                  "handle": "GROUP/ACCORDION"
+               },
+               "version": "1.0",
+               "name": "Post Cover",
+               "description": "Settings for the post cover",
+               "value": "",
+               "childSettings": [
+                  {
+                     "id": "33",
+                     "key": "overlay_opacity",
+                     "type": {
+                        "handle": "FIELD/NUMBER"
+                     },
+                     "version": "1.0",
+                     "name": "Overlay Opacity",
+                     "description": "Enter the overlay opacity (0-1)",
+                     "value": 0.2
+                  },
+                  {
+                     "id": "34",
+                     "key": "cover_image_url",
+                     "type": {
+                        "handle": "FIELD/URL"
+                     },
+                     "version": "1.0",
+                     "name": "Cover Image URL",
+                     "description": "Enter the URL of the cover image",
+                     "value": "https://images.unsplash.com/photo-1590640265333-3aee45101470"
+                  }
+               ]
+            },
+            {
+               "id": "35",
+               "key": "post_content",
+               "type": {
+                  "handle": "GROUP/ACCORDION"
+               },
+               "version": "1.0",
+               "name": "Post Content",
+               "description": "Settings for the post content",
+               "value": "",
+               "childSettings": [
+                  {
+                     "id": 14,
+                     "key": "title",
+                     "type": {
+                        "handle": "FIELD/TEXT"
+                     },
+                     "version": "1.0",
+                     "name": "Title",
+                     "description": "Enter the fun fact",
+                     "value": "Fun Fact"
+                  },
+                  {
+                     "id": "36",
+                     "key": "title_color",
+                     "type": {
+                        "handle": "FIELD/COLOR"
+                     },
+                     "version": "1.0",
+                     "name": "Title Color",
+                     "description": "Select a color for the title",
+                     "value": "#000000"
+                  },
+                  {
+                     "id": "37",
+                     "key": "title_bg_color",
+                     "type": {
+                        "handle": "FIELD/COLOR"
+                     },
+                     "version": "1.0",
+                     "name": "Title Background Color",
+                     "description": "Select a color for the title background",
+                     "value": "#01ddef"
+                  },
+                  {
+                     "id": "38",
+                     "key": "footer_color",
+                     "type": {
+                        "handle": "FIELD/COLOR"
+                     },
+                     "version": "1.0",
+                     "name": "Footer Color",
+                     "description": "Select a color for the footer",
+                     "value": "white"
+                  },
+                  {
+                     "id": "39",
+                     "key": "content_bg_color",
+                     "type": {
+                        "handle": "FIELD/COLOR"
+                     },
+                     "version": "1.0",
+                     "name": "Content Background Color",
+                     "description": "Select a color for the content background",
+                     "value": "#1b1b1b"
+                  },
+                  {
+                     "id": "40",
+                     "key": "fact",
+                     "type": {
+                        "handle": "FIELD/TEXT"
+                     },
+                     "version": "1.0",
+                     "name": "Fact",
+                     "description": "Enter an interesting fact",
+                     "value": "Did you know that dolphins are not fish, but mammals? They are highly intelligent and are known for their playful behavior and social interactions."
+                  },
+                  {
+                     "id": "41",
+                     "key": "fact_color",
+                     "type": {
+                        "handle": "FIELD/COLOR"
+                     },
+                     "version": "1.0",
+                     "name": "Fact Color",
+                     "description": "Select a color for the fact",
+                     "value": "white"
+                  },
+                  {
+                     "id": "42",
+                     "key": "footer_text",
+                     "type": {
+                        "handle": "FIELD/TEXT"
+                     },
+                     "version": "1.0",
+                     "name": "Footer Text",
+                     "description": "Enter the footer text",
+                     "value": "Discover more interesting facts!"
+                  }
+               ]
+            }
+         ]
+      },
+
+      {
          "id": 1,
          "name": "Start template",
          "version": "1.0",

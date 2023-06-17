@@ -1,0 +1,34 @@
+<div class='didyou-template'>
+    <div class="didyou-template__top">
+        <div class="didyou-template__top-overlay"></div>
+    </div>
+    <div class="didyou-template__bot">
+        <div class=didyou-template__bot-title>%title%</div>
+        <div class=didyou-template__bot-content>%content_text%</div>
+        <div class=didyou-template__bot-footer>%footer_text%</div>
+    </div>
+</div>
+
+ <style>
+     .didyou-template {
+         display: flex;
+         flex-direction: column;
+     }
+     .didyou-template__top-overlay  {
+         background: %overlay_color%;
+     }
+     .didyou-template__top {
+         background-image: url(%cover_image_url%);
+     }
+     .didyou-template__bot-title {
+         color: %title_color%;
+         background: %title_bg_color%;
+     }
+     .didyou-template__bot-footer {
+         font-size: 12px;
+         color: %footer_color%;
+     }
+     .didyou-template__bot {
+         background: %content_bg_color%;
+     }
+ </style>
