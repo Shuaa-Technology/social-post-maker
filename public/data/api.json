@@ -1,7 +1,7 @@
 {
    "templates": [
       {
-         "id": 222,
+         "id": 1,
          "name": "Event",
          "version": "1.0",
          "description": "This is an Event template.",
@@ -136,7 +136,7 @@
          ]
       },
       {
-         "id": 223,
+         "id": 2,
          "name": "Did You Know?",
          "version": "1.0",
          "description": "This is a DidYou template.",
@@ -284,7 +284,155 @@
          ]
       },
       {
-         "id": 225,
+         "id": 3,
+         "name": "Did You Know? 2",
+         "version": "1.0",
+         "description": "This is a DidYou template.",
+         "height": 500,
+         "width": 500,
+         "style": ".didyou-template { display: flex; flex-direction: column-reverse; height: 100%; } .didyou-template__top-overlay { background: rgba(0, 0, 0, %overlay_opacity%); width: 100%; height: 100%; } .didyou-template__bot-content { color: %fact_color%; } .didyou-template__top { background-size: cover; position: relative; background-image: url(%cover_image_url%); flex-basis: 60%; } .didyou-template__bot-title { color: %title_color%; background: %title_bg_color%; width: 259px; padding: 13px; font-size: 29px; text-align: center; font-weight: 900; z-index: 13; position: absolute; left: 50%; bottom: -80px; transform: translate(-50%, -60%); } .didyou-template__bot-footer { margin-top: 30px; font-size: 12px; color: %footer_color%; } .didyou-template__bot { font-size: 20px; position: relative; padding: 40px; background: %content_bg_color%; flex-basis: 40%; }",
+         "render": "<div class='didyou-template'><div class='didyou-template__top'><div class='didyou-template__top-overlay'></div></div><div class='didyou-template__bot'><div class='didyou-template__bot-title'>%title%</div><div class='didyou-template__bot-content'>%fact%</div><div class='didyou-template__bot-footer'>%footer_text%</div></div></div>",
+         "settings": [
+            {
+               "id": "10",
+               "key": "post_cover",
+               "type": {
+                  "handle": "GROUP/ACCORDION"
+               },
+               "version": "1.0",
+               "name": "Post Cover",
+               "description": "Settings for the post cover",
+               "value": "",
+               "childSettings": [
+                  {
+                     "id": "11",
+                     "key": "overlay_opacity",
+                     "type": {
+                        "handle": "FIELD/NUMBER"
+                     },
+                     "version": "1.0",
+                     "name": "Overlay Opacity",
+                     "description": "Enter the overlay opacity (0-1)",
+                     "value": 0.2
+                  },
+                  {
+                     "id": "12",
+                     "key": "cover_image_url",
+                     "type": {
+                        "handle": "FIELD/URL"
+                     },
+                     "version": "1.0",
+                     "name": "Cover Image URL",
+                     "description": "Enter the URL of the cover image",
+                     "value": "https://images.unsplash.com/photo-1587049352895-5caf69ef3b6e"
+                  }
+               ]
+            },
+            {
+               "id": "13",
+               "key": "post_content",
+               "type": {
+                  "handle": "GROUP/ACCORDION"
+               },
+               "version": "1.0",
+               "name": "Post Content",
+               "description": "Settings for the post content",
+               "value": "",
+               "childSettings": [
+                  {
+                     "id": "14",
+                     "key": "title_color",
+                     "type": {
+                        "handle": "FIELD/COLOR"
+                     },
+                     "version": "1.0",
+                     "name": "Title Color",
+                     "description": "Select a color for the title",
+                     "value": "#000000"
+                  },
+                  {
+                     "id": "15",
+                     "key": "title_bg_color",
+                     "type": {
+                        "handle": "FIELD/COLOR"
+                     },
+                     "version": "1.0",
+                     "name": "Title Background Color",
+                     "description": "Select a color for the title background",
+                     "value": "#ffd60d"
+                  },
+                  {
+                     "id": "16",
+                     "key": "footer_color",
+                     "type": {
+                        "handle": "FIELD/COLOR"
+                     },
+                     "version": "1.0",
+                     "name": "Footer Color",
+                     "description": "Select a color for the footer",
+                     "value": "white"
+                  },
+                  {
+                     "id": "17",
+                     "key": "content_bg_color",
+                     "type": {
+                        "handle": "FIELD/COLOR"
+                     },
+                     "version": "1.0",
+                     "name": "Content Background Color",
+                     "description": "Select a color for the content background",
+                     "value": "#1b1b1b"
+                  },
+                  {
+                     "id": "18",
+                     "key": "fact",
+                     "type": {
+                        "handle": "FIELD/TEXT"
+                     },
+                     "version": "1.0",
+                     "name": "Fact",
+                     "description": "Enter an interesting fact about food",
+                     "value": "Did you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible!"
+                  },
+                  {
+                     "id": 14,
+                     "key": "title",
+                     "type": {
+                        "handle": "FIELD/TEXT"
+                     },
+                     "version": "1.0",
+                     "name": "Title",
+                     "description": "Enter the Title",
+                     "value": "Did you know?"
+                  },
+                  {
+                     "id": "19",
+                     "key": "fact_color",
+                     "type": {
+                        "handle": "FIELD/COLOR"
+                     },
+                     "version": "1.0",
+                     "name": "Fact Color",
+                     "description": "Select a color for the fact",
+                     "value": "white"
+                  },
+                  {
+                     "id": "20",
+                     "key": "footer_text",
+                     "type": {
+                        "handle": "FIELD/TEXT"
+                     },
+                     "version": "1.0",
+                     "name": "Footer Text",
+                     "description": "Enter the footer text",
+                     "value": "Learn more about food facts!"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "id": 4,
          "name": "Fun Fact Left",
          "version": "1.0",
          "description": "This is a Fun Fact template with image on the left.",
@@ -430,377 +578,6 @@
                ]
             }
          ]
-      },
-
-      {
-         "id": 1,
-         "name": "Start template",
-         "version": "1.0",
-         "description": "This is a Start template.",
-         "height": 500,
-         "width": 500,
-         "style": ".start_template__bg_image { height:100%; background-image: linear-gradient( %gradient_top_color% , %gradient_bottom_color% ), url(https://images.unsplash.com/photo-1497215728101-856f4ea42174?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit); background-size: cover; background-position: center; color: #fff; } .content { display: grid; place-content: center; text-align: center; min-height: 500px; } .content h2 { font-size: 3.5rem; } .content p { font-size: 20px; } ",
-         "render": "<div class='start_template__bg_image'><div class='content'><h2>%title%</h2><p>%description% %gradient_top_color% </p></div></div>",
-         "settings": [
-            {
-               "id": "1",
-               "key": "bg-image-settings",
-               "type": {
-                  "handle": "GROUP/ACCORDION"
-               },
-               "version": "1.0",
-               "name": "Background image Settings",
-               "description": "Background image Settings",
-               "value": "",
-               "childSettings": [
-                  {
-                     "id": "1",
-                     "key": "bg-image",
-                     "type": {
-                        "handle": "FIELD/URL"
-                     },
-                     "version": "1.0",
-                     "name": "Background image",
-                     "description": "Upload a thumbnail image",
-                     "value": "https://loremflickr.com/cache/resized/1238_1116489949_9015d8ec0e_c_600_600_nofilter.jpg"
-                  },
-                  {
-                     "id": "2",
-                     "key": "gradient_top_color",
-                     "type": {
-                        "handle": "FIELD/COLOR"
-                     },
-                     "version": "1.0",
-                     "name": "Gradient top color",
-                     "description": "Select a color for the header",
-                     "value": "#4682b4"
-                  },
-                  {
-                     "id": "3",
-                     "key": "gradient_bottom_color",
-                     "type": {
-                        "handle": "FIELD/COLOR"
-                     },
-                     "version": "1.0",
-                     "name": "Gradient bottom color",
-                     "description": "Select a color for the body text",
-                     "value": "#b22222"
-                  }
-               ]
-            },
-            {
-               "id": "4",
-               "key": "title",
-               "type": {
-                  "handle": "FIELD/TEXT"
-               },
-               "version": "1.0",
-               "name": "Title",
-               "description": "Enter a heading for the template",
-               "value": "Example Heading after parsing"
-            },
-            {
-               "id": "4",
-               "key": "description",
-               "type": {
-                  "handle": "FIELD/TEXT"
-               },
-               "version": "1.0",
-               "name": "Description",
-               "description": "Enter a heading for the template",
-               "value": "Example description after parsing"
-            }
-         ]
-      },
-      {
-         "id": 2,
-         "name": "Fancy template",
-         "version": "1.0",
-         "description": "This is a Fancy template.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;' >Fancy Template HTML <span>",
-         "settings": []
-      },
-      {
-         "id": 3,
-         "name": "Elegant template",
-         "version": "1.0",
-         "description": "This is an Elegant template.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;' >Elegant Template HTML <span>",
-         "settings": []
-      },
-      {
-         "id": 4,
-         "name": "Dreamer template",
-         "version": "1.0",
-         "description": "This is a Dreamer template.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;' >Dreamer Template HTML <span>",
-         "settings": []
-      },
-      {
-         "id": 5,
-         "name": "Amazing template",
-         "version": "1.0",
-         "description": "This is an Amazing template.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;' >Amazing Template HTML <span>",
-         "settings": []
-      },
-      {
-         "id": 6,
-         "name": "Black&White template",
-         "version": "1.0",
-         "description": "This is a Black&White template.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;' >Black&White Template HTML <span>",
-         "settings": []
-      },
-      {
-         "id": 7,
-         "name": "Nerdy template",
-         "version": "1.0",
-         "description": "This is a Nerdy template.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;' >Nerdy Template HTML <span>",
-         "settings": []
-      },
-      {
-         "id": 8,
-         "name": "Sunny template",
-         "version": "1.0",
-         "description": "This is a Sunny template.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;' >Sunny Template HTML <span>",
-         "settings": []
-      },
-      {
-         "id": 9,
-         "name": "Template 9",
-         "version": "1.0",
-         "description": "This is Template 9.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;'>Template 9 HTML</span>",
-         "settings": []
-      },
-      {
-         "id": 10,
-         "name": "Template 10",
-         "version": "1.0",
-         "description": "This is Template 10.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;'>Template 10 HTML</span>",
-         "settings": []
-      },
-      {
-         "id": 11,
-         "name": "Template 11",
-         "version": "1.0",
-         "description": "This is Template 11.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;'>Template 11 HTML</span>",
-         "settings": []
-      },
-      {
-         "id": 12,
-         "name": "Template 12",
-         "version": "1.0",
-         "description": "This is Template 12.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;'>Template 12 HTML</span>",
-         "settings": []
-      },
-      {
-         "id": 13,
-         "name": "Template 13",
-         "version": "1.0",
-         "description": "This is Template 13.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;'>Template 13 HTML</span>",
-         "settings": []
-      },
-      {
-         "id": 14,
-         "name": "Template 14",
-         "version": "1.0",
-         "description": "This is Template 14.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;'>Template 14 HTML</span>",
-         "settings": []
-      },
-      {
-         "id": 15,
-         "name": "Template 15",
-         "version": "1.0",
-         "description": "This is Template 15.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;'>Template 15 HTML</span>",
-         "settings": []
-      },
-      {
-         "id": 16,
-         "name": "Template 16",
-         "version": "1.0",
-         "description": "This is Template 16.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;'>Template 16 HTML</span>",
-         "settings": []
-      },
-      {
-         "id": 17,
-         "name": "Template 17",
-         "version": "1.0",
-         "description": "This is Template 17.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;'>Template 17 HTML</span>",
-         "settings": []
-      },
-      {
-         "id": 18,
-         "name": "Template 18",
-         "version": "1.0",
-         "description": "This is Template 18.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;'>Template 18 HTML</span>",
-         "settings": []
-      },
-      {
-         "id": 19,
-         "name": "Template 19",
-         "version": "1.0",
-         "description": "This is Template 19.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;'>Template 19 HTML</span>",
-         "settings": []
-      },
-      {
-         "id": 20,
-         "name": "Template 20",
-         "version": "1.0",
-         "description": "This is Template 20.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;'>Template 20 HTML</span>",
-         "settings": []
-      },
-      {
-         "id": 21,
-         "name": "Template 21",
-         "version": "1.0",
-         "description": "This is Template 21.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;'>Template 21 HTML</span>",
-         "settings": []
-      },
-      {
-         "id": 22,
-         "name": "Template 22",
-         "version": "1.0",
-         "description": "This is Template 22.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;'>Template 22 HTML</span>",
-         "settings": []
-      },
-      {
-         "id": 23,
-         "name": "Template 23",
-         "version": "1.0",
-         "description": "This is Template 23.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;'>Template 23 HTML</span>",
-         "settings": []
-      },
-      {
-         "id": 24,
-         "name": "Template 24",
-         "version": "1.0",
-         "description": "This is Template 24.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;'>Template 24 HTML</span>",
-         "settings": []
-      },
-      {
-         "id": 25,
-         "name": "Template 25",
-         "version": "1.0",
-         "description": "This is Template 25.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;'>Template 25 HTML</span>",
-         "settings": []
-      },
-      {
-         "id": 26,
-         "name": "Template 26",
-         "version": "1.0",
-         "description": "This is Template 26.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;'>Template 26 HTML</span>",
-         "settings": []
-      },
-      {
-         "id": 27,
-         "name": "Template 27",
-         "version": "1.0",
-         "description": "This is Template 27.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;'>Template 27 HTML</span>",
-         "settings": []
-      },
-      {
-         "id": 28,
-         "name": "Template 28",
-         "version": "1.0",
-         "description": "This is Template 28.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;'>Template 28 HTML</span>",
-         "settings": []
-      },
-      {
-         "id": 29,
-         "name": "Template 29",
-         "version": "1.0",
-         "description": "This is Template 29.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;'>Template 29 HTML</span>",
-         "settings": []
-      },
-      {
-         "id": 30,
-         "name": "Template 30",
-         "version": "1.0",
-         "description": "This is Template 30.",
-         "height": 500,
-         "width": 500,
-         "render": "<span style='color:black;'>Template 30 HTML</span>",
-         "settings": []
       }
    ]
 }
