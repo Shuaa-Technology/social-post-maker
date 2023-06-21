@@ -14,6 +14,15 @@ export class TemplatesService {
     this.templates = [];
   }
 
+
+  /** 
+   * get all templates from API or a local data surce
+   *
+   * @param {number} [page=1]
+   * @param {number} [limit=ITEMS_PER_PAGE]
+   * @return {*}  {Promise<TemplateInterface[]>}
+   * @memberof TemplatesService
+   */
   fetchTemplates(
     page: number = 1,
     limit: number = ITEMS_PER_PAGE
@@ -83,20 +92,48 @@ export class TemplatesService {
     );
   }
 
+
+  /**
+   *
+   *
+   * @param {string} id
+   * @return {*}  {(TemplateInterface | null)}
+   * @memberof TemplatesService
+   */
   getTemplateById(id: string): TemplateInterface | null {
     return this.templates.filter(function (el) {
       return el.id === id;
     })[0];
   }
 
+ /**
+  *
+  *
+  * @return {*}  {TemplateInterface[]}
+  * @memberof TemplatesService
+  */
  getTemplates(): TemplateInterface[] {
     return  this.templates;
  }
-  addTemplates(templates:TemplateInterface[]): TemplatesService {
+
+ /**
+  *
+  *
+  * @param {TemplateInterface[]} templates
+  * @return {*}  {TemplatesService}
+  * @memberof TemplatesService
+  */
+ addTemplates(templates:TemplateInterface[]): TemplatesService {
     this.templates = this.templates.concat(templates)
      return this;
   }
 
+
+
+  /**
+   * Gets default template
+   * @returns default template 
+   */
   getDefaultTemplate(): TemplateInterface {
     return {
       id: "1",

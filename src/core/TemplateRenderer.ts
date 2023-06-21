@@ -8,17 +8,39 @@ export class TemplateRenderer {
   _output: string = "";
   _style: string = "";
 
+
+
+  /**
+   *
+   *
+   * @param {TemplateInterface} template
+   * @return {*}  {TemplateRenderer}
+   * @memberof TemplateRenderer
+   */
   setTemplate(template: TemplateInterface): TemplateRenderer {
     this._template = template;
     return this;
   }
 
+
+  /**
+   *
+   *
+   * @return {*}  {TemplateInterface}
+   * @memberof TemplateRenderer
+   */
   getTemplate(): TemplateInterface {
     return this._template;
   }
 
+
+  /**
+   * modify all placeholders with their corresponding values.
+   *
+   * @return {*}  {TemplateRenderer}
+   * @memberof TemplateRenderer
+   */
   parse(): TemplateRenderer {
-    /* @todo: Better?! */
     if (this._template) {
       this._output = this._template.render.replace(
         /%\w+%/g,
@@ -46,10 +68,23 @@ export class TemplateRenderer {
     return this;
   }
 
-  style(): string {
+ /**
+  *
+  *
+  * @return {*}  {string}
+  * @memberof TemplateRenderer
+  */
+ style(): string {
     return this._style;
   }
 
+  /**
+   * get sanitized HTML content.
+   *
+   * @param {*} [options]
+   * @return {*}  {string}
+   * @memberof TemplateRenderer
+   */
   render(options?: any): string {
     return sanitizeHtml(this._output, { ...SANITIZE_OPTIONS, ...options });
   }
