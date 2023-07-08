@@ -73,6 +73,7 @@ export const TemplatesStore = createSlice({
         const  response = action.payload;
         const  templates = templatesService.addTemplates(response).getTemplates()
         state.templates = templates;
+        state.currentTemplate = templates[0];
         //  state.page = page;
       })
       .addCase(loadTemplates.rejected, (state) => {
