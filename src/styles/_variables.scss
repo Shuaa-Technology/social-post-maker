@@ -76,6 +76,3 @@ $color-scheme: (
                 rt-color-dark: #fff
         )
 ) !default;
-
-$color-scheme: map-merge($color-scheme, $color-overrides) !default;
-//TODO test this
