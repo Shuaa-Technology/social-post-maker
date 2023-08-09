@@ -2,6 +2,10 @@
 
 Social Post Maker is a simple and intuitive social media post builder built with React. With a variety of templates and customization options, users can quickly create engaging and professional social media posts. It's perfect for bloggers, social media managers, and anyone who needs to create custom social media posts quickly and easily.
 
+## Demo
+
+https://social-craft.netlify.app
+
 ## Getting Started
 
 To get started with Social Post Maker, simply clone this repository and run `npm install` to install the required dependencies. Then run `npm start` to start the development server.
