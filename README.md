@@ -110,7 +110,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Team
 
-- **Alaeddin Ben Salah ** - Designer / Developer - [alaeddinbs@gmail.com](mailto:alaeddinbs@gmail.com)
+- **Alaeddin Ben Salah** - Designer / Developer - [alaeddinbs@gmail.com](mailto:alaeddinbs@gmail.com)
 - **Bilel Chehata** - Developer - [chehata.b8@gmail.com](mailto:chehata.b8@gmail.com)
 
 ## 🙋 Support & Questions
