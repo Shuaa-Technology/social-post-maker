@@ -17,8 +17,8 @@
 
 ### 🛠️ Technical Architecture
 
-- **⚛️ React ** - Built with React for a responsive, component-based interface
-- **⚛️ TypeScript - Type-safe development ensuring robust code quality
+- **⚛️React** - Built with React for a responsive, component-based interface
+- **⚛️TypeScript** - Type-safe development ensuring robust code quality
 - **🔄 Redux Toolkit** - Robust state handling for a seamless editing experience
 - **📦 Modular Components** - Organized architecture for maximum flexibility and extensibility
 - **🎨 Advanced Styling** - Leverages modern CSS techniques for pixel-perfect designs
